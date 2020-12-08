@@ -24,7 +24,7 @@
             <th class="tg-bjuv" colspan="8"><span style="font-weight:bold;">ORIGINAL</span></th>
         </tr>
         <tr>
-            <td class="tg-zb0m" colspan="3"><span style="font-weight:bold">TELEPATHIC SOFT</span></td>
+            <td class="tg-zb0m" colspan="3"><span style="font-weight:bold">RED HOT CHILI DEVS</span></td>
             <td class="tg-zb0z" colspan="2"><span style="font-weight:bold;font-size:80px;">X </span><br> <span style="font-weight:bold;font-size:25px;">COD. 011</span></td>
             <td class="tg-zb0m" colspan="3"><span style="font-weight:bold">FACTURA</span></td>
         </tr>
