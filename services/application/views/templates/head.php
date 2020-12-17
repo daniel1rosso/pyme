@@ -23,6 +23,8 @@
         <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
+    
+
 
         <script>
             //--- URL BASE ---//
@@ -32,6 +34,23 @@
             //SERVIDOR
 //                URL = '';
         </script>
+
+        <!--===============================================================================================-->
+	<script src="<?= $url ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?= $url ?>assets/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?= $url ?>assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="<?= $url ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?= $url ?>assets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?= $url ?>assets/vendor/daterangepicker/moment.min.js"></script>
+	<script src="<?= $url ?>assets/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="<?= $url ?>assets/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="<?= $url ?>assets/js/main.js"></script>
 
         <script src="//code.jquery.com/jquery.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
