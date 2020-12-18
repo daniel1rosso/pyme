@@ -45,7 +45,7 @@ class MY_Controller extends CI_Controller {
         $data['url'] = base_url();
         $data['CI'] = & get_instance();
         $data['anioFooter'] = date('Y');
-        $data['title'] = 'PYME';
+        $data['title'] = 'Panda Gestion';
         $userdata = $this->session->all_userdata();
 
         if (!$this->is_login() || $userdata['idNivel'] == 6) {

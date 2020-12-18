@@ -1,23 +1,23 @@
 <!--Page container -->
-<div class="page-container">
+<div class="page-container" style="background-image: linear-gradient(to right bottom, #ffffff, #e3e4e6, #c5cbcc, #abb2af, #969891);">
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" style="background:#f8f8f8; box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);">
         <div class="sidebar-content">
             <!-- User dropdown -->
-            <div class="user-menu dropdown" onclick="abrirMenuPrincipal();">
+            <div class="user-menu dropdown"  onclick="abrirMenuPrincipal();">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="<?php echo(empty($usuario['imgPerfil'])) ? $url . 'assets/images/home-3-inner-rev-2-img-3.png' : $url . '/uploads/perfiles/thumbs/' . $usuario['imgPerfil'] ?>">
                     <div class="user-info">
                         <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )
-                        <span style="color: white; text-decoration: underline;">Ir al panel principal</span>
+                        <span style="color: white; text-decoration: underline;">Panel Principal</span>
                     </div>
                 </a>
             </div>
             <!-- /user dropdown -->
 
             <!-- Main navigation -->
-            <ul class="navigation">
+            <ul class="navigation" style="background:#f8f8f8" >
                 <?php
                 //ver como hacer para los sublitems
 
@@ -25,8 +25,10 @@
                     foreach ($menu as $key => $value) {
 
                         if ($menu[$key]['idTipoInterna'] == 1) {
-                            echo '<li>' .
-                            '<a href="' . $url . $menu[$key]['link'] . '">' .
+                            echo '<li >' .
+                            ' <a 
+                                style="color:black; font-weight: bold;"
+                            href="' . $url . $menu[$key]['link'] . '"> ' .
                             '<span>' . $menu[$key]['nombre'] . '</span>' .
                             '<i class="' . $menu[$key]['icono'] . '"></i></a>';
                             

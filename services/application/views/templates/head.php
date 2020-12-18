@@ -19,13 +19,14 @@
         <link href="<?= $url ?>assets/css/uploadfile.custom.css"  rel="stylesheet"  type="text/css">
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.css" rel="stylesheet">
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.min.css" rel="stylesheet">
+        <link href="<?= $url ?>assets/css/material_dashboard.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
         <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      
 
     
-
-
+  
         <script>
             //--- URL BASE ---//
             //LOCAL
@@ -106,9 +107,9 @@
         <script type="text/javascript" src="<?= $url ?>assets/js/jquery.uploadfile.min.js"></script>
 
         <!-- Ck Editor-->
-        <script type="text/javascript" src="<?= $url ?>assets/plugins/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="<?= $url ?>assets/js/plugins/ckeditor/ckeditor.js"></script>
         <!-- Ck Finder-->
-        <script type="text/javascript" src="<?= $url ?>assets/plugins/ckfinder/ckfinder.js"></script>
+        <script type="text/javascript" src="<?= $url ?>assets/js/plugins/ckfinder/ckfinder.js"></script>
 
         <!-- Funciones -->
         <script type="text/javascript" src="<?= $url ?>assets/js/coreAdmin.js"></script>

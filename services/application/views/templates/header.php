@@ -14,10 +14,11 @@
             <i class="icon-paragraph-justify2"></i>
         </button>        
 
-        <a class="navbar-brand" onclick="abrirMenuPrincipal()"">
+        <a class="navbar-brand" onclick="abrirMenuPrincipal()">
             <?= $title ?>
         </a>
     </div>
+
 
     <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
         <!--        <li class="nav-item dropdown">
