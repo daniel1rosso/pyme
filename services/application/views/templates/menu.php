@@ -1,50 +1,71 @@
-<!--Page container -->
-<div class="page-container" style="background-image: linear-gradient(to right bottom, #ffffff, #e3e4e6, #c5cbcc, #abb2af, #969891);">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-    <!-- Sidebar -->
-    <div class="sidebar" style="background:#f8f8f8; box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);">
-        <div class="sidebar-content">
-            <!-- User dropdown -->
-            <div class="user-menu dropdown"  onclick="abrirMenuPrincipal();">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="<?php echo(empty($usuario['imgPerfil'])) ? $url . 'assets/images/home-3-inner-rev-2-img-3.png' : $url . '/uploads/perfiles/thumbs/' . $usuario['imgPerfil'] ?>">
-                    <div class="user-info">
-                        <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )
-                        <span style="color: white; text-decoration: underline;">Panel Principal</span>
-                    </div>
-                </a>
-            </div>
-            <!-- /user dropdown -->
+        Tip 2: you can also add an image using data-image tag
+     -->
+   
+  <div class="sidebar" style="background: fixed;">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
-            <!-- Main navigation -->
-            <ul class="navigation" style="background:#f8f8f8" >
-                <?php
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+
+        <div class="info">
+       
+          <strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong>
+        </div>
+       </div>
+      
+       <nav class="mt-2">
+
+        <ul  class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+
+          <li class="nav-item menu-open">
+            <a class="nav-link active" onclick="abrirMenuPrincipal();">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>Menu Principal</p>
+            </a>
+            </li>
+
+            
+            <?php
                 //ver como hacer para los sublitems
 
                 if ($menu) {
                     foreach ($menu as $key => $value) {
 
                         if ($menu[$key]['idTipoInterna'] == 1) {
-                            echo '<li >' .
-                            ' <a 
-                                style="color:black; font-weight: bold;"
+                            echo '<li class="nav-item" >' .
+                            ' <a class="nav-link"
+                        
                             href="' . $url . $menu[$key]['link'] . '"> ' .
-                            '<span>' . $menu[$key]['nombre'] . '</span>' .
-                            '<i class="' . $menu[$key]['icono'] . '"></i></a>';
+                            '<i class="' . $menu[$key]['icono'] . ' "></i>'.
+                            '<span class="badge badge-info right">' . '</span>' .
+                            
+                            '<i class=" fas fa-angle-left right "></i>
+                            <p> '. $menu[$key]['nombre'] .'</p>
+                            
+                            </a>';
                             
                             for ($j = 0; $j < count($menu); $j++) {
                                 if ($menu[$j]['idTipoInterna'] == 2) {
                                     if ($menu[$j]['idSubItem'] == $value['posicion']) {
-                                        echo '<ul><li>' .
-                                        '<a href="' . $url . $menu[$j]['link'] . '">' .
+                                        echo '<ul class="nav nav-treeview"><li class="nav-item" >' .
+                                        '<a class="nav-link" href="' . $url . $menu[$j]['link'] . '">' .
+                                        '<i class="far fa-circle nav-icon"></i>'.
                                         '<span>' . $menu[$j]['nombre'] . '</span>' .
-//                                        '<i class="' . $menu[$j]['icono'] . '"></i>
+                                         
                                         '</a>';
 
                                         for ($k = 0; $k < count($menu); $k++) {
                                             if ($menu[$k]['idTipoInterna'] == 3 && $menu[$j]['posicion'] == $menu[$k]['idSubItem']) {
                                                 echo '<ul><li>' .
-                                                '<a href="' . $url . $menu[$k]['link'] . '">' .
+                                                '<a class="nav-link" href="' . $url . $menu[$k]['link'] . '">' .
+                                               
                                                 '<span>' . $menu[$k]['nombre'] . '</span>' .
 //                                                '<i class="' . $menu[$k]['icono'] . '"></i>
                                                 '</a>';
@@ -53,6 +74,7 @@
                                                     if ($menu[$l]['idTipoInterna'] == 4 && $menu[$k]['posicion'] == $menu[$l]['idSubItem']) {
                                                         echo '<ul><li>' .
                                                         '<a href="' . $url . $menu[$l]['link'] . '">' .
+                                                       
                                                         '<span>' . $menu[$l]['nombre'] . '</span>' .
         //                                                '<i class="' . $menu[$k]['icono'] . '"></i>
                                                         '</a>';
@@ -71,10 +93,9 @@
                     }
                 }
                 ?>
-
-            </ul>
-            <!-- /main navigation -->
-        </div>
-    </div>
-
-<!-- /sidebar -->
+        
+        </ul>
+        </nav>
+      
+      </div>
+              </aside>

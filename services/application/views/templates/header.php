@@ -1,6 +1,24 @@
+
+
 <!-- Navbar -->
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
+
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+<ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+
+<div class="container-fluid">
+    <div class="navbar-wrapper">
         <a class="sidebar-toggle">
             <!--<i class="icon-paragraph-justify2"></i>-->
             <i class="fas fa-bars"></i>
@@ -20,7 +38,7 @@
     </div>
 
 
-    <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+    <ul class="nav-item dropdown" id="navbar-icons">
         <!--        <li class="nav-item dropdown">
                     <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="http://example.com" id="navbarDropdownMenuLink">
                         <i class="material-icons">
@@ -106,5 +124,6 @@
             </ul>
         </li>
     </ul>
-</div>
+    </div>
+                            </nav>
 <!-- /navbar -->

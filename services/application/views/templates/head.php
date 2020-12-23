@@ -19,12 +19,32 @@
         <link href="<?= $url ?>assets/css/uploadfile.custom.css"  rel="stylesheet"  type="text/css">
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.css" rel="stylesheet">
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.min.css" rel="stylesheet">
-        <link href="<?= $url ?>assets/css/material_dashboard.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
         <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-      
 
+        <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?= $url ?>assets/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/summernote/summernote-bs4.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@3,900&display=swap" rel="stylesheet">
     
   
         <script>
@@ -52,13 +72,8 @@
 	<script src="<?= $url ?>assets/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="<?= $url ?>assets/js/main.js"></script>
-
-        <script src="//code.jquery.com/jquery.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-
+    
+       
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/charts/sparkline.min.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/uniform.min.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/select2.min.js"></script>
@@ -77,7 +92,10 @@
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/daterangepicker.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/fancybox.min.js"></script>
 
-<!-- <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/moment.js"></script> -->
+
+       
+  <script>
+
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/jgrowl.min.js"></script>
@@ -126,6 +144,43 @@
             CKEDITOR.config.allowedContent = true;
         </script>
         
+
+
+
+
+<!-- admin lte -->
+
+<!-- jQuery -->
+<script src="<?= $url ?>assets/js/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="<?= $url ?>assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="<?= $url ?>assets/js/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="<?= $url ?>assets/js/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="<?= $url ?>assets/js/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="<?= $url ?>assets/js/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="<?= $url ?>assets/js/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="<?= $url ?>assets/js/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="<?= $url ?>assets/js/plugins/moment/moment.min.js"></script>
+<script src="<?= $url ?>assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?= $url ?>assets/js/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="<?= $url ?>assets/js/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="<?= $url ?>assets/js/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= $url ?>assets/js/adminlte.js"></script>
+
     </head>
 
     <body>
