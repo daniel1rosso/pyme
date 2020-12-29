@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="translated-ltr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,7 @@
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.css" rel="stylesheet">
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
+        <link href="<?= $url ?>assets/css/estilos.css" rel="stylesheet">
         <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -181,6 +182,7 @@
 <!-- AdminLTE App -->
 <script src="<?= $url ?>assets/js/adminlte.js"></script>
 
-    </head>
+  </head>
 
-    <body>
+<body class="sidebar-mini layout-fixed sidebar-collapse">
+  <div class="wrapper">

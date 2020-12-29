@@ -21,6 +21,6 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="<?=$url?>assets/js/coreFooter.js"></script>
-    
+</div>
 </body>
 </html>

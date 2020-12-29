@@ -50,9 +50,11 @@
     $active_group = 'default';
     $active_record = TRUE;
 
-    $db['default']['hostname'] = '24.232.94.111';
+    //$db['default']['hostname'] = '24.232.94.111';
+    $db['default']['hostname'] = 'localhost';
     $db['default']['username'] = 'root';
-    $db['default']['password'] = 'Admin1234';
+    //$db['default']['password'] = 'Admin1234';
+    $db['default']['password'] = '';
     $db['default']['database'] = 'mypyme';
 
     $db['default']['dbdriver'] = 'mysqli';

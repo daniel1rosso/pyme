@@ -47,6 +47,8 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -32919,4 +32921,6 @@ a.text-muted:hover {
 .dark-mode .link-dark {
   color: #ced4da;
 }
+
+.main-header{background-color: red;}
 /*# sourceMappingURL=adminlte.css.map */
