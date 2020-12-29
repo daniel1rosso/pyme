@@ -77,7 +77,7 @@
 						Bienvenido
 					</span>
 					<span class="login100-form-title p-b-48" style="padding:0">
-						<img src="<?=$url?>assets/images/logoPanda/panda.png" style="width:70%">
+						<img src="<?=$url?>assets/images/ejemplo.png" style="width:70%">
 					</span>
 
 					<div class="wrap-input100 validate-input  <?php echo (isset($user)) ? 'has-feedback' : 'has-feedback has-error'; ?>" data-validate = "Valid email is: a@b.c">
@@ -89,7 +89,7 @@
 					</div>
 
                     <div class="wrap-input100 validate-input <?php echo (isset($password)) ? 'has-feedback' : 'has-feedback has-error'; ?>" data-validate="Enter password">
-                    <h3 style=""> 
+                     <h3 style=""> 
                      <strong>Contraseña</strong>    
                      </h3>
 						<span class="btn-show-pass">
@@ -124,7 +124,7 @@
 	</div>
 	
 
-	<div id="dropDownSelect1"></div>
+	<div id="dropDownSelect1">
 
 
 
@@ -143,6 +143,6 @@
             </div>
         </footer>         
         <!-- /footer -->
-
+        </div>
 </body>
 </html>
