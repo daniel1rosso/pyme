@@ -201,17 +201,17 @@
                     <h6 class="panel-title"><i class="fa fa-ticket"></i> Contactenos</h6>
                 </div>
                 <form action="#" class="block validate" role="form">
-                    <div class="panel-body">
+                    <div class="panel-body" style = "font-size: 12px;">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Nombre Completo: <span class="mandatory">*</span></label>
-                                    <input type="text" name="name" placeholder="Nombre Completo" class="form-control required">
+                                    <input type="text" name="name" placeholder="Nombre Completo" class="form-control required" style="font-size:15px;">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label>Correo Electronico: <span class="mandatory">*</span></label>
-                                    <input type="text" name="email_field" placeholder="Correo Electronico" class="form-control required">
+                                    <input type="text" name="email_field" placeholder="Correo Electronico" class="form-control required" style="font-size:15px;">
                                 </div>
                             </div>
                         </div>
@@ -233,12 +233,12 @@
 
                         <div class="form-group">
                             <label>Mensaje: <span class="mandatory">*</span></label>
-                            <textarea rows="5" cols="5" name="message" placeholder="Escriba su mensaje..." class="elastic form-control required"></textarea>
+                            <textarea rows="5" cols="5" name="message" placeholder="Escriba su mensaje..." class="elastic form-control required" style="font-size:15px;"></textarea>
                         </div>
 
                         <div class="text-right">
-                            <input type="reset" value="Cancelar" class="btn btn-danger">
-                            <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
+                            <input type="reset" value="Cancelar" class="btn btn-danger" style="width: 30%;">
+                            <input type="submit" value="Enviar Mensaje" class="btn btn-primary" style="width: 30%;">
                         </div>
                     </div>
                 </form>
