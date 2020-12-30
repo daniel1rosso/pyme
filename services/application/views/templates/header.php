@@ -105,12 +105,12 @@
             </li>
             
             <li class="user dropdown nav-item">
-                <a class="dropdown- nav-link" data-toggle="dropdown" style = "font-size:180%;">
+                <a class="dropdown nav-link" data-toggle="dropdown" style = "font-size:180%;">
                     <img alt="" src="<?php echo(empty($userdata['picture'])) ? $url . 'assets/images/main-team-member-img-3-100x100.jpg' : $url . '/uploads/profile/' . $userdata['picture'] ?>">
                     <span><?= $user['usuario'] ?></span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-right icons-right">
-                    <li><a href="<?= $url ?>admin/logout"><i class="icon-exit"></i> Cerrar Sesi&oacute;n</a></li>
+                <ul class="dropdown-menu dropdown-menu-left icons-left">
+                    <li><a href="<?= $url ?>admin/logout"><i class="icon-exit"></i>Cerrar Sesi&oacute;n</a></li>
                 </ul>
             </li>
         </ul>                       
