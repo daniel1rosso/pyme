@@ -26,8 +26,8 @@
 
             <li class="nav-item menu-open">
               <a class="nav-link active" onclick="abrirMenuPrincipal();">
-                <i class="nav-icon fas fa-bars"></i>
-                <p>Menu Principal</p>
+                <i class="nav-icon fas fa-bars" style="padding-top:3px;"></i>
+                <p  style="font-size:125%;">Menu Principal</p>
               </a>
             </li>
 
@@ -44,7 +44,7 @@
                         '<i class="' . $menu[$key]['icono'] . ' "></i>'.
                         '<span class="badge badge-info right">' . '</span>' .
                         '<i class=" fas fa-angle-left right "></i>
-                        <p> '. $menu[$key]['nombre'] .'</p>                    
+                        <p style="font-size:125%;"> '. $menu[$key]['nombre'] .'</p>                    
                         </a>';
                               
                           for ($j = 0; $j < count($menu); $j++) {
@@ -53,14 +53,14 @@
                                 echo '<ul class="nav nav-treeview"><li class="nav-item" >' .
                                 '<a class="nav-link" href="' . $url . $menu[$j]['link'] . '">' .
                                 '<i class="far fa-circle nav-icon"></i>'.
-                                '<span>' . $menu[$j]['nombre'] . '</span>' .                     
+                                '<span style="font-size:125%;">' . $menu[$j]['nombre'] . '</span>' .                     
                                 '</a>';
 
                                   for ($k = 0; $k < count($menu); $k++) {
                                     if ($menu[$k]['idTipoInterna'] == 3 && $menu[$j]['posicion'] == $menu[$k]['idSubItem']) {
                                       echo '<ul><li>' .
                                       '<a class="nav-link" href="' . $url . $menu[$k]['link'] . '">' .                                 
-                                      '<span>' . $menu[$k]['nombre'] . '</span>' .
+                                      '<span style="font-size:125%;">' . $menu[$k]['nombre'] . '</span>' .
                                                           //  '<i class="' . $menu[$k]['icono'] . '"></i>
                                       '</a>';
 
@@ -68,7 +68,7 @@
                                         if ($menu[$l]['idTipoInterna'] == 4 && $menu[$k]['posicion'] == $menu[$l]['idSubItem']) {
                                           echo '<ul><li>' .
                                         '<a href="' . $url . $menu[$l]['link'] . '">' .    
-                                          '<span>' . $menu[$l]['nombre'] . '</span>' .
+                                          '<span style="font-size:125%;">' . $menu[$l]['nombre'] . '</span>' .
                                                           //  '<i class="' . $menu[$k]['icono'] . '"></i>
                                           '</a>';
                                           echo "</li></ul>";

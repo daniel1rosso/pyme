@@ -60,9 +60,9 @@
         </li>-->
         <ul class="navbar-nav ml-auto">                
             <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link" data-toggle="dropdown">
-                    <i class="fas fa-bell fa-lg" style="color: #428bca;"></i>
-                    <span class="label label-default" style="background: #428bca;"> <?= $cantNotificaciones ?> </span>
+            <a class="nav-link" data-toggle="dropdown">
+                    <i class="far fa-bell fa-2x" ></i>
+                    <span class="badge badge-warning navbar-badge" > <?= $cantNotificaciones ?> </span>
                 </a>
                 <div class="popup dropdown-menu dropdown-menu-right">
                     <div class="popup-header">

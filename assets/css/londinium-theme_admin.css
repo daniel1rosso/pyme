@@ -1814,6 +1814,7 @@ a.list-group-item-info.active:focus {
   margin: 0;
   background: none;
   border-radius: 0;
+  font-size: 120%;
 }
 .breadcrumb > li {
   font-weight: 600;
@@ -2288,6 +2289,7 @@ a.list-group-item-info.active:focus {
   border-top-right-radius: 2px;
   padding: 0;
   position: relative;
+  font-size : 120%;
 }
 
 
