@@ -13,7 +13,7 @@
           <!--<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
           <img src="<?php echo(empty($userdata['picture'])) ? $url . 'assets/images/main-team-member-img-3-100x100.jpg' : $url . '/uploads/profile/' . $userdata['picture'] ?>" class="img-circle elevation-2" alt="User Image">
         </div>
-
+        
         <div class="info">
           <strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong>
         </div>
