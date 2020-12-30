@@ -1,9 +1,9 @@
 <!-- Page content -->
-<div class="page-content">
+<div class="content-wrapper">
 
     <div class="page-header">
         <div class="page-title">
-            <h3>Menu Principal <small>Bienvenid@ <?=$user['nombreCompleto']?></small></h3>
+            <h1 class= "m-5" style="margin: 15% 0%;">Menu Principal </h1>
         </div>
     </div>
     
@@ -21,29 +21,29 @@
 
     <!-- Info blocks -->
     <div class="row">
-        <div class="col-md-12 info-buttons block">
-            <a href="<?=$url?>clientes/listar_clientes" class="col-sm-3">
+        <div class="col-sm-12 info-buttons">
+            <a href="<?=$url?>clientes/listar_clientes" class="small-box col-sm-3" style=""> <!--style= "background-color: #28C6EE;"-->
                 <i class="fas fa-user-tie"></i> 
                 <span>Total Clientes</span> 
                 <strong class="label label-info"><?=$totClientes?></strong>
             </a>
-            <a href="<?=$url?>proveedores/listar_proveedores" class="col-sm-3">
+            <a href="<?=$url?>proveedores/listar_proveedores" class="small-box col-sm-3">
                 <i class="fas fa-truck-loading"></i> 
                 <span>Total Proveedores</span> 
                 <strong class="label label-warning"><?=$totProveedores?></strong>
             </a>
-            <a href="<?=$url?>productos/listar_productos" class="col-sm-3">
+            <a href="<?=$url?>productos/listar_productos" class="small-box col-sm-3">
                 <i class="fas fa-boxes"></i> 
                 <span>Total Productos</span> 
                 <strong class="label label-primary"><?=$totProductos?></strong>
             </a>
-            <a href="<?=$url?>usuarios/listar_usuarios" class="col-sm-3">
+            <a href="<?=$url?>usuarios/listar_usuarios" class="small-box col-sm-3">
                 <i class="fas fa-users"></i> 
                 <span>Total Usuarios</span> 
                 <strong class="label label-success"><?=$totUsuarios?></strong>
-            </a>      
+            </a>
         </div>
-    </div>  
+    </div>
     <!-- /info blocks -->
 
     <div class="row">
