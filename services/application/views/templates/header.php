@@ -57,7 +57,7 @@
         </li>-->
         <ul class="navbar-nav ml-auto">                
             <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown">
+                <a class="nav-link" data-toggle="dropdown">
                     <i class="far fa-bell fa-2x" ></i>
                     <span class="badge badge-warning navbar-badge" > <?= $cantNotificaciones ?> </span>
                 </a>
