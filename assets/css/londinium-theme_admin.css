@@ -1483,6 +1483,7 @@ a.list-group-item-info.active:focus {
   margin: 0; 
   position: 
   relative; border: 0; 
+  font-size: 120%;
 }
 
 .page-header small {
