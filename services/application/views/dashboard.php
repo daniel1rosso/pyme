@@ -21,29 +21,63 @@
 
     <!-- Info blocks -->
     <div class="row">
-        <div class="col-sm-12 info-buttons">
-            <a href="<?=$url?>clientes/listar_clientes" class="small-box col-sm-3" style=""> <!--style= "background-color: #28C6EE;"-->
-                <i class="fas fa-user-tie"></i> 
-                <span>Total Clientes</span> 
-                <strong class="label label-info"><?=$totClientes?></strong>
-            </a>
-            <a href="<?=$url?>proveedores/listar_proveedores" class="small-box col-sm-3">
-                <i class="fas fa-truck-loading"></i> 
-                <span>Total Proveedores</span> 
-                <strong class="label label-warning"><?=$totProveedores?></strong>
-            </a>
-            <a href="<?=$url?>productos/listar_productos" class="small-box col-sm-3">
-                <i class="fas fa-boxes"></i> 
-                <span>Total Productos</span> 
-                <strong class="label label-primary"><?=$totProductos?></strong>
-            </a>
-            <a href="<?=$url?>usuarios/listar_usuarios" class="small-box col-sm-3">
-                <i class="fas fa-users"></i> 
-                <span>Total Usuarios</span> 
-                <strong class="label label-success"><?=$totUsuarios?></strong>
-            </a>
-        </div>
-    </div>
+    <div class="col-lg-3 col-6">
+    <div class="small-box bg-info">
+              <div class="inner">
+                <h3><?=$totClientes?></h3>
+
+                <p>Clientes</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="<?=$url?>clientes/listar_clientes" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+            <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><?=$totProveedores?></h3>
+
+                <p>Proveedores</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-truck-loading"></i>
+              </div>
+              <a href="<?=$url?>proveedores/listar_proveedores" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3><?=$totProductos?></h3>
+
+                <p>Productos</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-box-open"></i>
+              </div>
+              <a href="<?=$url?>productos/listar_productos" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3><?=$totUsuarios?></h3>
+
+                <p>Usuarios</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user"></i>
+              </div>
+              <a href="<?=$url?>usuarios/listar_usuarios" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+
+
+      </div>
     <!-- /info blocks -->
 
     <div class="row">
@@ -164,34 +198,7 @@
     <div class="row">
         <div class="col-md-6">
             <!-- Notificaciones de Empresa -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h6 class="panel-title"><i class="fa fa-wrench"></i> Soporte y Mantenimiento</h6>
-                </div>
-                <ul  class="message-list">
-                    <li class="media" style="margin-top:0px;">
-                        <!--
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="http://placehold.it/300" alt="">
-                            </a>
-                        -->
-                        <div class="media-body">
-                            <div class="clearfix">
-                                <a href="#" class="media-heading">Damian Marrone</a>
-                                <span class="media-notice">Marzo 06, 2018 / 8:30 am</span>
-                            </div>
-                            Actualización sobre el funcionamiento del backend y frontend. Ver 1.8.0
-                        </div>
-                        <div class="media-body">
-                            <div class="clearfix">
-                                <a href="#" class="media-heading">Damian Marrone</a>
-                                <span class="media-notice">Marzo 05, 2018 / 10:58 am</span>
-                            </div>
-                            Actualización sobre el funcionamiento del backend y frontend. Ver 1.7.5
-                        </div>                        
-                    </li>
-                </ul>
-            </div>
+           
         </div>
         
         <div class="col-md-6">

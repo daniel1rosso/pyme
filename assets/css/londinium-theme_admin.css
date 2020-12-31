@@ -505,7 +505,7 @@ blockquote {
 .navbar-default .navbar-nav > .active > a:focus {
   background-color: #eee;
 }
-
+/*
 .navbar-default .sidebar-toggle {
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -514,7 +514,7 @@ blockquote {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-
+*/
 
 
 
@@ -774,8 +774,9 @@ blockquote {
   .navbar-form,
   .navbar-text,
   .navbar-nav,
-  .navbar-button,
-  .sidebar {
+  .navbar-button
+  /*,
+  .sidebar*/ {
     display: block;
   }
 
@@ -2278,6 +2279,7 @@ a.list-group-item-info.active:focus {
   border-radius: 2px;
   margin-bottom: 35px;
   box-shadow: none;
+  font-size: 125%;
 }
 
 .panel .panel-body .panel:last-child {
@@ -2421,6 +2423,7 @@ a.list-group-item-info.active:focus {
   display: block;
   font-size: 12px;
   padding: 11px 12px 12px 12px;
+  font-size: 120%;
 }
 .panel-title > i {
   float: left;
@@ -4186,6 +4189,7 @@ border-top: 1px solid #DDD;
 }
 .thumbnail .caption.text-center {
   text-align: center;
+  font-size: 120%
 }
 .thumbnail .caption h6 small {
   display: block;

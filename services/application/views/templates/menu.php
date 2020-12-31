@@ -5,7 +5,7 @@
         Tip 2: you can also add an image using data-image tag
      -->
    
-  <div class="sidebar" style="background: fixed;">
+  <div class="sidebar" style="background: fixed;  background: -webkit-linear-gradient(left, #21d4fd, #b721ff);">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
@@ -15,7 +15,8 @@
         </div>
         
         <div class="info">
-          <strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong>
+         <h3> <strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong>
+         </h3>
         </div>
        </div>
       
@@ -27,7 +28,7 @@
             <li class="nav-item menu-open">
               <a class="nav-link active" onclick="abrirMenuPrincipal();">
                 <i class="nav-icon fas fa-bars" style="padding-top:3px;"></i>
-                <p  style="font-size:125%;">Menu Principal</p>
+                <p  style="font-size:125%; color:black;">Menu Principal</p>
               </a>
             </li>
 
@@ -41,10 +42,10 @@
                         echo '<li class="nav-item" >' .
                         ' <a class="nav-link"
                         href="' . $url . $menu[$key]['link'] . '"> ' .
-                        '<i class="' . $menu[$key]['icono'] . ' "></i>'.
+                        '<i class="' . $menu[$key]['icono'] . ' " style="padding-top:3px;"></i>'.
                         '<span class="badge badge-info right">' . '</span>' .
                         '<i class=" fas fa-angle-left right "></i>
-                        <p style="font-size:125%;"> '. $menu[$key]['nombre'] .'</p>                    
+                        <p style="font-size:125%; color:black;"> '. $menu[$key]['nombre'] .'</p>                    
                         </a>';
                               
                           for ($j = 0; $j < count($menu); $j++) {
@@ -52,15 +53,15 @@
                               if ($menu[$j]['idSubItem'] == $value['posicion']) {
                                 echo '<ul class="nav nav-treeview"><li class="nav-item" >' .
                                 '<a class="nav-link" href="' . $url . $menu[$j]['link'] . '">' .
-                                '<i class="far fa-circle nav-icon"></i>'.
-                                '<span style="font-size:125%;">' . $menu[$j]['nombre'] . '</span>' .                     
+                                '<i class="far fa-circle nav-icon" style="padding-top:3px;"></i>'.
+                                '<span style="font-size:125%; color:black;">' . $menu[$j]['nombre'] . '</span>' .                     
                                 '</a>';
 
                                   for ($k = 0; $k < count($menu); $k++) {
                                     if ($menu[$k]['idTipoInterna'] == 3 && $menu[$j]['posicion'] == $menu[$k]['idSubItem']) {
                                       echo '<ul><li>' .
                                       '<a class="nav-link" href="' . $url . $menu[$k]['link'] . '">' .                                 
-                                      '<span style="font-size:125%;">' . $menu[$k]['nombre'] . '</span>' .
+                                      '<span style="font-size:125%; color:black;">' . $menu[$k]['nombre'] . '</span>' .
                                                           //  '<i class="' . $menu[$k]['icono'] . '"></i>
                                       '</a>';
 
@@ -68,7 +69,7 @@
                                         if ($menu[$l]['idTipoInterna'] == 4 && $menu[$k]['posicion'] == $menu[$l]['idSubItem']) {
                                           echo '<ul><li>' .
                                         '<a href="' . $url . $menu[$l]['link'] . '">' .    
-                                          '<span style="font-size:125%;">' . $menu[$l]['nombre'] . '</span>' .
+                                          '<span style="font-size:125%; color:black;">' . $menu[$l]['nombre'] . '</span>' .
                                                           //  '<i class="' . $menu[$k]['icono'] . '"></i>
                                           '</a>';
                                           echo "</li></ul>";
