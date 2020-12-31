@@ -176,14 +176,14 @@
                                                     }
                                                 ?>     
                                             </a>
-                                            <h6>
+                                            <h4>
                                                 <?=$value['usuarioLog']?><span class="status status-info"></span> 
                                                 <small>
                                                     &nbsp; /&nbsp; 
                                                     <i class="icon-time" style="color:#FFF;font-size:1.0em;"></i>
                                                     <?=$value['fechaIngresoLog']?>
                                                 </small>
-                                            </h6>
+                                            </h4>
                                         </div>
                                     </div>
                                 </li>

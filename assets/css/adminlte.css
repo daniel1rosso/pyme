@@ -6081,7 +6081,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   height: 100vh;
   background-color: #000;
 }
-
+/*
 .modal-backdrop.fade {
   opacity: 0;
 }
@@ -6089,7 +6089,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .modal-backdrop.show {
   opacity: 0.5;
 }
-
+*/
 .modal-header {
   display: -ms-flexbox;
   display: flex;

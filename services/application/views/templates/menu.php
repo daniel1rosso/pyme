@@ -17,8 +17,8 @@
         </div>
         
         <div class="info">
-         <h3> <strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong>
-         </h3>
+         <h4> <strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong>
+         </h4>
         </div>
        </div>
       
