@@ -42,6 +42,8 @@
   <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/daterangepicker/daterangepicker.css">
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/summernote/summernote-bs4.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -60,8 +62,9 @@
 
         <!--===============================================================================================-->
   <script src="<?= $url ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/listbox.js"></script>
+  
 <script type="text/javascript" src="<?= $url ?>assets/js/application.js"></script>
+<script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/listbox.js"></script>
 <!--===============================================================================================-->
 	<script src="<?= $url ?>assets/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -103,7 +106,8 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/jgrowl.min.js"></script>
-        <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/datatables.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/colorpicker.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/fullcalendar.min.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/interface/timepicker.min.js"></script>
