@@ -45,7 +45,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?= $url ?>assets/js/plugins/summernote/summernote-bs4.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@3,900&display=swap" rel="stylesheet">
+<link src="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@3,900&display=swap" rel="stylesheet">
     
   
         <script>
@@ -57,8 +57,11 @@
 //                URL = '';
         </script>
 
+
         <!--===============================================================================================-->
-	<script src="<?= $url ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="<?= $url ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/listbox.js"></script>
+<script type="text/javascript" src="<?= $url ?>assets/js/application.js"></script>
 <!--===============================================================================================-->
 	<script src="<?= $url ?>assets/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -81,7 +84,7 @@
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/inputmask.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/autosize.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/inputlimit.min.js"></script>
-        <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/listbox.js"></script>
+        
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/multiselect.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/validate.min.js"></script>
         <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/tags.min.js"></script>
@@ -95,7 +98,7 @@
 
 
        
-  <script>
+ 
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
@@ -109,7 +112,7 @@
         <script type="text/javascript" src="<?= $url ?>assets/js/charts/full/pie.js"></script>
 
         <script type="text/javascript" src="<?= $url ?>assets/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="<?= $url ?>assets/js/application.js"></script>
+        
 
         <!-- DatePicker -->
         <link rel="stylesheet" type="text/css" href="<?= $url ?>assets/css/jquery.datetimepicker.css"/>
@@ -152,7 +155,7 @@
 <!-- admin lte -->
 
 <!-- jQuery -->
-<script src="<?= $url ?>assets/js/plugins/jquery/jquery.min.js"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="<?= $url ?>assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

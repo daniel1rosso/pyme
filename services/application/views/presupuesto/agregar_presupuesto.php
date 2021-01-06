@@ -386,7 +386,7 @@
                 </div>
 
                 <div style="margin-top:15px;">
-                    <span id="btnGuardarPresupuesto" onclick="guardar_presupuesto()" class="btn btn-primary btn-raised btn-block">
+                    <span id="guardarPresupuesto" onclick="guardar_presupuesto()" class="btn btn-primary btn-raised btn-block">
                         <i class="fa fa-floppy-o" aria-hidden="true"></i>
                         Guardar
                     </span>
