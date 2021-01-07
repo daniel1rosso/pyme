@@ -2124,10 +2124,10 @@ $(function() {
     });
 
     /* Change navbar background color */
-    var topStyle = $('.navbar-inverse')[0].style;
-    $('.change-navbar-color').colorpicker().on('changeColor', function(ev) {
-        topStyle.background = ev.color.toHex();
-    });
+   // var topStyle = $('.navbar-inverse')[0].style();
+  //  $('.change-navbar-color').colorpicker().on('changeColor', function(ev) {
+   //     topStyle.background = ev.color.toHex();
+   // });
 
 
     //===== jGrowl notifications defaults =====//

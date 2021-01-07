@@ -55,7 +55,7 @@
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="presupuesto">
+                <div class="tab-pane active " id="presupuesto">
 
                     <!-- Striped and bordered datatable inside panel -->
                     <div class="panel panel-default">
@@ -71,6 +71,7 @@
                                         <th class="text-center">Descuento</th>
                                         <th class="text-center">Total</th>
                                         <th class="text-center">Fecha Alta</th>
+                                
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -81,3 +82,5 @@
                 </div>            
             </div>
         </div>
+        
+       

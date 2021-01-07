@@ -8,6 +8,11 @@
         <title><?= $title ?></title>
 
         <link rel="shortcut icon" href="<?php echo $url; ?>favicon.ico"  />
+<!-- Los viejos -->
+
+
+<!-- fin los viejos -->
+
 
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <link href="<?= $url ?>assets/css/bootstrap-admin.min.css" rel="stylesheet" type="text/css">
@@ -61,8 +66,10 @@
 
 
         <!--===============================================================================================-->
-  <script src="<?= $url ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-  
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="<?= $url ?>assets/js/application.js"></script>
 <script type="text/javascript" src="<?= $url ?>assets/js/plugins/forms/listbox.js"></script>
 <!--===============================================================================================-->

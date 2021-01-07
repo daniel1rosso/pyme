@@ -3590,7 +3590,9 @@ function addProductoNewPresupuesto() {
             if (dato['valid']) {
                 $("#modal-cargando").modal("hide");
                 var idGenProd = "'" + dato['idGenProducto'] + "'";
+                
                 listadoPresupuesto = $('#listadoPresupuesto_formNuevoPresupuesto').DataTable();
+                
                 var row = listadoPresupuesto.row.add([
                     dato['idGenProducto'],
                     '<input type="text" value="' + dato['idGenProducto'] + '" id="codProd' + dato['idGenProducto'] + '" readonly class="form-control">',
