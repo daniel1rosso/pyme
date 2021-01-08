@@ -55,7 +55,7 @@
                 </li>	  	                 
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="proveedores">
+                <div class="tab-pane active" id="proveedores">
 
                     <!-- Striped and bordered datatable inside panel -->
                     <div class="panel panel-default">
