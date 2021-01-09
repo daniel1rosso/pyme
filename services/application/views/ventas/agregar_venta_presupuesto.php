@@ -307,7 +307,7 @@
                             idGenPresupuesto = "<?= $idGenPresupuesto ?>";
                             llenado_tabla_venta_presupuesto(idGenPresupuesto);</script>
                         <div class="tab-content">
-                            <div class="tab-pane active fade in" id="venta">
+                            <div class="tab-pane active  " id="venta">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h6 class="panel-title"><i class="icon-paragraph-justify"></i> Listado</h6></div>
                                     <div class="datatable">

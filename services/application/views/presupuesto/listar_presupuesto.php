@@ -14,7 +14,7 @@
         <!---->
         
         <?php if(isset($successModif)) : ?>
-        <div class="callout callout-success fade in">
+        <div class="callout callout-success  ">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <h5>¡Bien!</h5>
                 <p>Se modificó el presupuesto con éxito.</p>

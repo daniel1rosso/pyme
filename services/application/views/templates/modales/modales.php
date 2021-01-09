@@ -1,5 +1,5 @@
 <!-- Modal Cargando -->
-<div id="modal-cargando" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="modal-cargando" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,7 +9,7 @@
 
             <div class="modal-body with-padding">
                 <p>
-                    <div class="alert alert-info fade in" style="text-align:center;width:95%;margin:0px auto;border:1px solid #3A87AD;padding-bottom:30px;">
+                    <div class="alert alert-info  " style="text-align:center;width:95%;margin:0px auto;border:1px solid #3A87AD;padding-bottom:30px;">
                         <i id="rotate" style="position: absolute;font-size: 1.5em;" class="fa fa-cog fa-spin fa-1x fa-fw margin-bottom"></i>
                     </div>
                 </p>
@@ -19,7 +19,7 @@
 </div>
 
 <!-- Modal Eliminar -->
-<div id="modal-delete" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-delete" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -40,7 +40,7 @@
 </div>
 
 <!-- Modal Exitoso -->
-<div id="modal-exitoso" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="modal-exitoso" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -65,7 +65,7 @@
 </div>
 
 <!-- Modal Exitoso -->
-<div id="modal-exitoso-insercion" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="modal-exitoso-insercion" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -90,7 +90,7 @@
 </div>
 
 <!-- Modal Exitoso -->
-<div id="operacionExitosa" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="operacionExitosa" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -115,7 +115,7 @@
 </div>
 
 <!-- Modal Eliminacion Exitosa -->
-<div id="eliminacion-exitosa" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="eliminacion-exitosa" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -140,7 +140,7 @@
 </div>
 
 <!--- Modal Exitoso para añadir mensaje --->
-<div id="popUpExitoMsg" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="popUpExitoMsg" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -163,7 +163,7 @@
 </div>
 
 <!--- Modal Error --->
-<div id="popUpErrorMsg" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="popUpErrorMsg" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -187,7 +187,7 @@
 </div>
 
 <!--- Modal Error --->
-<div id="popUpError" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="popUpError" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -212,7 +212,7 @@
 </div>
 <!-- Modal Agregar MenuAdmin -->
 
-<div id="modal-add-menuAdmin" class="modal fade in" tabindex="-1" role="dialog">
+<div id="modal-add-menuAdmin" class="modal  " tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -357,7 +357,7 @@
     </div>
 </div>
 
-<div id="modal-editar-menuAdmin" class="modal fade in" tabindex="-1" role="dialog">
+<div id="modal-editar-menuAdmin" class="modal  " tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -490,7 +490,7 @@
 </div>
 <!-- Modal Editar Usuarios -->
 
-<div id="modal-editar-usuario" class="modal fade in" tabindex="-1" role="dialog">
+<div id="modal-editar-usuario" class="modal  " tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -689,7 +689,7 @@
 </div>
 <!-- Modal Agregar Usuario -->
 
-<div id="modal-add-usuario" class="modal fade in" tabindex="-1" role="dialog">
+<div id="modal-add-usuario" class="modal  " tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -872,7 +872,7 @@
     </div>
 </div>
 <!-- Modal Editar Categoria-->
-<div id="modal-editar-categoria" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-editar-categoria" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -914,7 +914,7 @@
 </div>
 
 <!-- Modal Agregar Categoria-->
-<div id="modal-agregar-categoria" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-agregar-categoria" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -968,7 +968,7 @@
 </div>
 
 <!-- Modal Agregar Cobro-->
-<div id="modal-agregar-cobro" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-agregar-cobro" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1075,7 +1075,7 @@
 </div>
 
 <!-- Modal Agregar Cobro-->
-<div id="modal-agregar-cobro-gasto" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-agregar-cobro-gasto" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1143,7 +1143,7 @@
 </div>
 
 <!-- Modal Movimientos entre cuentas-->
-<div id="modal-movimiento-cuentas" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-movimiento-cuentas" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1237,7 +1237,7 @@
     </div>
 </div>
 <!-- Modal Agregar Pago-->
-<div id="modal-agregar-pago" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-agregar-pago" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1320,7 +1320,7 @@
     </div>
 </div>
 <!-- Modal Agregar gasto-->
-<div id="modal-agregar-gasto" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-agregar-gasto" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1484,7 +1484,7 @@
 </div>
 
 <!-- Modal Modificar gasto-->
-<div id="modal-modificar-gasto" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-modificar-gasto" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1650,7 +1650,7 @@
 </div>
 
 <!-- Modal Cuenta Tesoreria -->
-<div id="modal-cuenta-tesoreria" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-cuenta-tesoreria" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -1711,7 +1711,7 @@
 </div>
 
 <!-- Modal Cliente -->
-<div id="modal-nuevo-cliente" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nuevo-cliente" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:70%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -2228,7 +2228,7 @@
 </div>
 
 <!-- Modal Proveedor -->
-<div id="modal-nuevo-proveedor" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nuevo-proveedor" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:70%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -2764,7 +2764,7 @@
 </div>
 
 <!-- Modal Categorias Compras -->
-<div id="modal-nueva-categoria-compras" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nueva-categoria-compras" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -2809,7 +2809,7 @@
 </div>
 
 <!-- Modal Categorias Gastos -->
-<div id="modal-nueva-categoria-gastos" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nueva-categoria-gastos" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -2884,7 +2884,7 @@
 </div>
 
 <!-- Modal Categorias Gastos -->
-<div id="modal-modificar-categoria-gastos" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-modificar-categoria-gastos" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -2963,7 +2963,7 @@
 </div>
 
 <!-- Modal Subcategorias Gastos -->
-<div id="modal-nueva-subcategoria-gastos" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nueva-subcategoria-gastos" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -3031,7 +3031,7 @@
 </div>
 
 <!-- Modal Subcategorias Ventas -->
-<div id="modal-nueva-subcategoria-ventas" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nueva-subcategoria-ventas" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -3099,7 +3099,7 @@
 </div>
 
 <!-- Modal Categoria Detalle Ventas -->
-<div id="modal-nueva-categoria-detalle-ventas" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nueva-categoria-detalle-ventas" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -3172,7 +3172,7 @@
     </div>
 </div>
 <!-- Modal Categoria Detalle Ventas -->
-<div id="modal-modificar-categoria-detalle-ventas" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-modificar-categoria-detalle-ventas" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -3251,7 +3251,7 @@
 </div>
 
 <!-- Modal Producto -->
-<div id="modal-nuevo-producto" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nuevo-producto" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:70%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -3646,7 +3646,7 @@
 </div>
 
 <!-- Modal de comprobantes de pagos -->
-<div id="modal-comprobantes-pagos" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="modal-comprobantes-pagos" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="width: 700px;margin: 0px auto;">
             <div class="modal-header">
@@ -3675,7 +3675,7 @@
 
             <div id="cargando_comprobantes_pagos" style="display:none;" class="modal-body with-padding">
                 <p>
-                    <div class="alert alert-info fade in" style="text-align:center;width:95%;margin:0px auto;border:1px solid #3A87AD;padding-bottom:30px;">
+                    <div class="alert alert-info  " style="text-align:center;width:95%;margin:0px auto;border:1px solid #3A87AD;padding-bottom:30px;">
                         <i id="rotate" style="position: absolute;font-size: 1.5em;" class="fa fa-cog fa-spin fa-1x fa-fw margin-bottom"></i>
                     </div>
                 </p>
@@ -3689,7 +3689,7 @@
 </div>
 
 <!-- Modal de cte cte de proveedores -->
-<div id="modal-cta-cte-proveedores" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="modal-cta-cte-proveedores" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="width: 700px;margin: 0px auto;">
             <div class="modal-header">
@@ -3722,7 +3722,7 @@
 </div>
 
 <!-- Modal de cte cte de clientes -->
-<div id="modal-cta-cte-clientes" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="modal-cta-cte-clientes" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="width: 700px;margin: 0px auto;">
             <div class="modal-header">

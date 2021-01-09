@@ -61,7 +61,7 @@
                 </li>	  	                 
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="saldos">
+                <div class="tab-pane active  " id="saldos">
                     <div class="row">
                         <?php 
                         if($userdata['idUsuario'] != 28 && $userdata['idUsuario'] != 29):?>                           
@@ -285,7 +285,7 @@
 
 <!--                <div class="tab-pane" id="movimientos">
                     <div style="padding-bottom:10px;">
-                        <div class="alert alert-info fade in">
+                        <div class="alert alert-info  ">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             <i class="icon-info"></i>
                             Conoce todos tus Movimientos de Dinero agrupados por cuentas de Tesorería! En este informe se contempla lo siguiente:
@@ -453,7 +453,7 @@
                 </div>            -->
                 <div class="tab-pane" id="movimientosListado">
                     <div style="padding-bottom:10px;">
-                        <div class="alert alert-info fade in">
+                        <div class="alert alert-info  ">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             <i class="icon-info"></i>
                             Conoce todos tus Movimientos de Dinero agrupados por cuentas de Tesorería! En este informe se contempla lo siguiente:

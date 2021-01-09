@@ -25,7 +25,7 @@
 
     <!-- Callout -->
     <?php if(isset($success)) : ?>
-    <div class="callout callout-success fade in">
+    <div class="callout callout-success  ">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <h5>¡Bien!</h5>
         <p>Se modifico el proveedor con éxito.</p>

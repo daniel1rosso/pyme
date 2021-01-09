@@ -799,7 +799,7 @@ class Abonos extends MY_Controller {
                 $result = $this->app_model->eliminar_abono_by_idAbono($idAbono);
             } else {
                 $result = false;
-                $result = false;
+               
             }
             if ($result && $movimiento_stock) {
                 $msg = "Registro eliminado";

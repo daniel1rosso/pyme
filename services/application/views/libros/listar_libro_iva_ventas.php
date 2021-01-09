@@ -14,7 +14,7 @@
         <!---->
 
         <?php if (isset($successModif)) : ?>
-            <div class="callout callout-success fade in">
+            <div class="callout callout-success  ">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <h5>¡Bien!</h5>
                 <p>Se modificó el movimiento con éxito.</p>
@@ -64,7 +64,7 @@
             <?php // endif; ?>          
             <!---->            
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="libroCompra">
+                <div class="tab-pane active  " id="libroCompra">
 
                     <!-- Striped and bordered datatable inside panel -->
                     <div class="panel panel-default">

@@ -33,7 +33,7 @@
                 </li>	  	                 
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="arqueoCajas">
+                <div class="tab-pane active  " id="arqueoCajas">
 
                     <!-- Striped and bordered datatable inside panel -->
                     <div class="panel panel-default">

@@ -1,5 +1,5 @@
 <!-- Modal Exitoso -->
-<div id="modal-exitoso-insercion" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+<div id="modal-exitoso-insercion" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -24,7 +24,7 @@
 </div>
 
 <!-- Modal Importar Clientes -->
-<div id="modal-importar-clientes" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-importar-clientes" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -59,7 +59,7 @@
 </div>
 
 <!-- Modal Importar Proveedores -->
-<div id="modal-importar-proveedores" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-importar-proveedores" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -94,7 +94,7 @@
 </div>
 
 <!-- Modal Importar Productos -->
-<div id="modal-importar-productos" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-importar-productos" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:50%;">
         <div class="modal-content">
             <div class="modal-header">

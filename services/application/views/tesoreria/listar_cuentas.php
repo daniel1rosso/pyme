@@ -45,7 +45,7 @@
                 </li>	  	                 
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="cuentas">
+                <div class="tab-pane active  " id="cuentas">
 
                     <!-- Striped and bordered datatable inside panel -->
                     <?php if(isset($tipo_cuenta)) : ?>

@@ -66,8 +66,10 @@
 
 
         <!--===============================================================================================-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+         <!-- Sweet Alert --> 
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="<?= $url ?>assets/js/application.js"></script>
@@ -151,8 +153,7 @@
         <!-- Include jQuery Validator plugin -->
         <script src="<?= $url ?>assets/js/validator.js"></script>
 
-        <!-- Sweet Alert --> 
-        <script type="text/javascript" src="<?= $url ?>assets/js/sweetalert2/sweetalert2.all.js"></script>
+       
 
         <script>
             /*--- Evito Disable HTML correction - CKEDITOR ---*/

@@ -195,7 +195,7 @@
                             </li>	  
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active fade in" id="compra">
+                            <div class="tab-pane active  " id="compra">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h6 class="panel-title"><i class="icon-paragraph-justify"></i> Listado</h6></div>
                                     <div class="datatable">

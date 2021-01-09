@@ -420,7 +420,7 @@ class CI_Javascript {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Fade In
+	 *  
 	 *
 	 * Outputs a javascript library hide event
 	 *

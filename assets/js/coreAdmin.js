@@ -8085,22 +8085,23 @@ $(function() {
         e.preventDefault();
         $(".button-delete-si").unbind(); // Borro cache del evento para que no repita la funcio x cant. de clicks
 
+       
         var id = $(this).data('id');
+      
         $('.button-delete-si').click(function(e) {
             e.preventDefault();
             $("#modal-delete").modal("hide");
-            $("#modal-cargando").modal("show");
+            //$("#modal-cargando").modal("show");
+           
             $.ajax({
-                    url: URL + 'abonos/eliminar_abono/',
+                    url: `${URL}abonos/eliminar_abono`,
                     type: 'POST',
-                    cache: false,
-                    data: {
-                        id: id
-                    }
+                    
+                    data: "id="+id
                 })
                 .done(function(data) {
                     var dato = JSON.parse(data);
-                    //                //console.log(dato);
+                   console.log(dato);
 
                     if (dato['valid']) {
                         $("#modal-cargando").modal("hide");
@@ -8112,10 +8113,15 @@ $(function() {
                         $("#popUpError").modal("show");
                     }
                 })
-                .fail(function(data) {
-                    $("#modal-cargando").modal("hide");
-                    $("#eliminacion-exitosa").modal("hide");
-                    $("#popUpError").modal("show");
+                .fail(function() {
+                    swal({
+                        icon: 'error',
+                        type: "error",
+                        title: 'Abonos',
+                        showConfirmButton: true,
+                    });
+                  
+                    
                 });
         });
     });
@@ -9671,7 +9677,7 @@ $(function() {
         $('.button-delete-si').click(function(e) {
             e.preventDefault();
             $("#modal-delete").modal("hide");
-            $("#modal-cargando").modal("show");
+         //   $("#modal-cargando").modal("show");
             $.ajax({
                     url: URL + 'ventas/eliminar_categoria_ventas/',
                     type: 'POST',

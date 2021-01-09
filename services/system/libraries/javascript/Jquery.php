@@ -445,7 +445,7 @@ class CI_Jquery extends CI_Javascript {
 	// --------------------------------------------------------------------
 		
 	/**
-	 * Fade In
+	 *  
 	 *
 	 * Outputs a jQuery hide event
 	 *

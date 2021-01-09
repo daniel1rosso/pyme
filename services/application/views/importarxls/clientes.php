@@ -14,7 +14,7 @@
         <!---->
 
         <?php if (isset($successModif)) : ?>
-            <div class="callout callout-success fade in">
+            <div class="callout callout-success  ">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <h5>¡Bien!</h5>
                 <p>Se modificó el movimiento con éxito.</p>
@@ -52,7 +52,7 @@
         <input type="hidden" name="importadoXls_clientes" id="importadoXls_clientes" value="0">
        
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="movimientos">
+                <div class="tab-pane active  " id="movimientos">
 
                     <!-- Striped and bordered datatable inside panel -->
                     <div class="panel panel-default">

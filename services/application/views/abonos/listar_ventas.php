@@ -14,7 +14,7 @@
         <!---->
         
         <?php if(isset($successModif)) : ?>
-        <div class="callout callout-success fade in">
+        <div class="callout callout-success ">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <h5>¡Bien!</h5>
                 <p>Se modificó el proveedor con éxito.</p>
@@ -46,7 +46,7 @@
             </ul>
             <script> idGenAbono = "<?= $idGenAbono ?>"; console.log(idGenAbono); llenado_tabla_venta_abono(idGenAbono);</script>
             <div class="tab-content">
-                <div class="tab-pane active fade in" id="proveedores">
+                <div class="tab-pane active " id="proveedores">
 
                     <!-- Striped and bordered datatable inside panel -->
                     <div class="panel panel-default">
