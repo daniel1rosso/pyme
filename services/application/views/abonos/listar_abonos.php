@@ -7,7 +7,7 @@
         <!-- Page header -->
         <div class="page-header">
                 <div class="page-title">
-                        <h3>Abonos<small>Listar</small></h3>
+                        <h1  class= "m-5" style="margin: 15% 0%;">Abonos<small>Listar</small></h1>
                 </div>
         </div>
         

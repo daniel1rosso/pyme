@@ -12068,6 +12068,8 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 [class*="sidebar-light-"] .user-panel .dropdown-menu {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   border-color: rgba(0, 0, 0, 0.1);
+
+  
 }
 
 [class*="sidebar-light-"] .user-panel .dropdown-item {

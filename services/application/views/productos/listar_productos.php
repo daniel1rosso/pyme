@@ -7,7 +7,7 @@
         <!-- Page header -->
         <div class="page-header">
             <div class="page-title">
-                <h3>Productos<small>Listar</small></h3>
+                <h1  class= "m-5" style="margin: 15% 0%;">Productos</h1>
             </div>
         </div>
 
@@ -39,21 +39,20 @@
         <div class="col-md-12 input-group">
             <div class="col-md-6">
             </div>
-
-            <div class="col-md-6 input-group text-right">
-            <?php if ( $empresa[0]['stock'] == 0 ) : ?>
-                <div class="col-md-6"></div>
-                <div class="form-actions col-md-2" >
-                    <div class="btn-group">
-                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ajustar Stock</button>
-                        <ul class="dropdown-menu icons-left">
-                            <li><a class="tip " data-toggle="modal" onclick="aumentarStock()" ><i class="fas fa-arrow-circle-up"></i> Aumentar Stock</a></li>
-                            <li><a class="tip " data-toggle="modal" onclick="disminuirStock()"><i class="fas fa-arrow-circle-down"></i> Disminuir Stock</a></li>
-                        </ul>
+            <!--CORREGIR RESPONSIVE DE BOTONES-->
+            <div class="col-md-6 input-group text-right" style="float: left;">
+                <?php if ( $empresa[0]['stock'] == 0 ) : ?>
+                    <div class="form-actions" style="float: left; margin-right: 5%; margin-left: 60%;">
+                        <div class="btn-group">
+                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ajustar Stock</button>
+                            <ul class="dropdown-menu icons-left">
+                                <li><a class="tip " data-toggle="modal" onclick="aumentarStock()" ><i class="fas fa-arrow-circle-up"></i> Aumentar Stock</a></li>
+                                <li><a class="tip " data-toggle="modal" onclick="disminuirStock()"><i class="fas fa-arrow-circle-down"></i> Disminuir Stock</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
                 <?php endif; ?>
-                <div class="form-actions col-md-4" style="padding-right: 0px;">
+                <div class="form-actions" style="padding-right: 0px; float: left;">
                     <a href="#modal-nuevo-producto" onclick="resetFormProducto()" data-toggle="modal" class="btn btn-primary">
                         <i class="icon-plus"></i>
                         Agregar Producto
@@ -63,8 +62,8 @@
         </div>
         <!---->
         <?php if ($userdata['idUsuario'] != 28 && $userdata['idUsuario'] != 29): ?>            
-            <ul class="page-stats list-justified">
-                <li class="bg-primary text-center">
+            <ul class="page-stats list-justified" >
+                <li class="bg-primary text-center" style="margin: 0% 5%;">
                     <div class="page-stats-showcase" style="float:none;">
                         <span>
                             Unidades en Stock
@@ -72,7 +71,7 @@
                         <h2><?= $totStock ?></h2>
                     </div>
                 </li>
-                <li class="bg-danger text-center">
+                <li class="bg-danger text-center" style="margin: 0% 5%;">
                     <div class="page-stats-showcase" style="float:none;">
                         <span>
                             Costo Total

@@ -4,7 +4,7 @@
     <!-- Page header -->
     <div class="page-header">
         <div class="page-title">
-            <h3>Configuración del Sistema</h3>
+            <h1 class= "m-5" style="margin: 15% 0%;">Configuración del Sistema</h1>
         </div>
     </div>
     <!-- /page header -->
