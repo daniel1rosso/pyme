@@ -1927,6 +1927,8 @@ class App_model extends CI_Model
             u.nombreCompleto as nombreVend,
             u.apellido as apellidoVend,
             u.idUsuario as idUsuarioVend,
+            
+
             cc.descripcion as categoriaGasto
         ');
         $this->db->from('egresos as e');

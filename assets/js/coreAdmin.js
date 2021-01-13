@@ -13149,6 +13149,7 @@ function generarPdfDetalleVenta(idGenIngreso) {
 //--- Procesamiento de datos y estructurados en un pdf mostrado en un swal ---//
 function generarPdfDetalleEgreso(idGenEgreso) {
     $.ajax({
+        
             url: URL + 'compras/generaPDFDetalleEgreso/' + idGenEgreso,
             type: 'POST',
             cache: false,
@@ -13156,6 +13157,7 @@ function generarPdfDetalleEgreso(idGenEgreso) {
         .done(function(data) {
             $("#operacionExitosa").modal("hide");
             var dato = JSON.parse(data);
+            console.log(data);
             if (dato['valid']) {
                 swal({
                     title: "Detalle de Compra",

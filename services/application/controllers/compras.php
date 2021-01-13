@@ -145,12 +145,14 @@ class Compras extends MY_Controller {
         echo json_encode($dato);
     }
 
-    public function generaPDFDetalleEgreso($idGenEgreso) {
+    public function generaPDFDetalleEgreso($idGenEgreso) 
+    {
         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Credentials: true');
 
         $msg = "";
         $egreso = $this->app_model->get_egreso_by_idGenEgreso($idGenEgreso);
+        
         $detalleEgreso = $this->app_model->get_egreso_detalle_by_idGenEgreso($idGenEgreso);
 
         if ($egreso && $detalleEgreso && $idGenEgreso) {
@@ -188,13 +190,8 @@ class Compras extends MY_Controller {
                             <td class="tg-swzm" colspan="2">'. "$" . number_format($operacion, 2, ',', '.') .'</td>
                         </tr>';
             }
-            
-            if ($egreso[0]['razonSocial'] == "") {
-                $razonSocial = "-";
-            } else {
-                $razonSocial = $egreso[0]['razonSocial'];
-            }
-            
+            //contigencia ante datos invalidos
+           
             if ($egreso[0]['domicilio'] == "") {
                 $domicilio = "-";
             } elseif ($egreso[0]['domicilio'] != "" && $egreso[0]['piso'] == "" && $egreso[0]['dpto'] == "") {
@@ -206,7 +203,7 @@ class Compras extends MY_Controller {
             } elseif ($egreso[0]['domicilio'] != "" && $egreso[0]['piso'] != "" && $egreso[0]['dpto'] != "") {
                 $domicilio = $egreso[0]['domicilio'] . " " . $egreso[0]['nro'] . " piso " . $egreso[0]['piso'] . " dpto " . $egreso[0]['dpto'];
             }
-            
+            //
             $this->html2pdf->html('
             <style type="text/css">
                 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -243,8 +240,8 @@ class Compras extends MY_Controller {
                         <td class="tg-704r" colspan="12">Fecha Vencimiento: ' . date("d/m/Y", strtotime($egreso[0]['fechaVtoPago'])) . '</td>
                     </tr>
                     <tr>
-                        <td class="tg-704r" colspan="6">Razón Social: ' . utf8_decode($razonSocial) . '<br>Nombre: ' . utf8_decode($egreso[0]['nombEmpresa']) . '<br>Celular: ' . $egreso[0]['cel'] . '<br>Domicilio: ' . utf8_decode($domicilio) . '</td>
-                        <td class="tg-704r" colspan="6">' . $egreso[0]['tipoDoc'] . ': ' . $egreso[0]['cuit'] . '<br>Condición Iva: ' . $egreso[0]['condicionIva'] . '<br>Categoría: ' . utf8_decode($egreso[0]['categoriaGasto']) . '<br>Vendedor: ' . $egreso[0]['apellidoVend'] . ", " . $egreso[0]['nombreVend'] . '</td>
+                        <td class="tg-704r" colspan="6">Razón Social: ' . '<br>Nombre: ' . utf8_decode($egreso[0]['nombEmpresa']) . '<br>Celular: ' . $egreso[0]['cel'] . '<br>Domicilio: ' . utf8_decode($domicilio) . '</td>
+                        <td class="tg-704r" colspan="6">'. '<br>Categoría: ' . utf8_decode($egreso[0]['categoriaGasto']) . '<br>Vendedor: ' . $egreso[0]['apellidoVend'] . ", " . $egreso[0]['nombreVend'] . '</td>
                     </tr>
                     <tr>
                         <td class="tg-r0gd" colspan="1">Código</td>
@@ -277,7 +274,7 @@ class Compras extends MY_Controller {
 
 
             $msg = "Ok";
-            $dato = array("valid" => true, "msg" => $msg, "nombrePdf" => $nombreArchivo . ".pdf", "longitud" => iconv_strlen($egreso[0]['tipoDoc']));
+            $dato = array("valid" => true, "msg" => $msg, "nombrePdf" => $nombreArchivo . ".pdf");
         } else {
             $msg = "No se ha podiado realizar el pdf, esta vacio idGenEgreso";
             $dato = array("valid" => true, "msg" => $msg, "idGenEgreso" => $idGenEgreso, "egreso" => $egreso, "detalleEgreso" => $detalleEgreso);
