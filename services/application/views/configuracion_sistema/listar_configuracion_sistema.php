@@ -298,7 +298,7 @@
                                 <label class="control-label" for="inputInicioActividad">                                                  
                                     Inicio Actividad
                                 </label>
-                                <input name="inputInicioActividad_formConfiguracionSistema" id="inputInicioActividad_formConfiguracionSistema" data-minlength="2" maxlength="25" type="text" class="form-control" autocomplete="off"  value="<?= ($empresa) ? $empresa[0]["inicioActividad"] : "" ?>">
+                                <input name="inputInicioActividad_formConfiguracionSistema" id="inputInicioActividad_formConfiguracionSistema"  type="text" class="form-control" autocomplete="off"  value="<?= ($empresa) ? date_format(date_create($empresa[0]["inicioActividad"]),"d/m/Y") : "" ?>">
 
                                 <div id="errorInputInicioActividad_formConfiguracionSistema" class="btn-danger erroBoxs" style="display: none">
                                     * Debe completar el campo
@@ -336,9 +336,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-12" style="padding: inherit;">
+                <div style="margin-top:15px;padding-bottom: 75px;">
+                    <span id="btnValidarDatos" class="btn btn-primary btn-raised btn-block" onclick="configuracion_sistema()">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                        Guardar
+                    </span>
+                </div>  
+            </div>
+
         </div>
 
-        <div class="panel panel-default">
+        <!-- <div class="panel panel-default">
             <div class="panel-heading"><h6 class="panel-title"><i class="fas fa-file-contract"></i> Configuración Legal</h6></div>
             <div class="panel-body">
                 <div id="paso-1" style="padding-bottom:15px;">
@@ -529,7 +539,7 @@
                     </span>
                 </div>  
             </div>
-        </div>
+        </div> -->
 
         <script> mostrarCampoLocalidad(); facturaElectronicaCampos(); mostrarCamposFacturacionSegunFacturacion();</script>
 

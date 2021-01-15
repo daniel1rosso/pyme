@@ -53,27 +53,37 @@ class Configuracion_Sistema extends MY_Controller {
             $id = $this->input->post('id_formConfiguracionSistema', true);
             $nombre = $this->input->post('inputNombre_formConfiguracionSistema', true);
             $nombreEmpesa = $this->input->post('inputNombreEmpesa_formConfiguracionSistema', true);
-            $cuit = $this->input->post('inputCuit_formConfiguracionSistema', true);
+            //$cuit = $this->input->post('inputCuit_formConfiguracionSistema', true);
             $tipoMoneda = $this->input->post('selectTipoMoneda_formConfiguracionSistema', true);
             $correo = $this->input->post('inputCorreo_formConfiguracionSistema', true);
             $direccion = $this->input->post('inputDomicilio_formConfiguracionSistema', true);
             $inicioActividad = $this->input->post('inputInicioActividad_formConfiguracionSistema', true);
-            $iibb = $this->input->post('inputIibb_formConfiguracionSistema', true);
-            $tipoAnteAfip = $this->input->post('selectTipoAnteAfip_formConfiguracionSistema', true);
-            $puntoVenta = $this->input->post('inputPuntoVenta_formConfiguracionSistema', true);
+            //$iibb = $this->input->post('inputIibb_formConfiguracionSistema', true);
+            //$tipoAnteAfip = $this->input->post('selectTipoAnteAfip_formConfiguracionSistema', true);
+            //$puntoVenta = $this->input->post('inputPuntoVenta_formConfiguracionSistema', true);
             $numTel = $this->input->post('inputNumTel_formConfiguracionSistema', true);
             $numCel = $this->input->post('inputNumCel_formConfiguracionSistema', true);
             $pais = $this->input->post('selectPais_formConfiguracionSistema', true);
             $provincia = $this->input->post('selectProvincia_formConfiguracionSistema', true);
             $localidad = $this->input->post('selectLocalidad_formConfiguracionSistema', true);
-            $facturaElectronica = $this->input->post('selectFacturaElectronica_formConfiguracionSistema', true);
-            $razonSocial = $this->input->post('inputRazonSocial_formConfiguracionSistema', true);
+            //$facturaElectronica = $this->input->post('selectFacturaElectronica_formConfiguracionSistema', true);
+            //$razonSocial = $this->input->post('inputRazonSocial_formConfiguracionSistema', true);
             $token = $this->input->post('inputToken_formConfiguracionSistema', true);
-            $condicionFacturacion = $this->input->post('selectCondicionFacturacion_formConfiguracionSistema', true);
-            $certificado = $this->input->post('inputCertificado_formConfiguracionSistema', true);
+            //$condicionFacturacion = $this->input->post('selectCondicionFacturacion_formConfiguracionSistema', true);
+            //$certificado = $this->input->post('inputCertificado_formConfiguracionSistema', true);
             $stock = $this->input->post('selectStock_formConfiguracionSistema', true);
             $arqueo = $this->input->post('selectArqueo_formConfiguracionSistema', true);
             $caja = $this->input->post('selectCaja_formConfiguracionSistema', true);
+
+            $facturaElectronica = 0;
+            $iibb = 0;
+            $cuit = 0;
+            $tipoAnteAfip = 0;
+            $puntoVenta = 0;
+            $razonSocial = "";
+            $condicionFacturacion = 0;
+            $token = "";
+            $certificado = "";
 
             //--- Declaracion de variables ---//
             $img_config_sistema = false;
@@ -89,10 +99,10 @@ class Configuracion_Sistema extends MY_Controller {
             }
             
 
-            if ( (!empty($cuit) && !empty($iibb) && !empty($puntoVenta) && !empty($razonSocial) && isset($condicionFacturacion) && $facturaElectronica == 0 && !empty($caja)) || (!empty($razonSocial) && isset($condicionFacturacion) && $facturaElectronica == 1 && !empty($caja)) ) {
+            //if ( (!empty($cuit) && !empty($iibb) && !empty($puntoVenta) && !empty($razonSocial) && isset($condicionFacturacion) && $facturaElectronica == 0 && !empty($caja)) || (!empty($razonSocial) && isset($condicionFacturacion) && $facturaElectronica == 1 && !empty($caja)) ) {
                 
                 //--- Aca obtenemos las empresas dependiendo si tienen o no la localidades y provincia segun el pais que tiene seleccionado ---//
-                $empresasLocalidadProvincia = $this->app_model->get_empresas();
+                /*$empresasLocalidadProvincia = $this->app_model->get_empresas();
                 $empresasLocalidad = $this->app_model->get_empresas_sin_localidad_provincia();
                 if ($empresasLocalidadProvincia && $empresasLocalidad) {
                     $configuracion_sistema = array_merge($empresasLocalidadProvincia, $empresasLocalidad);
@@ -107,10 +117,10 @@ class Configuracion_Sistema extends MY_Controller {
                 if (!$configuracion_sistema) {
                     //--- Insert configuraciones del sistema ---//
                     $insert_configuracion_sistema = $this->app_model->insert_configuracion_sistema($nombre, $nombreEmpesa, $cuit, $tipoMoneda, $correo, $direccion, $inicioActividad, $iibb, $tipoAnteAfip, $puntoVenta, $numTel, $numCel, $pais, $provincia, $localidad, $localidadText, $facturaElectronica, $razonSocial, $condicionFacturacion, $stock, $arqueo, $token, $certificado, $caja);
-                } else {
+                } else {*/
                     //--- Update configuraciones del sistema ---//
                     $update_configuracion_sistema = $this->app_model->update_configuracion_sistema($id, $nombre, $nombreEmpesa, $cuit, $tipoMoneda, $correo, $direccion, $inicioActividad, $iibb, $tipoAnteAfip, $puntoVenta, $numTel, $numCel, $pais, $provincia, $localidad, $localidadText, $facturaElectronica, $razonSocial, $condicionFacturacion, $stock, $arqueo, $token, $certificado);
-                }
+                //}
                 
 //
                 //--- Guardo Imagen - Config Sistema ---//
@@ -167,12 +177,12 @@ class Configuracion_Sistema extends MY_Controller {
                     $dato = array("valid" => true, "msg" => $msg);
                 } else {
                     $msg = "Se produjo un error al actualizar la configuracion del sistema, vuelva a intentarlo.";
-                    $dato = array("valid" => false, "msg" => $msg);
+                    $dato = array("valid" => false, "msg" => $msg, "update_configuracion_sistema" => $update_configuracion_sistema, "img_config_sistema" => $img_config_sistema, "insert_configuracion_sistema" => $insert_configuracion_sistema);
                 }
-            } else {
+            /* } else {
                 $msg = "No llego correctamente la razon social, vuelva a intentarlo.";
                 $dato = array("valid" => false, "msg" => $msg);
-            }
+            } */
         } else {
             $msg = "No hay post";
             $dato = array("valid" => false, "msg" => $msg);
