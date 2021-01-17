@@ -198,4 +198,58 @@ class Configuracion_Sistema extends MY_Controller {
         echo json_encode($dato);
     }
 
+    public function save_img_empresa(){
+        header("Access-Control-Allow-Origin: *");
+        header('Access-Control-Allow-Credentials: true');
+
+        //--- Guardo ---//
+        if ($_POST) {
+            //--- Datos ---//
+            $id = $this->input->post('id_formConfiguracionSistema', true);
+            $nombreImg = "";
+
+            //--- Guardo Imagen - Config Sistema ---//
+            if (!empty($_FILES['fileImagen_formConfiguracionSistema']['name'])) {
+                if (!file_exists('./uploads/logo/')) {
+                    mkdir('./uploads/logo/', 0777, true);
+                }
+                $config['upload_path'] = './uploads/logo/';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = '0';
+                $config['overwrite'] = TRUE;
+                $nombreImg = substr(md5(microtime()), 15, 17);
+                $config['file_name'] = $nombreImg;
+
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+                if (!$this->upload->do_upload('fileImagen_formConfiguracionSistema')) {
+                    $error = array('error' => $this->upload->display_errors());
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                    $nombreImg = $data['upload_data']['file_name'];
+
+                    //Creo el thumb
+                    $config3['image_library'] = 'gd2';
+                    //CARPETA EN LA QUE ESTÁ LA IMAGEN A REDIMENSIONAR
+                    $config3['source_image'] = './uploads/logo/' . $nombreImg;
+                    $config3['width'] = 200;
+                    $config3['height'] = 200;
+
+                    $this->load->library('image_lib', $config3);
+                    $this->image_lib->initialize($config3);
+                    $this->image_lib->resize();
+                }
+
+                $img_config_sistema = $this->app_model->update_logo_empresa($id, $nombreImg);
+            }
+
+            $msg = "Actualización de la imagen";
+            $dato = array("valid" => true, "msg" => $msg, "nombreImg" => $nombreImg);
+        } else {
+            $msg = "No hay post";
+            $dato = array("valid" => false, "msg" => $msg);
+        }
+
+        echo json_encode($dato);
+    }
 }

@@ -271,7 +271,17 @@ class Menu_Admin extends MY_Controller
                 }
             } else {
                 $msg = "Datos vacios, vuelva a intentarlo";
-                $dato = array("valid" => false, "msg" => $msg);
+                $dato = array("valid" => false, "msg" => $msg, $idMenuAdmin,
+                $nivel,
+                $nombre,
+                $color,
+                $link,
+                $posicion,
+                $icono,
+                $idNivelGen,
+                $idNivelGenDOS,
+                $tipoInterna,
+                $subItem);
             }
         } else {
             $msg = "No hay POST";

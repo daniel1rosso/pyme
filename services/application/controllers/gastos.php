@@ -132,12 +132,13 @@ class Gastos extends MY_Controller
             $selectSubCatGasto = $this->input->post('selectSubCatGasto', true);
             $selectMedioPago = $this->input->post('selectMedioPago', true);
             $descripcionGasto = $this->input->post('descripcionGasto', true);
-            $selectTipoFactura = $this->input->post('selectTipoFactura', true);
+            /* $selectTipoFactura = $this->input->post('selectTipoFactura', true); */
             $inputFechaVtoGasto = $this->input->post('inputFechaVtoGasto', true);
             $idEstado = $this->input->post('idEstado', true);
 
             if (
-                !empty($montoGasto) AND isset($selectCatGasto) AND isset($selectSubCatGasto) AND isset($selectMedioPago) AND isset($selectTipoFactura) AND !empty($inputFechaVtoGasto)
+                /* !empty($montoGasto) AND isset($selectCatGasto) AND isset($selectSubCatGasto) AND isset($selectMedioPago) AND isset($selectTipoFactura) AND !empty($inputFechaVtoGasto) */
+                !empty($montoGasto) AND isset($selectCatGasto) AND isset($selectSubCatGasto) AND isset($selectMedioPago) AND !empty($inputFechaVtoGasto)
             ) {
                 $userdata = $this->session->all_userdata();
                 $idVendedor = $userdata['idUsuario'];
@@ -217,7 +218,7 @@ class Gastos extends MY_Controller
                     $nombreExtension = $nombreImg;
                 }
 
-                $result = $this->app_model->insert_gasto($idVendedor, $idGenGasto, $idEstado, $fechaGasto, $montoGasto, $selectCatGasto, $selectSubCatGasto, $selectMedioPago, $descripcionGasto, $nombreExtension, $selectTipoFactura, $inputFechaVtoGasto);
+                $result = $this->app_model->insert_gasto($idVendedor, $idGenGasto, $idEstado, $fechaGasto, $montoGasto, $selectCatGasto, $selectSubCatGasto, $selectMedioPago, $descripcionGasto, $nombreExtension, /* $selectTipoFactura */ 0, $inputFechaVtoGasto);
 
                 //--- Si el gasto es pagado registramos el egreso o la deuda de este gasto ---//
                 if ($idEstado == 2) {

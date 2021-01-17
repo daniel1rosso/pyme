@@ -510,7 +510,8 @@ class Compras extends MY_Controller {
                     $idVendedor, $datosFacturacion["selectProveedor"], //selectCliente
                     $fechaEmision, //fechaEmision
                     $fechaPago, //fechaPago
-                    $datosFacturacion["selectTipoFactCompra"], //selectTipoFac
+                    /* $datosFacturacion["selectTipoFactCompra"], //selectTipoFac */
+                    0, //selectTipoFac
                     $datosFacturacion["selectCategoriaCompra"], //selectCatCompra
                     $datosFacturacion["notaInterna"], //notaInterna
                     $datosFacturacion["totalNoGravado"], //importeNoGravado
@@ -887,7 +888,8 @@ class Compras extends MY_Controller {
                     $idGenEgreso, $tipoEgreso = 1, $idVendedor, $datosFacturacion["selectProveedor"], //selectCliente
                     $datosFacturacion["inputFechaEmisionCompra"], //fechaEmision
                     $datosFacturacion["inputFechaPagoCompra"], //fechaPago
-                    $datosFacturacion["selectTipoFactCompra"], //selectTipoFac
+                    /* $datosFacturacion["selectTipoFactCompra"], //selectTipoFac */
+                    0, //selectTipoFac
                     $datosFacturacion["selectCategoriaCompra"], //selectCatCompra
                     $datosFacturacion["notaInterna"], //notaInterna
                     $datosFacturacion["totalNoGravado"], //importeNoGravado

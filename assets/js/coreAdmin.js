@@ -1781,7 +1781,7 @@
          var selectCatGasto = $('#selectCatGasto').val();
          var selectSubCatGasto = $('#selectSubCatGasto').val();
          var selectMedioPago = $('#selectMedioPago2').val();
-         var selectTipoFactura = $('#selectTipoFactura').val();
+         /* var selectTipoFactura = $('#selectTipoFactura').val(); */
          var fileGasto = document.getElementById("fileGasto");
          var inputFechaVtoGasto = $('#inputFechaVtoGasto').val();
 
@@ -1813,13 +1813,13 @@
              $("#errorselectMedioPago_formAgregarGasto").css("display", "none");
              val4 = true;
          }
-         if (selectTipoFactura == 0) {
+         /* if (selectTipoFactura == 0) {
              $("#errorselectTipoFactura").css("display", "block");
              val6 = false;
          } else {
              $("#errorselectTipoFactura").css("display", "none");
              val6 = true;
-         }
+         } */
          if (inputFechaVtoGasto == 0) {
              $("#errorinputFechaVtoGasto").css("display", "block");
              val7 = false;
@@ -1834,7 +1834,8 @@
              pagado = 1;
          }
 
-         if (val1 && val2 && val3 && val4 && val6 && val7) {
+         /* if (val1 && val2 && val3 && val4 && val6 && val7) { */
+         if (val1 && val2 && val3 && val4 && val7) {
              $("#modal-cargando").modal("show");
              var formData = new FormData($("#formAgregarGasto")[0]);
              formData.append("idEstado", pagado);
@@ -2293,7 +2294,7 @@
          var selectCliente = $('#selectCliente').val();
          var inputFechaEmision = $('#inputFechaEmision').val();
          var inputFechaCobro = $('#inputFechaCobroVenta').val();
-         var selectTipoFact = $('#selectTipoFact').val();
+         /* var selectTipoFact = $('#selectTipoFact').val(); */
          var selectCategoriaVenta = $('#selectCategoriaVenta').val();
          var selectSubCategoriaVenta = $('#selectSubCategoriaVenta').val();
          var notaCliente = $('#notaCliente').val();
@@ -2318,13 +2319,13 @@
              $("#errorselectCliente").css("display", "none");
              val1 = true;
          }
-         if (selectTipoFact == 0) {
+         /* if (selectTipoFact == 0) {
              $("#errorselectTipoFact").css("display", "block");
              val2 = false;
          } else {
              $("#errorselectTipoFact").css("display", "none");
              val2 = true;
-         }
+         } */
          if (selectSubCategoriaVenta == 0) {
              $("#errorselectSubCategoriaVenta").css("display", "block");
              val8 = false;
@@ -2388,7 +2389,8 @@
              val7 = true;
          }
 
-         if ((val1 && val2 && val3 && val7 && val8 && idConceptoFactura != 2) || (val1 && val2 && val3 && val7 && val8 && val11 && val12 && idConceptoFactura == 2)) {
+         /* if ((val1 && val2 && val3 && val7 && val8 && idConceptoFactura != 2) || (val1 && val2 && val3 && val7 && val8 && val11 && val12 && idConceptoFactura == 2)) { */
+         if ((val1 && val3 && val7 && val8 && idConceptoFactura != 2) || (val1 && val3 && val7 && val8 && val11 && val12 && idConceptoFactura == 2)) {
              $("#modal-cargando").modal("show");
 
              var datosVenta = [];
@@ -2415,7 +2417,7 @@
                          //Si es X puede tener o no IVA
 
                          //Si es C o E no tiene que tener asociado el IVA
-                         if (selectTipoFact == 3 || selectTipoFact == 5) {
+                         /* if (selectTipoFact == 3 || selectTipoFact == 5) {
                              //No tiene que tener iva por lo tanto el select deberia estar en "IVA", sino sumo el error a p
                              if (valueIvaSelect == "IVA") {
                                  p++;
@@ -2425,7 +2427,7 @@
                              if (valueIvaSelect == "IVA") {
                                  p++;
                              }
-                         }
+                         } */
 
                          //--- verificamos si se debe controlar o no el stock, de serlo tenemos que verificar que cada detalle no haya excedido de su maximo ---//
                          if ((empresa[0]['stock'] == 0 && parseInt($('#cantProd' + tabla[i][0]).val()) <= parseInt(tabla[i][4])) || empresa[0]['stock'] == 1) {
@@ -2453,7 +2455,7 @@
                          "selectCliente": selectCliente,
                          "inputFechaEmision": inputFechaEmision,
                          "inputFechaCobro": inputFechaCobro,
-                         "selectTipoFact": selectTipoFact,
+                         /* "selectTipoFact": selectTipoFact, */
                          "selectCategoriaVenta": selectCategoriaVenta,
                          "notaCliente": notaCliente,
                          "notaInterna": notaInterna,
@@ -2471,40 +2473,46 @@
 
                      //--- verificamos si se debe controlar o no el stock, de serlo tenemos que verificar que ningun detalle se haya excedido de su maximo ---//
                      if ((empresa[0]['stock'] == 0 && k == 0) || empresa[0]['stock'] == 1) {
-                         if (p == 0) {
-                             $.ajax({
-                                     url: URL + 'ventas/set_venta/',
-                                     type: 'POST',
-                                     data: { datosVenta: datosVenta, datosFacturacion: datosFacturacion, idGenPresupuesto: idGenPresupuesto }
-                                 })
-                                 .done(function(data) {
-                                     var dato = JSON.parse(data);
-                                     //console.log(dato);
-                                     if (dato['valid']) {
-                                         $("#modal-cargando").modal("hide");
-                                         if (selectTipoFact == 1 || selectTipoFact == 2 || selectTipoFact == 4) {
-                                             generarPdfComprobanteLegal(dato['idGenIngreso']);
-                                         } else {
-                                             generarPdfComprobanteNoLegal(dato['idGenIngreso']);
-                                         }
+                         /* if (p == 0) { */
+                         $.ajax({
+                                 url: URL + 'ventas/set_venta/',
+                                 type: 'POST',
+                                 data: { datosVenta: datosVenta, datosFacturacion: datosFacturacion, idGenPresupuesto: idGenPresupuesto }
+                             })
+                             .done(function(data) {
+                                 var dato = JSON.parse(data);
+                                 //console.log(dato);
+                                 if (dato['valid']) {
+                                     $("#modal-cargando").modal("hide");
+                                     /* if (selectTipoFact == 1 || selectTipoFact == 2 || selectTipoFact == 4) {
+                                         generarPdfComprobanteLegal(dato['idGenIngreso']);
                                      } else {
-                                         swal(
-                                             'Venta',
-                                             dato['msg'],
-                                             'error'
-                                         )
-                                     }
+                                         generarPdfComprobanteNoLegal(dato['idGenIngreso']);
+                                     } */
+                                     swal(
+                                         'Venta',
+                                         dato['msg'],
+                                         'success'
+                                     )
+                                     setTimeout(location.reload(), 4000);
+                                 } else {
+                                     swal(
+                                         'Venta',
+                                         dato['msg'],
+                                         'error'
+                                     )
+                                 }
 
-                                 })
-                                 .fail(function(data) {
-                                     $("#popUpError").modal("show");
-                                 });
-                         } else {
+                             })
+                             .fail(function(data) {
+                                 $("#popUpError").modal("show");
+                             });
+                         /* } else {
                              k = 0
                              $("#modal-cargando").modal("hide");
                              document.getElementById("msgError").innerHTML = "Controle, hay productos que contienen un valor de iva que no corresponde al tipo de factura seleccionado.";
                              $("#popUpErrorMsg").modal("show");
-                         }
+                         } */
                      } else {
                          k = 0
                          $("#modal-cargando").modal("hide");
@@ -2522,7 +2530,7 @@
          var selectCategoriaCompra = $('#selectCategoriaCompra').val();
          var inputFechaEmisionCompra = $('#inputFechaEmisionCompra').val();
          var inputFechaPagoCompra = $('#inputFechaPagoCompra').val();
-         var selectTipoFactCompra = $('#selectTipoFactCompra').val();
+         /* var selectTipoFactCompra = $('#selectTipoFactCompra').val(); */
          var notaInterna = $('#notaInterna').val();
          var razonSocial = $('#selectRazonSocial').val();
          var descProveedor = $('#descuentoProveedor').val();
@@ -2545,13 +2553,13 @@
              val2 = true;
          }
 
-         if (selectTipoFactCompra == 0) {
+         /* if (selectTipoFactCompra == 0) {
              $("#errorselectTipoFactCompra").css("display", "block");
              val3 = false;
          } else {
              $("#errorselectTipoFactCompra").css("display", "none");
              val3 = true;
-         }
+         } */
 
          var info = tableListadoCompra.page.info();
          var count = info.recordsTotal;
@@ -2579,14 +2587,15 @@
              val8 = true;
          }
 
-         if (val1 && val2 && val3 && val4 && val8) {
+         /* if (val1 && val2 && val3 && val4 && val8) { */
+         if (val1 && val2 && val4 && val8) {
              $("#modal-cargando").modal("show");
              var datosFacturacion = {
                  "selectProveedor": selectProveedor,
                  "selectCategoriaCompra": selectCategoriaCompra,
                  "inputFechaEmisionCompra": inputFechaEmisionCompra,
                  "inputFechaPagoCompra": inputFechaPagoCompra,
-                 "selectTipoFactCompra": selectTipoFactCompra,
+                 /* "selectTipoFactCompra": selectTipoFactCompra, */
                  "notaInterna": notaInterna,
                  "totalNoGravado": totalNoGravado,
                  "total": total,
@@ -2651,8 +2660,8 @@
                                          'success'
                                      )
                                      setTimeout(function() {
-                                         location.href = URL + 'compras/listar_compras';
-                                     }, 1000);
+                                         location.reload()
+                                     }, 2000);
                                  } else {
                                      swal(
                                          'Compra',
@@ -2680,7 +2689,7 @@
          var selectCliente = $('#selectCliente').val();
          var inputFechaEmision = $('#inputFechaEmision').val();
          var inputFechaCobro = $('#inputFechaCobro').val();
-         var selectTipoFact = $('#selectTipoFact').val();
+         /* var selectTipoFact = $('#selectTipoFact').val(); */
          var selectCategoriaVenta = $('#selectCategoriaVenta').val();
          var selectSubCategoriaVenta = $('#selectSubCategoriaVenta').val();
          var inputFechaInicioAbono = $('#inputFechaInicioAbono').val();
@@ -2710,13 +2719,13 @@
              $("#errorselectCliente").css("display", "none");
              val1 = true;
          }
-         if (selectTipoFact == 0) {
+         /* if (selectTipoFact == 0) {
              $("#errorselectTipoFact").css("display", "block");
              val2 = false;
          } else {
              $("#errorselectTipoFact").css("display", "none");
              val2 = true;
-         }
+         } */
          if (selectCategoriaVenta == 0) {
              $("#errorselectCategoriaVenta").css("display", "block");
              val3 = false;
@@ -2775,7 +2784,8 @@
              val7 = true;
          }
 
-         if ((val1 && val2 && val3 && val7 && val8 && val10 && idConceptoFactura != 2) || (val1 && val2 && val3 && val7 && val8 && val10 && val11 && val12 && idConceptoFactura == 2)) {
+         /* if ((val1 && val2 && val3 && val7 && val8 && val10 && idConceptoFactura != 2) || (val1 && val2 && val3 && val7 && val8 && val10 && val11 && val12 && idConceptoFactura == 2)) { */
+         if ((val1 && val3 && val7 && val8 && val10 && idConceptoFactura != 2) || (val1 && val3 && val7 && val8 && val10 && val11 && val12 && idConceptoFactura == 2)) {
              $("#modal-cargando").modal("show");
 
              var datosVenta = [];
@@ -2804,7 +2814,7 @@
                          //Si es X puede tener o no IVA
 
                          //Si es C o E no tiene que tener asociado el IVA
-                         if (selectTipoFact == 3 || selectTipoFact == 5) {
+                         /* if (selectTipoFact == 3 || selectTipoFact == 5) {
                              //No tiene que tener iva por lo tanto el select deberia estar en "IVA", sino sumo el error a p
                              if (valueIvaSelect != "IVA") {
                                  p++;
@@ -2814,7 +2824,7 @@
                              if (valueIvaSelect == "IVA") {
                                  p++;
                              }
-                         }
+                         } */
 
                          //--- verificamos si se debe controlar o no el stock, de serlo verificamos que cada detalle no se este excediendo el stock ---//
                          if ((empresa[0]['stock'] == 0 && parseInt($('#cantProd' + tabla[i][0]).val()) <= parseInt(tabla[i][4])) || empresa[0]['stock'] == 1) {
@@ -2841,7 +2851,8 @@
                          selectCliente,
                          inputFechaEmision,
                          inputFechaCobro,
-                         selectTipoFact,
+                         /* selectTipoFact, */
+                         0,
                          selectCategoriaVenta,
                          inputFechaInicioAbono,
                          inputDuracion,
@@ -2862,40 +2873,46 @@
 
                      //--- verificamos si se debe controlar o no el stock, de serlo verificamos que ninguna detalle este excediendo el stock ---//
                      if ((empresa[0]['stock'] == 0 && k == 0) || empresa[0]['stock'] == 1) {
-                         if (p == 0) {
-                             $.ajax({
-                                     url: URL + 'ventas/update_venta/',
-                                     type: 'POST',
-                                     data: { datosVenta: datosVenta, datosFacturacion: datosFacturacion, idGenIngreso: idGenIngreso, totalVenta: totalVentaPost, importeNoGravado: importeNoGravado }
-                                 })
-                                 .done(function(data) {
-                                     var dato = JSON.parse(data);
-                                     //console.log(dato);
-                                     if (dato['valid']) {
-                                         $("#modal-cargando").modal("hide");
-                                         if (selectTipoFact == 1 || selectTipoFact == 2 || selectTipoFact == 4) {
-                                             generarPdfComprobanteLegal(dato['idGenIngreso']);
-                                         } else {
-                                             generarPdfComprobanteNoLegal(dato['idGenIngreso']);
-                                         }
+                         /* if (p == 0) { */
+                         $.ajax({
+                                 url: URL + 'ventas/update_venta/',
+                                 type: 'POST',
+                                 data: { datosVenta: datosVenta, datosFacturacion: datosFacturacion, idGenIngreso: idGenIngreso, totalVenta: totalVentaPost, importeNoGravado: importeNoGravado }
+                             })
+                             .done(function(data) {
+                                 var dato = JSON.parse(data);
+                                 //console.log(dato);
+                                 if (dato['valid']) {
+                                     $("#modal-cargando").modal("hide");
+                                     /* if (selectTipoFact == 1 || selectTipoFact == 2 || selectTipoFact == 4) {
+                                         generarPdfComprobanteLegal(dato['idGenIngreso']);
                                      } else {
-                                         swal(
-                                             'Venta',
-                                             dato['msg'],
-                                             'error'
-                                         )
-                                     }
+                                         generarPdfComprobanteNoLegal(dato['idGenIngreso']);
+                                     } */
+                                     swal(
+                                         'Venta',
+                                         dato['msg'],
+                                         'success'
+                                     )
+                                     setTimeout(location.reload(), 2000);
+                                 } else {
+                                     swal(
+                                         'Venta',
+                                         dato['msg'],
+                                         'error'
+                                     )
+                                 }
 
-                                 })
-                                 .fail(function(data) {
-                                     $("#popUpError").modal("show");
-                                 });
-                         } else {
+                             })
+                             .fail(function(data) {
+                                 $("#popUpError").modal("show");
+                             });
+                         /* } else {
                              k = 0
                              $("#modal-cargando").modal("hide");
                              document.getElementById("msgError").innerHTML = "Controle, hay productos que contienen un valor de iva que no corresponde al tipo de factura seleccionado.";
                              $("#popUpErrorMsg").modal("show");
-                         }
+                         } */
                      } else {
                          $("#modal-cargando").modal("hide");
                          document.getElementById("msgError").innerHTML = "Controle, hay productos que superan el stock";
@@ -2910,7 +2927,7 @@
          e.preventDefault();
          var val1, val2, val3, val7, val8, val9, val10, val11, val12;
          var selectProveedor = $('#selectProveedor_formModificarCompra').val();
-         var selectTipoFact = $('#selectTipoFactCompra_formModificarCompra').val();
+         /* var selectTipoFact = $('#selectTipoFactCompra_formModificarCompra').val(); */
          var selectCategoriaCompra = $('#selectCategoriaCompra_formModificarCompra').val();
          var selectSubCategoriaCompra = $('#selectSubCategoriaCompra_formModificarCompra').val();
          var inputFechaEmision = $('#inputFechaEmisionCompra_formModificarCompra').val();
@@ -2935,13 +2952,13 @@
              $("#errorselectProveedor_formModificarCompra").css("display", "none");
              val1 = true;
          }
-         if (selectTipoFact == 0) {
+         /* if (selectTipoFact == 0) {
              $("#errorselectTipoFact").css("display", "block");
              val2 = false;
          } else {
              $("#errorselectTipoFact").css("display", "none");
              val2 = true;
-         }
+         } */
          if (selectCategoriaCompra == 0) {
              $("#errorselectCategoriaCompra_formModificarCompra").css("display", "block");
              val3 = false;
@@ -2981,14 +2998,15 @@
              val7 = true;
          }
 
-         if (val1 && val2 && val3 && val7 && val8 && val10 && val12) {
+         /* if (val1 && val2 && val3 && val7 && val8 && val10 && val12) { */
+         if (val1 && val3 && val7 && val8 && val10 && val12) {
              $("#modal-cargando").modal("show");
              var datosFacturacion = {
                  "selectProveedor": selectProveedor,
                  "selectCategoriaCompra": selectCategoriaCompra,
                  "inputFechaEmisionCompra": inputFechaEmision,
                  "inputFechaPagoCompra": inputFechaCobro,
-                 "selectTipoFactCompra": selectTipoFact,
+                 /* "selectTipoFactCompra": selectTipoFact, */
                  "selectSubCategoriaCompra": selectSubCategoriaCompra,
                  "notaInterna": notaInterna,
                  "totalNoGravado": importeNoGravado,
@@ -3024,7 +3042,7 @@
                          //Si es X puede tener o no IVA
 
                          //Si es C o E no tiene que tener asociado el IVA
-                         if (selectTipoFact == 3 || selectTipoFact == 5) {
+                         /* if (selectTipoFact == 3 || selectTipoFact == 5) {
                              //No tiene que tener iva por lo tanto el select deberia estar en "IVA", sino sumo el error a p
                              if (valueIvaSelect != "IVA") {
                                  p++;
@@ -3034,7 +3052,7 @@
                              if (valueIvaSelect == "IVA") {
                                  p++;
                              }
-                         }
+                         } */
 
                          //--- verificamos si se debe controlar o no el stock, de serlo verificamos que cada detalle no se este excediendo el stock ---//
                          if ((empresa[0]['stock'] == 0 && parseInt($('#cantProd' + tabla[i][0]).val()) <= parseInt(tabla[i][4])) || empresa[0]['stock'] == 1) {
@@ -3058,43 +3076,43 @@
 
                      //--- verificamos si se debe controlar o no el stock, de serlo verificamos que ninguna detalle este excediendo el stock ---//
                      if ((empresa[0]['stock'] == 0 && k == 0) || empresa[0]['stock'] == 1) {
-                         if (p == 0) {
-                             $.ajax({
-                                     url: URL + 'compras/update_compra/',
-                                     type: 'POST',
-                                     data: { datosCompra: datosCompra, datosFacturacion: datosFacturacion, idGenEgreso: idGenEgreso, totalCompra: totalCompraPost, importeNoGravado: importeNoGravado }
-                                 })
-                                 .done(function(data) {
-                                     var dato = JSON.parse(data);
-                                     //console.log(dato);
-                                     if (dato['valid']) {
-                                         $("#modal-cargando").modal("hide");
-                                         swal(
-                                             'Compra',
-                                             dato['msg'],
-                                             'success'
-                                         )
-                                         setTimeout(function() {
-                                             location.href = URL + 'compras/listar_compras';
-                                         }, 2000);
-                                     } else {
-                                         swal(
-                                             'Compra',
-                                             dato['msg'],
-                                             'error'
-                                         )
-                                     }
+                         /* if (p == 0) { */
+                         $.ajax({
+                                 url: URL + 'compras/update_compra/',
+                                 type: 'POST',
+                                 data: { datosCompra: datosCompra, datosFacturacion: datosFacturacion, idGenEgreso: idGenEgreso, totalCompra: totalCompraPost, importeNoGravado: importeNoGravado }
+                             })
+                             .done(function(data) {
+                                 var dato = JSON.parse(data);
+                                 //console.log(dato);
+                                 if (dato['valid']) {
+                                     $("#modal-cargando").modal("hide");
+                                     swal(
+                                         'Compra',
+                                         dato['msg'],
+                                         'success'
+                                     )
+                                     setTimeout(function() {
+                                         location.reload()
+                                     }, 2000);
+                                 } else {
+                                     swal(
+                                         'Compra',
+                                         dato['msg'],
+                                         'error'
+                                     )
+                                 }
 
-                                 })
-                                 .fail(function(data) {
-                                     $("#popUpError").modal("show");
-                                 });
-                         } else {
+                             })
+                             .fail(function(data) {
+                                 $("#popUpError").modal("show");
+                             });
+                         /* } else {
                              k = 0;
                              $("#modal-cargando").modal("hide");
                              document.getElementById("msgError").innerHTML = "Controle, hay productos que contienen un valor de iva que no corresponde al tipo de factura seleccionado.";
                              $("#popUpErrorMsg").modal("show");
-                         }
+                         } */
                      } else {
                          $("#modal-cargando").modal("hide");
                          document.getElementById("msgError").innerHTML = "Controle, hay productos que superan el stock";
@@ -16194,6 +16212,45 @@ e-listado-cte-proveedores-informe').val();
      //}
  }
 
+
+ function imagen_connguracion_sistema() {
+
+     //--- Obtencion de datos ---//
+     var id = $('#id_formConfiguracionSistema').val();
+     //--- formData ---//
+     var formData = new FormData($("#formConfiguracionSistema")[0]);
+     //--- Ajax ---//
+     $.ajax({
+             url: URL + "configuracion_sistema/save_img_empresa/",
+             type: 'POST',
+             cache: false,
+             contentType: false,
+             processData: false,
+             data: formData
+         })
+         .done(function(data) {
+             var dato = JSON.parse(data);
+             if (dato['valid']) {
+                 swal(
+                     'Exito',
+                     dato['msg'],
+                     'success'
+                 )
+                 if (dato['nombreImg'] != "") {
+                     $("#imgconfiguracionempresa").attr("src", URL + "uploads/logo/" + dato['nombreImg']);
+                 }
+             } else {
+                 swal(
+                     'Error',
+                     dato['msg'],
+                     'error'
+                 )
+             }
+         })
+         .fail(function(data) {
+             //console.log(data);
+         });
+ }
  //--- Fin de las configuraciones del sistema ---//
 
  //--- Inicio Descuento de estoy a efectuar una cobranza ---//

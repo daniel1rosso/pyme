@@ -95,7 +95,7 @@
                                         <label class="control-label" for="selectProductosCompras_formModificarCompra">Productos</label>
                                         <select name="selectProductosCompras_formModificarCompra" id="selectProductosCompras_formModificarCompra" class="select-full" required>
                                             <option value="0">Seleccionar producto</option>
-                                            <option value="addProductoNewCompra_formModificarCompra">Agregar Producto</option>                                            
+                                            <!-- <option value="addProductoNewCompra_formModificarCompra">Agregar Producto</option>   -->                                          
                                             <?php
                                             if (isset($productos)) :
                                                 for ($i = 0; $i < count($productos); $i++) :
@@ -118,7 +118,8 @@
 
                         <div class="col-md-6" style="padding:0px;">
                             <div class="col-md-12" style="padding:0px;">
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4">    -->                             
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaEmisionCompra_formModificarCompra">Emision</label>
                                         <input type="text" id="inputFechaEmisionCompra_formModificarCompra" name="inputFechaEmisionCompra_formModificarCompra" value="<?= ($egreso[0]['fechaEmision']) ? $egreso[0]['fechaEmision'] : "0000-00-00" ?> " class="form-control date-range-filter" data-date-format="yyyy-mm-dd">
@@ -128,7 +129,8 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4"> -->                                
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaPagoCompra_formModificarCompra"><span style="color: red;"> * </span>Fecha Vto del cobro</label>
                                         <input type="text" id="inputFechaPagoCompra_formModificarCompra" name="inputFechaPagoCompra_formModificarCompra" value="<?= $egreso[0]['fechaVtoPago'] ?> " class="form-control date-range-filter" data-date-format="yyyy-mm-dd">
@@ -138,13 +140,13 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4">                                
                                     <div class="form-group label-floating has-feedback"> 
                                         <label class="control-label" for="selectTipoFact_formModificarCompra"><span style="color: red;"> * </span>Tipo</label>
                                         <select name="selectTipoFactCompra_formModificarCompra" id="selectTipoFactCompra_formModificarCompra" class="select-full" required>
                                             <option value="0">Seleccionar tipo</option>
                                             <?php
-                                            if (isset($facturaTipos)) :
+                                            i/* f (isset($facturaTipos)) :
                                                 for ($i = 0; $i < count($facturaTipos); $i++) :
                                                     if ($facturaTipos[$i]['idTipoFactura'] == $egreso[0]['tipoFactura']):
                                                         echo '<option selected value="' . $facturaTipos[$i]['idTipoFactura'] . '">' . $facturaTipos[$i]['descripcion'] . '</option>';
@@ -152,7 +154,7 @@
                                                         echo '<option value="' . $facturaTipos[$i]['idTipoFactura'] . '">' . $facturaTipos[$i]['descripcion'] . '</option>';
                                                     endif;
                                                 endfor;
-                                            endif;
+                                            endif; */
                                             ?>         
                                         </select>                                               
 
@@ -160,7 +162,7 @@
                                             * Debe seleccionar una opci&oacute;n
                                         </div>   
                                     </div>                                       
-                                </div>
+                                </div> -->
                             </div>              
 
                             <div class="col-md-12">                              

@@ -1370,8 +1370,7 @@
                                     <input type="checkbox" name="pagado_agregarGasto" id="pagado_agregarGasto" value="1"> <label for="cbox2">Pagado</label>
                                 </div>
                             </div>
-
-                            <div class="col-md-12">
+                            <!-- <div class="col-md-12">
                                 <div class="form-group label-floating has-feedback">
                                     <label class="control-label" for="selectTipoFactura"><span style="color: red;"> * </span>Tipo Factura</label>
                                     <select name="selectTipoFactura" id="selectTipoFactura" class="select-full" required>
@@ -1389,7 +1388,7 @@
                                         * Debe completar el campo
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-md-12">
                                 <div class="form-group label-floating has-feedback">
 

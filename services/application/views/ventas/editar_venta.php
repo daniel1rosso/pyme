@@ -117,7 +117,7 @@
                                         <label class="control-label" for="selectProductos">Productos</label>
                                         <select name="selectProductos_editarVenta" id="selectProductos_editarVenta" class="select-full" required>
                                             <option value="0">Seleccionar producto</option>
-                                            <option value="addProdNew_formEditarVenta">Agregar Producto</option>
+                                            <!-- <option value="addProdNew_formEditarVenta">Agregar Producto</option> -->
                                             <?php
                                             if (isset($productos)) :
                                                 for ($i = 0; $i < count($productos); $i++) :
@@ -140,7 +140,8 @@
 
                         <div class="col-md-6" style="padding:0px;">
                             <div class="col-md-12" style="padding:0px;">
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4"> -->                                
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaEmision">Emision</label>
                                         <input type="text" id="inputFechaEmision" value="<?= $ingreso[0]['fechaEmision'] ?>"class="form-control date-range-filter" data-date-format="yyyy-mm-dd" autocomplete="off">
@@ -150,7 +151,8 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4"> -->                                
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaCobro">Fecha Vto del cobro</label>
                                         <input type="text" id="inputFechaCobro" value="<?= $ingreso[0]['fechaVtoCobro'] ?>" class="form-control date-range-filter" data-date-format="yyyy-mm-dd" autocomplete="off">
@@ -160,7 +162,7 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4">                                
                                     <div class="form-group label-floating has-feedback"> 
                                         <label class="control-label" for="selectTipoFact"><span style="color: red;"> * </span>Tipo</label>
                                         <select name="selectTipoFact" id="selectTipoFact" class="select-full" required>
@@ -182,7 +184,7 @@
                                             * Debe seleccionar una opci&oacute;n
                                         </div>   
                                     </div>                                       
-                                </div>
+                                </div> -->
                             </div>              
                             <?php
                             if ($ingreso[0]['idCategoria'] == 1):

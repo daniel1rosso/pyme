@@ -74,7 +74,7 @@
                                     <div class="col-md-12">  
                                         <div class="form-group label-floating has-feedback">     
                                             <label class="control-label" for="imagen">Logo</label>
-                                            <input type="file" name="fileImagen_formConfiguracionSistema" id="fileImagen_formConfiguracionSistema" class="styled">								
+                                            <input type="file" name="fileImagen_formConfiguracionSistema" id="fileImagen_formConfiguracionSistema" class="styled" onchange="imagen_connguracion_sistema()">								
                                             <div id="errorFile_formConfiguracionSistema" class="btn-danger erroBoxs" style="display: none">
                                                 * Ingrese una imagen.
                                             </div>                                          
@@ -88,7 +88,7 @@
                             <?PHP if ($empresa) : ?>
                                 <?PHP if ($empresa[0]["logo"] != "") : ?>
                                     <div class="col-md-12" style="text-align: center;">  
-                                        <img src="<?= base_url() ?>uploads/logo/<?=   $empresa[0]["logo"] ?>" style="max-width: 50%;">
+                                        <img id="imgconfiguracionempresa" src="<?= base_url() ?>uploads/logo/<?=   $empresa[0]["logo"] ?>" style="max-width: 50%;">
                                     </div>
                                 <?php endif; ?>
                             <?php endif; ?>
@@ -298,7 +298,7 @@
                                 <label class="control-label" for="inputInicioActividad">                                                  
                                     Inicio Actividad
                                 </label>
-                                <input name="inputInicioActividad_formConfiguracionSistema" id="inputInicioActividad_formConfiguracionSistema"  type="text" class="form-control" autocomplete="off"  value="<?= ($empresa) ? date_format(date_create($empresa[0]["inicioActividad"]),"d/m/Y") : "" ?>">
+                                <input name="inputInicioActividad_formConfiguracionSistema" id="inputInicioActividad_formConfiguracionSistema"  type="date" class="form-control" autocomplete="off"  value="<?= ($empresa) ? $empresa[0]["inicioActividad"] : "" ?>">
 
                                 <div id="errorInputInicioActividad_formConfiguracionSistema" class="btn-danger erroBoxs" style="display: none">
                                     * Debe completar el campo

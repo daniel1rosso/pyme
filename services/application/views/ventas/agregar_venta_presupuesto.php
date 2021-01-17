@@ -117,7 +117,7 @@
                                         <label class="control-label" for="selectProductos_venta_presupuesto">Productos</label>
                                         <select name="selectProductos_venta_presupuesto" id="selectProductos_venta_presupuesto" class="select-full" required>
                                             <option value="0">Seleccionar producto</option>
-                                            <option value="addProdNew_venta_presupuesto">Agregar Producto</option>
+                                            <!-- <option value="addProdNew_venta_presupuesto">Agregar Producto</option> -->
                                             <?php
                                             if (isset($productos)) :
                                                 for ($i = 0; $i < count($productos); $i++) :

@@ -1017,7 +1017,8 @@ class Ventas extends MY_Controller
                         $datosFacturacion["selectCliente"], //selectCliente
                             $fechaEmision, //fechaEmision
                             $fechaCobro, //fechaCobro
-                            $datosFacturacion["selectTipoFact"], //selectTipoFac
+                            /* $datosFacturacion["selectTipoFact"], //selectTipoFac */
+                            0, //selectTipoFac
                             $datosFacturacion["selectCategoriaVenta"], //selectCatVenta
                             $datosFacturacion["notaCliente"], //notaCliente
                             $datosFacturacion["notaInterna"], //notaInterna
@@ -1372,7 +1373,8 @@ class Ventas extends MY_Controller
                         $datosFacturacion[0], //selectCliente
                         $fechaEmision, //fechaEmision
                         $fechaCobro, //fechaCobro
-                        $datosFacturacion[3], //selectTipoFac
+                        /* $datosFacturacion[3], //selectTipoFac */
+                        0, //selectTipoFac
                         $datosFacturacion[4], //selectCatVenta
                         $datosFacturacion[5], //inputFechaInicioAbono
                         $datosFacturacion[6], //inputDuracion

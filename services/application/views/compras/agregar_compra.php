@@ -94,7 +94,7 @@
                                                 endif;
                                                 ?>         
                                             </select>
-                                            <span class="input-group-addon btn-primary" onclick="open_new_product()"><i class="fas fa-plus" style="color:white"></i></span>
+                                            <!-- <span class="input-group-addon btn-primary" onclick="open_new_product()"><i class="fas fa-plus" style="color:white"></i></span> -->
                                         </div>
 
                                         <div id="errorSelectProvincia" class="btn-danger erroBoxs" style="display: none">
@@ -110,7 +110,8 @@
 
                         <div class="col-md-6" style="padding:0px;">
                             <div class="col-md-12" style="padding:0px;">
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4"> -->                                
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaEmisionCompra">Emision</label>
                                         <input type="text" id="inputFechaEmisionCompra" name="inputFechaEmisionCompra"class="form-control date-range-filter" data-date-format="yyyy-mm-dd" autocomplete="off">
@@ -120,7 +121,8 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4"> -->                                
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaPagoCompra"><span style="color: red;"> * </span>Fecha Vto del cobro</label>
                                         <input type="text" id="inputFechaPagoCompra" name="inputFechaPagoCompra" class="form-control date-range-filter" data-date-format="yyyy-mm-dd" autocomplete="off">
@@ -130,7 +132,7 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4">                                
                                     <div class="form-group label-floating has-feedback"> 
                                         <label class="control-label" for="selectTipoFact"><span style="color: red;"> * </span>Tipo</label>
                                         <select name="selectTipoFactCompra" id="selectTipoFactCompra" class="select-full" required>
@@ -148,7 +150,7 @@
                                             * Debe seleccionar una opci&oacute;n
                                         </div>   
                                     </div>                                       
-                                </div>
+                                </div> -->
                             </div>              
 
                             <div class="col-md-12">                              

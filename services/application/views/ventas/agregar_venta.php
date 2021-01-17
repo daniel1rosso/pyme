@@ -101,7 +101,7 @@
                                         <label class="control-label" for="selectProductos">Productos</label>
                                         <select name="selectProductos" id="selectProductos" class="select-full" required>
                                             <option value="0">Seleccionar producto</option>
-                                            <option value="addProdNew">Agregar Producto</option>
+                                            <!-- <option value="addProdNew">Agregar Producto</option> -->
                                             <?php
                                             if (isset($productos)) :
                                                 for ($i = 0; $i < count($productos); $i++) :
@@ -124,7 +124,8 @@
 
                         <div class="col-md-6" style="padding:0px;">
                             <div class="col-md-12" style="padding:0px;">
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4"> -->                                
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaEmision">Emision</label>
                                         <input type="text" id="inputFechaEmision" class="form-control date-range-filter" data-date-format="yyyy-mm-dd" autocomplete="off">
@@ -134,7 +135,8 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
+                                <!-- <div class="col-md-4"> -->                                
+                                <div class="col-md-6">                                
                                     <div class="form-group label-floating has-feedback">     
                                         <label class="control-label" for="inputFechaCobroVenta">Fecha Vto del cobro</label>
                                         <input type="text" id="inputFechaCobroVenta" class="form-control date-range-filter" data-date-format="yyyy-mm-dd" autocomplete="off">
@@ -144,25 +146,25 @@
                                         </div>   
                                     </div>                                        
                                 </div>
-                                <div class="col-md-4">                                
-                                    <div class="form-group label-floating has-feedback"> 
+                                <!-- <div class="col-md-4">    -->                             
+                                    <!-- <div class="form-group label-floating has-feedback"> 
                                         <label class="control-label" for="selectTipoFact"><span style="color: red;"> * </span>Tipo</label>
                                         <select name="selectTipoFact" id="selectTipoFact" class="select-full" required>
                                             <option value="0">Seleccionar tipo</option>
                                             <?php
-                                            if (isset($facturaTipos)) :
+                                            /* if (isset($facturaTipos)) :
                                                 for ($i = 0; $i < count($facturaTipos); $i++) :
                                                     echo '<option value="' . $facturaTipos[$i]['idTipoFactura'] . '">' . $facturaTipos[$i]['descripcion'] . '</option>';
                                                 endfor;
-                                            endif;
+                                            endif; */
                                             ?>         
                                         </select>                                               
 
                                         <div id="errorselectTipoFact" class="btn-danger erroBoxs" style="display: none">
                                             * Debe seleccionar una opci&oacute;n
                                         </div>   
-                                    </div>                                       
-                                </div>
+                                    </div>    -->                                    
+                                <!-- </div> -->
                             </div>              
 
                             <!--                            <div id="boxAbono" style="display: none">
