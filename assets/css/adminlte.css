@@ -5965,7 +5965,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .modal {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 1050;
