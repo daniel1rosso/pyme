@@ -13,7 +13,7 @@
 
 <!-- fin los viejos -->
 
-
+<link href="<?= $url ?>assets/css/estilos.css" rel="stylesheet">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <link href="<?= $url ?>assets/css/bootstrap-admin.min.css" rel="stylesheet" type="text/css">
         <link href="<?= $url ?>assets/css/londinium-theme_admin.css" rel="stylesheet" type="text/css">
@@ -25,7 +25,7 @@
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.css" rel="stylesheet">
         <link href="<?= $url ?>assets/css/weather_icons/css/weather-icons.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
-        <link href="<?= $url ?>assets/css/estilos.css" rel="stylesheet">
+        
         <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 

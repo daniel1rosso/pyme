@@ -77,7 +77,7 @@
 						Bienvenido
 					</span>
 					<span class="login100-form-title p-b-48" style="padding:0">
-						<img src="<?=$url?>assets/images/ejemplo.png" style="width:70%">
+						<img src="<?=$url?>assets/images/logoPanda/panda.png" style="width:70%">
 					</span>
 
 					<div class="wrap-input100 validate-input  <?php echo (isset($user)) ? 'has-feedback' : 'has-feedback has-error'; ?>" data-validate = "Valid email is: a@b.c">
@@ -133,7 +133,7 @@
         <footer class="footer clearfix fooerLogin" id="footerTSoft">
             <div class="text-center">
                 <a href="#" target="_blank" style="text-decoration:none;">
-                    <img id="logoFooterCR" src="<?=$url?>assets/images/logoTs/x64/64-ST-SB.png">
+                    <img id="logoFooterCR" src="<?=$url?>assets/images/logoRed/redhot.png">
                     <strong>Red Hot Chili Devs</strong> 
                 </a>
                 Copyright &#169; <?=$anioFooter?> </a>

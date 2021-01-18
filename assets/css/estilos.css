@@ -1,3 +1,17 @@
 li{list-style:none}
 
 .panel-title{font-size:20px;}
+
+.modal-backdrop{
+
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 0;
+    height: 0;
+    background-color: #000;
+}
+.modal-backdrop.show{
+    opacity: 0;
+}

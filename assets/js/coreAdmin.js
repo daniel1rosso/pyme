@@ -9076,7 +9076,7 @@
                      $('#selectIvaCompra_formProducto').val(0).trigger('change');
                      $('#selectControlStock_formProducto').val("select").trigger('change');
                      $('#selectProductoEcommerce_formDatosProducto').val(dato['producto'][0]['ecommerce']).trigger('change');
-                     $("#modal-nuevo-producto").modal("show");
+                    // $("#modal-nuevo-producto").modal("show");
                      //--- CARGO DATOS ---//
                      $('#selectProveedor_formProducto').val(dato['producto'][0]['idProveedor']).trigger('change');
                      $('#selectEstado_formProducto').val(dato['producto'][0]['activo']).trigger('change');
@@ -15480,7 +15480,7 @@ e-listado-cte-proveedores-informe').val();
 
  //--- Abrir el modal para registrar un nuevo producto ---//
  function open_new_product() {
-     $("#modal-nuevo-producto").modal("show");
+   //  $("#modal-nuevo-producto").modal("show");
  }
  //--- Fin Abrir el modal para registrar un nuevo producto ---//
 

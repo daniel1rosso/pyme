@@ -21,7 +21,7 @@
 
     <!-- Info blocks -->
     <div class="row">
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-3 col-6 target">
     <div class="small-box bg-info">
               <div class="inner">
                 <h3><?=$totClientes?></h3>
@@ -34,8 +34,9 @@
               <a href="<?=$url?>clientes/listar_clientes" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
+            
             <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
+    <div class="small-box bg-success">
               <div class="inner">
                 <h3><?=$totProveedores?></h3>
 
@@ -48,7 +49,7 @@
             </div>
             </div>
 
-            <div class="col-lg-3 col-6">
+    <div class="col-lg-3 col-6">
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3><?=$totProductos?></h3>
@@ -73,33 +74,14 @@
                 <i class="fas fa-user"></i>
               </div>
               <a href="<?=$url?>usuarios/listar_usuarios" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-            </div>
-
-
-      </div>
-
-
-      <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Area Chart</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="chart">
-                  <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                </div>
-              </div>
-              <!-- /.card-body -->
             </div>
+            </div>
+
+      
+
+
+    
     <!-- /info blocks -->
 
     <div class="row">
