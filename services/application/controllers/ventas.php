@@ -51,11 +51,11 @@ class Ventas extends MY_Controller
                 }
 
                 //--- Opcion de facturacion ---//
-                if ($facturaIdIngreso) {
+                /* if ($facturaIdIngreso) {
                     $factura = '<li><a href="#" onclick=""><i class="icon-binoculars"></i> Ver Factura</a></li>';
                 } else {
                     $factura = '<li><a href="#" onclick=""><i class="fas fa-file-invoice-dollar fa-lg"></i> Facturar Venta</a></li>';
-                }
+                } */
 
                 $idGenIngreso = "'" . $value['idGenIngreso'] . "'";
                 if ($userdata['idUsuario'] != 28 && $userdata['idUsuario'] != 29) {
@@ -64,7 +64,7 @@ class Ventas extends MY_Controller
                             '<li><a href="' . base_url() . 'remitos/agregar_remito/' . $value['idGenIngreso'] . '"><i class="icon-newspaper"></i> Crear remito</a></li>' .
                             '<li><a onclick="llenado_tabla_cta_cte_clientes(' . $value['idCliente'] . ')" ><i class="icon-clipboard"></i> Cta Cte</a></li>' .
                             '<li class="divider"></li>' .
-                            $factura .
+                            /* $factura . */
                             '<li><a href="#" onclick="verComprobantesPagos(' . $idGenIngreso . ')"><i class="icon-binoculars"></i> Comprobantes</a></li>' .
                             '<li><a href="' . base_url() . 'notas_credito_debito/nota_credito_debito_venta/' . $value['idGenIngreso'] . '"><i class="icon-binoculars"></i> Detalle</a></li>' .
                             '<li><a href="#" onclick="generarPdfDetalleVenta(' . $idGenIngreso . ')"><i class="icon-binoculars"></i> Ver detalle</a></li>' .
@@ -342,6 +342,7 @@ class Ventas extends MY_Controller
         header('Access-Control-Allow-Credentials: true');
 
         $msg = "";
+        $empresa = $this->app_model->get_empresas();
         $ingreso = $this->app_model->get_ingreso_clientes_by_idGenIngreso($idGenIngreso);
         if (!$ingreso){
             $ingreso = $this->app_model->get_ingreso_clientes_sindatosfacturacion_by_idGenIngreso($idGenIngreso);
