@@ -1320,11 +1320,11 @@
                                      }
 
                                      //--- Opcion de facturacion ---//
-                                     if (facturaIdIngreso) {
+                                     /* if (facturaIdIngreso) {
                                          factura = '<li><a href="#" onclick=""><i class="icon-binoculars"></i> Ver Factura</a></li>';
                                      } else {
                                          factura = '<li><a href="#" onclick=""><i class="fas fa-file-invoice-dollar fa-lg"></i> Facturar Venta</a></li>';
-                                     }
+                                     } */
 
                                      idGenIngreso = "'" + dato['ingreso'][0]['idGenIngreso'] + "'";
                                      if (dato['ingreso'][0]['idUsuario'] != 28 && dato['ingreso'][0]['idUsuario'] != 29) {
@@ -1333,7 +1333,7 @@
                                              '<li><a href="' + URL + 'remitos/agregar_remito/' + dato['ingreso'][0]['idGenIngreso'] + '"><i class="icon-newspaper"></i> Crear remito</a></li>' +
                                              '<li><a onclick="llenado_tabla_cta_cte_clientes(' + dato['ingreso'][0]['idCliente'] + ')" ><i class="icon-clipboard"></i> Cta Cte</a></li>' +
                                              '<li class="divider"></li>' +
-                                             factura +
+                                             /* factura + */
                                              '<li><a href="#" onclick="verComprobantesPagos(' + idGenIngreso + ')"><i class="icon-binoculars"></i> Comprobantes</a></li>' +
                                              '<li><a href="' + URL + 'notas_credito_debito/nota_credito_debito_venta/' + dato['ingreso'][0]['idGenIngreso'] + '"><i class="icon-binoculars"></i> Detalle</a></li>' +
                                              '<li><a href="#" onclick="generarPdfDetalleVenta(' + idGenIngreso + ')"><i class="icon-binoculars"></i> Ver detalle</a></li>' +
