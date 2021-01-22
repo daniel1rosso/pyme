@@ -3250,7 +3250,7 @@
 </div>
 
 <!-- Modal Producto -->
-<div id="modal-nuevo-producto" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nuevo-producto" class="modal" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:70%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -3260,7 +3260,7 @@
 
             <div class="panel-body">
                 <form id="formDatosProducto" role="form">
-                    <input name="inputIdGenProducto" id="inputIdGenProducto_formProducto" type="hidden">
+                    <input class="text-center" name="inputIdGenProducto" id="inputIdGenProducto_formProducto" type="hidden">
 
                     <div id="paso-1" style="padding-bottom:15px;">
                         <div id="boxCabeceraForm">

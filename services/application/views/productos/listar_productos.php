@@ -120,14 +120,14 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">Nº</th>
-                                        <th>Nombre</th>
-                                        <th>Stock</th>
-                                        <th>Costo</th>
-                                        <th>Precio Venta</th>
-                                        <th>IVA Ventas</th>
-                                        <th>IVA Compras</th>
-                                        <th>Tipo de Producto</th>
-                                        <th>Proveedor</th>
+                                        <th class="text-center">Nombre</th>
+                                        <th class="text-center">Stock</th>
+                                        <th class="text-center">Costo</th>
+                                        <th class="text-center">Precio Venta</th>
+                                        <th class="text-center">IVA Ventas</th>
+                                        <th class="text-center">IVA Compras</th>
+                                        <th class="text-center">Tipo de Producto</th>
+                                        <th class="text-center">Proveedor</th>
                                         <th class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
