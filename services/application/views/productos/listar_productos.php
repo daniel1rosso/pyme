@@ -37,30 +37,30 @@
         <!---->
 
         <div class="col-md-12 input-group" style="margin: 0.5% 0%;">
-            <div class="col-md-4">
+            <div class="col-md-6">
             </div>
-            <div class="col-md-4">
-            </div>
-            <!--CORREGIR RESPONSIVE DE BOTONES-->
-            <div class="col-md-4 input-group" >
-                <?php if ( $empresa[0]['stock'] == 0 ) : ?>
-                <div class="col-md-4" style="float: right;"></div>
-                    <div class="col-md-4 form-actions">
-                        <div class="">
-                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ajustar Stock</button>
-                            <ul class="dropdown-menu icons-left">
-                                <li><a class="tip" data-toggle="modal" onclick="aumentarStock()" ><i class="fas fa-arrow-circle-up"></i> Aumentar Stock</a></li>
-                                <li><a class="tip " data-toggle="modal" onclick="disminuirStock()">  <i class="fas fa-arrow-circle-down"></i>Disminuir Stock</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <div class="form-actions col-md-4" >
+            
+            <div class="col-md-6 ">
+                <div class="form-actions " style="float: right; margin-left:2%;">
                     <a href="#modal-nuevo-producto" onclick="resetFormProducto()" data-toggle="modal" class="btn btn-primary">
                         <i class="icon-plus"></i>
                         Agregar Producto
                     </a>
                 </div>
+
+                <?php if ( $empresa[0]['stock'] == 0 ) : ?>
+                
+                <div class=" form-actions" style="float: right;">
+                    <div style="float: right;">
+                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ajustar Stock</button>
+                        <ul class="dropdown-menu icons-left">
+                            <li><a class="tip" data-toggle="modal" onclick="aumentarStock()" ><i class="fas fa-arrow-circle-up"></i> Aumentar Stock</a></li>
+                            <li><a class="tip " data-toggle="modal" onclick="disminuirStock()">  <i class="fas fa-arrow-circle-down"></i>Disminuir Stock</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
             </div>
     
         </div>
