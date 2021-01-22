@@ -3637,7 +3637,7 @@
             </div>
 
             <div class="modal-footer">
-                <button id="btnAddProducto" class="btn btn-primary btn-raised">Guardar</button>
+                <button id="btnAddProducto" class="btn btn-primary btn-raised" onclick="location.reload()">Guardar</button>
                 <button class="btn btn-warning" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
