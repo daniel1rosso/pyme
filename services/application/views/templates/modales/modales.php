@@ -3254,8 +3254,8 @@
     <div class="modal-dialog" style="min-width:70%;">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title">Producto</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"><i class="icon-pencil3"></i>Producto</h4>
             </div>
 
             <div class="panel-body">
@@ -3267,7 +3267,7 @@
                             <h3>
                                 <small>
                                     <i style="color:#333333;" class="fas fa-id-card" aria-hidden="true"></i>
-                                    DATOS PRODUCTO.
+                                    AGREGAR DATOS DE PRODUCTO
                                 </small>
                             </h3>
                         </div>

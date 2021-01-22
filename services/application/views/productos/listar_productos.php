@@ -128,7 +128,7 @@
                                         <th>IVA Compras</th>
                                         <th>Tipo de Producto</th>
                                         <th>Proveedor</th>
-                                        <th class="text-center col-lg-1">Acciones</th>
+                                        <th class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -138,19 +138,18 @@
                                                 <td class="text-center"><?= $value['idProducto'] ?></td>
                                                 <td class="text-center"><?= $value['nombre'] ?></td>
                                                 <td class="text-center"><?= $value['stock'] ?></td>
-                                                <td class="text-right"><?= "$" . number_format($value['precioCompra'], 2, ",", ".") ?></td>
-                                                <td class="text-right"><?= "$" . number_format($value['precioVenta'], 2, ",", ".") ?></td>
-                                                <td class="text-right"><?= $value['descIvaVentas'] ?></td>
-                                                <td class="text-right"><?= $value['descIvaCompras'] ?></td>
-                                                <td> - </td>
+                                                <td class="text-center"><?= "$" . number_format($value['precioCompra'], 2, ",", ".") ?></td>
+                                                <td class="text-center"><?= "$" . number_format($value['precioVenta'], 2, ",", ".") ?></td>
+                                                <td class="text-center"><?= $value['descIvaVentas'] ?></td>
+                                                <td class="text-center"><?= $value['descIvaCompras'] ?></td>
+                                                <td class="text-center"> - </td>
                                                 <td class="text-center"><?= $value['nombEmpresa'] ?></td>
                                                 <td class="text-center">
                                                     <?php if ($userdata['idUsuario'] != 28 && $userdata['idUsuario'] != 29): ?>                                                    
                                                         <a href="#modal-delete" class="tip delete_producto" role="button" data-id="<?= $value['idGenProducto'] ?>" data-toggle="modal" data-original-title="Eliminar"><i class="icon-remove4"></i></a>
-                                                    <?php endif;
-                                                    ?>                                                        
+                                                    <?php endif?>                                                        
                                                     &nbsp;
-                                                    <a href="#" class="tip edit_producto" data-id="<?= $value['idGenProducto'] ?>" onclick="resetFormProducto()" data-original-title="Editar"><i class="icon-pencil3"></i></a>
+                                                    <a href="#" class="tip edit_producto" data-id="<?= $value['idGenProducto'] ?>" onclick="resetFormProducto()" data-toggle="modal" data-original-title="Editar"><i class="icon-pencil3"></i></a>
                                                 </td>
                                             </tr>				                        
                                         <?php endforeach; ?>
