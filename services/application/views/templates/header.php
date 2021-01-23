@@ -6,11 +6,7 @@
 
     <div class="container-fluid">
 
-        <!--<ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>
-        </ul>-->
+        
         <!--<div class="navbar-wrapper">
             <a class="sidebar-toggle">
                 //<i class="icon-paragraph-justify2"></i>
@@ -65,7 +61,7 @@
                     <i class="far fa-bell fa-2x" ></i>
                     <span class="badge badge-warning navbar-badge" > <?= $cantNotificaciones ?> </span>
                 </a>
-                <div class="popup dropdown-menu dropdown-menu-right">
+                <div class="popup dropdown-menu dropdown-menu-left">
                     <div class="popup-header">
                         <span>Notificaciones de deudas</span>
                     </div>
@@ -114,10 +110,20 @@
                     <li><a href="<?= $url ?>admin/logout"><i class="icon-exit"></i>Cerrar Sesi&oacute;n</a></li>
                 </ul>
             </li>
-        </ul>                       
+        </ul>     
+        <ul class="navbar-nav" style="visibility: hidden; float:right;">
+            <li class="nav-item" style="float:right;">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>                  
     </div>
+
 </nav>
-                            
+<style>
+    @media (max-width: 800px){
+        .nav-item{visibility: visible;}
+    }
+</style>                            
 
 <!-- /navbar -->
 

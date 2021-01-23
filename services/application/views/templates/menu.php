@@ -27,10 +27,10 @@
           <ul  class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 
-            <li class="nav-item menu-open">
-              <a class="nav-link active" onclick="abrirMenuPrincipal();">
-                <i class="nav-icon fas fa-bars" style="padding-top:3px;"></i>
-                <p  style="font-size:125%; color: white;">Menu Principal</p>
+            <li class="nav-item" style="margin-top: 1%;">
+              <a class="nav-link" onclick="abrirMenuPrincipal();">
+                <i class="nav-icon fas fa-bars" style="padding-top:3px; color:#0039FF;"></i>
+                <p  style="font-size:125%; color:#00CBFF; margin-left: 5%;">Menu Principal</p>
               </a>
             </li>
 
@@ -44,10 +44,9 @@
                         echo '<li class="nav-item" style="margin-top: 1%;" >' .
                         ' <a class="nav-link"
                         href="' . $url . $menu[$key]['link'] . '"> ' .
-                        '<i class="' . $menu[$key]['icono'] . ' " style="padding-top:3px; color:black;"></i>'.
-                        '<span class="badge badge-info right">' . '</span>' .
+                        '<i class="' . $menu[$key]['icono'] . ' " style="padding-top:3px; color:#0039FF;"></i>'.
                         '<i class=" fas fa-angle-left right"></i>
-                        <p class="pepe" style="font-size:125%; color:black;"> '. $menu[$key]['nombre'] .'</p>                    
+                        <p style="font-size:125%; color:#00CBFF; margin-left: 5%;"> '. $menu[$key]['nombre'] .'</p>                    
                         </a>';
                               
                           for ($j = 0; $j < count($menu); $j++) {
