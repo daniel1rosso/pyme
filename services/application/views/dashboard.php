@@ -1,5 +1,5 @@
 <!-- Page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" style="padding-left: 1%;">
 
     <div class="page-header">
         <div class="page-title">
