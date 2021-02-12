@@ -73,7 +73,7 @@
                                         <th>Cel</th>
                                         <th>Localidad</th>
                                         <th>Provincia</th>
-                                        <th class="text-center col-lg-2">Acciones</th>
+                                        <th class="">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>

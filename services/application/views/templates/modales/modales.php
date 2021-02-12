@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<!-- Modal Eliminar -->
+<!-- Modal Eliminar 
 <div id="modal-delete" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -38,6 +38,8 @@
         </div>
     </div>
 </div>
+
+-->
 
 <!-- Modal Exitoso -->
 <div id="modal-exitoso" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
