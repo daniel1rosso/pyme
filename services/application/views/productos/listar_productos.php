@@ -42,7 +42,7 @@
             
             <div class="col-md-6 ">
                 <div class="form-actions " style="float: right; margin-left:2%;">
-                    <a href="#modal-nuevo-producto" onclick="resetFormProducto()" data-toggle="modal" class="btn btn-primary">
+                    <a onclick="agregarProducto()" class="btn btn-primary">
                         <i class="icon-plus"></i>
                         Agregar Producto
                     </a>
@@ -72,7 +72,7 @@
                         <span>
                             Unidades en Stock
                         </span>
-                        <h2><?= $totStock ?></h2>
+                        <h2><span id="stock_listado_producto" name="stock_listado_product" style="font-size: larger;"><?= $totStock ?></span></h2>
                     </div>
                 </li>
                 <li class="bg-danger text-center" style="margin: 0% 5%;">
@@ -84,7 +84,7 @@
                                 <i class="fas fa-question-circle"></i>
                             </a>
                         </span>
-                        <h2>$<?= number_format($costoTotal, 2, ',', '.') ?></h2>
+                        <h2><span id="valor_costo_total_listado_producto" name="valor_costo_total_listado_producto" style="font-size: larger;">$<?= number_format($costoTotal, 2, ',', '.') ?></span></h2>
                     </div>
                 </li>
                 <li class="bg-success text-center" style="margin: 0% 5%;">
@@ -96,7 +96,7 @@
                                 <i class="fas fa-question-circle"></i>
                             </a>                        
                         </span>
-                        <h2>$<?= number_format($valorVentaTotal, 2, ',', '.') ?></h2>
+                        <h2><span id="valor_venta_total_listado_producto" name="valor_venta_total_listado_producto" style="font-size: larger;">$<?= number_format($valorVentaTotal, 2, ',', '.') ?></span></h2>
                     </div>
                 </li>
             </ul>        
@@ -128,9 +128,9 @@
                                         <th class="text-center">Stock</th>
                                         <th class="text-center">Costo</th>
                                         <th class="text-center">Precio Venta</th>
-                                        <th class="text-center">IVA Ventas</th>
+                                        <!-- <th class="text-center">IVA Ventas</th>
                                         <th class="text-center">IVA Compras</th>
-                                        <th class="text-center">Tipo de Producto</th>
+                                        <th class="text-center">Tipo de Producto</th> -->
                                         <th class="text-center">Proveedor</th>
                                         <th class="text-center">Acciones</th>
                                     </tr>
@@ -144,16 +144,13 @@
                                                 <td class="text-center"><?= $value['stock'] ?></td>
                                                 <td class="text-center"><?= "$" . number_format($value['precioCompra'], 2, ",", ".") ?></td>
                                                 <td class="text-center"><?= "$" . number_format($value['precioVenta'], 2, ",", ".") ?></td>
-                                                <td class="text-center"><?= $value['descIvaVentas'] ?></td>
-                                                <td class="text-center"><?= $value['descIvaCompras'] ?></td>
-                                                <td class="text-center"> - </td>
                                                 <td class="text-center"><?= $value['nombEmpresa'] ?></td>
                                                 <td class="text-center">
-                                                    <?php if ($userdata['idUsuario'] != 28 && $userdata['idUsuario'] != 29): ?>                                                    
-                                                        <a href="#modal-delete" class="tip delete_producto" role="button" data-id="<?= $value['idGenProducto'] ?>" data-toggle="modal" data-original-title="Eliminar"><i class="icon-remove4"></i></a>
+                                                    <?php if ($userdata['idUsuario'] != 28 && $userdata['idUsuario'] != 29): ?>                               
+                                                        <a onclick="eliminar_producto('<?=$value['idGenProducto']?>')" style="color:#339AF0"><i class="icon-remove4"></i></a>
                                                     <?php endif?>                                                        
                                                     &nbsp;
-                                                    <a href="#" class="tip edit_producto" data-id="<?= $value['idGenProducto'] ?>" onclick="resetFormProducto()" data-toggle="modal" data-original-title="Editar"><i class="icon-pencil3"></i></a>
+                                                    <a onclick="updateProducto('<?= $value['idGenProducto'] ?>')" style="color:#339AF0"><i class="icon-pencil3"></i></a>
                                                 </td>
                                             </tr>				                        
                                         <?php endforeach; ?>

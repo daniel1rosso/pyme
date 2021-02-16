@@ -86,6 +86,26 @@ class Proveedores extends MY_Controller {
         echo json_encode($dato);
     }
 
+    public function get_proveedores() {
+        header("Access-Control-Allow-Origin: *");
+        header('Access-Control-Allow-Credentials: true');
+
+        $msg = "";
+
+        //--- Obtenemos los datos de los proveedores ---//
+        $proveedores = $this->app_model->get_proveedores();
+
+        if ($proveedores) {
+            $msg = "Ok";
+            $dato = array("valid" => true, "msg" => $msg, "proveedores" => $proveedores);
+        } else {
+            $msg = "Error al obtener datos de los proveedores, vuelva a intentarlo";
+            $dato = array("valid" => false, "msg" => $msg);
+        }
+
+        echo json_encode($dato);
+    }
+
     public function set_proveedor() {
         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Credentials: true');

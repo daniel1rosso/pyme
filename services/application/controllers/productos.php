@@ -32,8 +32,8 @@ class Productos extends MY_Controller {
                 $this->data['productos'][$key]['stock'] = $value['stock'];
                 $this->data['productos'][$key]['precioCompra'] = $value['precioCompra'];
                 $this->data['productos'][$key]['precioVenta'] = $value['precioVenta'];
-                $this->data['productos'][$key]['descIvaVentas'] = $value['descIvaVentas'];
-                $this->data['productos'][$key]['descIvaCompras'] = $value['descIvaCompras'];
+                /* $this->data['productos'][$key]['descIvaVentas'] = $value['descIvaVentas'];
+                $this->data['productos'][$key]['descIvaCompras'] = $value['descIvaCompras']; */
                 $this->data['productos'][$key]['nombEmpresa'] = $value['nombEmpresa'];
 
                 //Total Stock
@@ -51,7 +51,7 @@ class Productos extends MY_Controller {
         $this->data['costoTotal'] = $costoTotal;
         $this->data['valorVentaTotal'] = $valorVentaTotal;
         $this->data['empresa'] = $empresa;
-        $this->data['configuracion_ecommerce'] = $this->app_model->get_configuracion_ecommerce();
+        /* $this->data['configuracion_ecommerce'] = $this->app_model->get_configuracion_ecommerce(); */
 
         $this->load_view('productos/listar_productos', $this->data);
     }
@@ -64,10 +64,13 @@ class Productos extends MY_Controller {
         $msg = "";
 
         if (!empty($idGenProducto)) {
+            
+            $proveedores = $this->app_model->get_proveedores();
             $producto = $this->app_model->get_info_producto_byIdGen($idGenProducto);
+            
             if ($producto) {
                 $msg = "Ok";
-                $dato = array("valid" => true, "msg" => $msg, "producto" => $producto);
+                $dato = array("valid" => true, "msg" => $msg, "producto" => $producto, "proveedores" => $proveedores);
             } else {
                 $msg = "Error al obtener datos";
                 $dato = array("valid" => false, "msg" => $msg);
@@ -93,10 +96,10 @@ class Productos extends MY_Controller {
             $inputDescripcion = $this->input->post('inputDescripcion', true);
             $selectEstado = $this->input->post('selectEstado', true);
             $inputPrecioVenta = $this->input->post('inputPrecioVenta', true);
-            $selectIvaVenta = $this->input->post('selectIvaVenta', true);
             $inputPrecioCompra = $this->input->post('inputPrecioCompra', true);
+            $selectControlStock = $this->input->post('selectControlStock', true);
+            $selectIvaVenta = $this->input->post('selectIvaVenta', true);
             $selectIvaCompra = $this->input->post('selectIvaCompra', true);
-            $selectControlStock = $this->input->post('selectControlStock_formProducto', true);
             $productoEcommerce = $this->input->post('selectProductoEcommerce_formDatosProducto', true);
             $porcentajeDescuento = $this->input->post('inputPorcentajeDescuento_formProducto', true);
 
@@ -117,7 +120,7 @@ class Productos extends MY_Controller {
                 $dato = array("valid" => false, "msg" => $msg);
             } else {
                 //--- Guardo Imagen - Producto ---//
-                if (!empty($_FILES['file']['name'])) {
+                /* if (!empty($_FILES['file']['name'])) {
                     if (!file_exists('./uploads/productos/' . $idGenProducto)) {
                         mkdir('./uploads/productos/' . $idGenProducto, 0777, true);
                     }
@@ -158,7 +161,7 @@ class Productos extends MY_Controller {
                     }
 
                     $insert_img_producto = $this->app_model->insert_img_producto($idGenProducto, $nombreImg);
-                }
+                } */
 
                 //--- Guardo - Producto ---//
                 $result_insert_producto = $this->app_model->insert_producto(
@@ -199,7 +202,7 @@ class Productos extends MY_Controller {
             $msg = "No hay post";
             $dato = array("valid" => false, "msg" => $msg);
         }
-
+        
         echo json_encode($dato);
     }
 
@@ -245,7 +248,7 @@ class Productos extends MY_Controller {
                     $iva_tipos = $this->app_model->get_iva_tipos();
                     if ($producto) {
                         $msg = "Registro agregado";
-                        $dato = array("valid" => true, "msg" => $msg, "producto" => $producto, "iva_tipos" => $iva_tipos);
+                        $dato = array("valid" => true, "msg" => $msg, "producto" => $producto, "iva_tipos" => $iva_tipos, "idUsuario" => $idUsuario);
                     } else {
                         $msg = "Producto no encontrado";
                         $dato = array("valid" => false, "msg" => $msg);
@@ -269,7 +272,7 @@ class Productos extends MY_Controller {
 
         //--- Guardo ---//
         if ($_POST) {
-            $idGenProducto = $this->input->post('inputIdGenProducto', true);
+            $idGenProducto = $this->input->post('idGenProducto', true);
             $inputNombre = $this->input->post('inputNombre', true);
             $inputCodigo = $this->input->post('inputCodigo', true);
             $selectProveedor = $this->input->post('selectProveedor', true);
@@ -277,10 +280,10 @@ class Productos extends MY_Controller {
             $inputDescripcion = $this->input->post('inputDescripcion', true);
             $selectEstado = $this->input->post('selectEstado', true);
             $inputPrecioVenta = $this->input->post('inputPrecioVenta', true);
-            $selectIvaVenta = $this->input->post('selectIvaVenta', true);
             $inputPrecioCompra = $this->input->post('inputPrecioCompra', true);
+            $selectControlStock = $this->input->post('selectControlStock', true);
+            $selectIvaVenta = $this->input->post('selectIvaVenta', true);
             $selectIvaCompra = $this->input->post('selectIvaCompra', true);
-            $selectControlStock = $this->input->post('selectControlStock_formProducto', true);
             $productoEcommerce = $this->input->post('selectProductoEcommerce_formDatosProducto', true);
             $porcentajeDescuento = $this->input->post('inputPorcentajeDescuento_formProducto', true);
 
@@ -288,16 +291,12 @@ class Productos extends MY_Controller {
             $idUsuario = $userdata['idUsuario'];
 
             if (
-                    ! empty($idGenProducto)
-                    AND ! empty($inputNombre)
-                    AND ! empty($inputCodigo)
-                    AND ! isset($selectProveedor)
-                    AND ! empty($inputStock)
-                    AND ! empty($inputDescripcion)
-                    AND ! empty($inputPrecioVenta)
-                    AND ! isset($selectIvaVenta)
-                    AND ! empty($inputPrecioCompra)
-                    AND ! isset($selectIvaCompra)
+                    ! empty($inputNombre) AND
+                    ! empty($inputCodigo) AND ! isset($selectProveedor) AND
+                    ! empty($inputStock) AND
+                    ! empty($inputDescripcion) AND ! isset($selectEstado) AND
+                    ! empty($inputPrecioVenta) AND ! isset($selectIvaVenta) AND
+                    ! empty($inputPrecioCompra) AND ! isset($selectIvaCompra) AND ! isset($selectControlStock)
             ) {
                 $msg = "Datos vacios";
                 $dato = array("valid" => false, "msg" => $msg);
@@ -307,7 +306,7 @@ class Productos extends MY_Controller {
                 $producto_datos_anterior = $this->app_model->get_productos_byIdGen($idGenProducto);
                 
                 //--- Guardo Imagen - Producto ---//
-                if (!empty($_FILES['file']['name'])) {
+                /* if (!empty($_FILES['file']['name'])) {
                     if (!file_exists('./uploads/productos/' . $idGenProducto)) {
                         mkdir('./uploads/productos/' . $idGenProducto, 0777, true);
                     }
@@ -348,11 +347,11 @@ class Productos extends MY_Controller {
                     }
 
                     $insert_img_producto = $this->app_model->insert_img_producto($idGenProducto, $nombreImg);
-                }
+                } */
 
                 //--- Actualizo - Producto ---//
                 $result_update_producto = $this->app_model->update_producto(
-                        $idGenProducto, $idUsuario, $inputNombre, $inputCodigo, $selectProveedor, $inputStock, $inputDescripcion, $selectEstado, $inputPrecioVenta, $selectIvaVenta, $inputPrecioCompra, $selectIvaCompra, $selectControlStock, $productoEcommerce, $porcentajeDescuento
+                        $idGenProducto, $idUsuario, $inputNombre, $inputCodigo, $selectProveedor, $inputStock, $inputDescripcion, $selectEstado, floatval($inputPrecioVenta), $selectIvaVenta, floatval($inputPrecioCompra), $selectIvaCompra, $selectControlStock, $productoEcommerce, $porcentajeDescuento
                 );
 
                 //--- Guardo - Historico precio ---//
@@ -372,6 +371,7 @@ class Productos extends MY_Controller {
                 (($m < 10) ? $m = "0" . $m : $m);
                 $y = $hoy['year'];
                 $fecha = $d . "-" . $m . "-" . $y;
+                
                 if ($producto_datos_anterior[0]['stock'] >= $inputStock) {
                     $diferencia = $producto_datos_anterior[0]['stock'] - $inputStock;
                     $movimiento_stock = $this->app_model->update_movimiento_stock($idGenProducto, $idGenProducto, 1, $diferencia, "Se actualizo el producto", 1, $idUsuario, $fecha);
@@ -388,7 +388,7 @@ class Productos extends MY_Controller {
                     }
                 } else {
                     $msg = "Error al actualizar registro";
-                    $dato = array("valid" => false, "msg" => $msg, "productoEcommerce" => $productoEcommerce);
+                    $dato = array("valid" => false, "msg" => $msg);
                 }
             }
         } else {
@@ -443,7 +443,7 @@ class Productos extends MY_Controller {
 
             if ($result_eliminar_producto && $result_insert_historico) {
                 $msg = "Registro eliminado";
-                $dato = array("valid" => true, "msg" => $msg);
+                $dato = array("valid" => true, "msg" => $msg, "idGenProducto" => $idGenProducto);
             } else {
                 $msg = "Error al eliminar registro";
                 $dato = array("valid" => false, "msg" => $msg);
@@ -491,6 +491,26 @@ class Productos extends MY_Controller {
 
         $productos = $this->app_model->get_productos();
         if ($productos) {
+
+            $totStock = 0;
+            $costoTotal = 0;
+            $subCostoTotal = 0;
+            $valorVentaTotal = 0;
+            $subValorVentaTotal = 0;
+    
+            if ($productos) {
+                foreach ($productos as $key => $value) {
+                    //Total Stock
+                    $totStock = $totStock + $value['stock'];
+                    //precioCompra
+                    $subCostoTotal = $value['stock'] * $value['precioCompra'];
+                    $costoTotal = $costoTotal + $subCostoTotal;
+                    //precioVenta
+                    $subValorVentaTotal = $value['stock'] * $value['precioVenta'];
+                    $valorVentaTotal = $valorVentaTotal + $subValorVentaTotal;
+                }
+            }
+
             $fecha = getdate();
             if ($fecha['mon'] < 10) {
                 $mes = "0" . $fecha['mon'];
@@ -505,7 +525,7 @@ class Productos extends MY_Controller {
 
             $hoy = $fecha['year'] . "-" . $mes . "-" . $dia ;
             $msg = "Ok";
-            $dato = array("valid" => true, "msg" => $msg, "productos" => $productos, "hoy" => $hoy);
+            $dato = array("valid" => true, "msg" => $msg, "productos" => $productos, "hoy" => $hoy, "totStock" => $totStock, "costoTotal" => $costoTotal, "valorVentaTotal" => $valorVentaTotal);
         } else {
             $msg = "No se encontro ningun producto";
             $dato = array("valid" => false, "msg" => $msg);

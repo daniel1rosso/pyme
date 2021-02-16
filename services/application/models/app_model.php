@@ -6532,6 +6532,8 @@ class App_model extends CI_Model
         $this->db->join('proveedores', 'proveedores.idProveedor = productos.idProveedor');
         $this->db->join('iva_tipos as ivaVta', 'ivaVta.idIva = productos.idIvaVta');
         $this->db->join('iva_tipos as ivaCompra', 'ivaCompra.idIva = productos.idIvaCompra');
+        $this->db->where('productos.eliminado', 0);
+        $this->db->where('productos.activo', 1);
         $this->db->from('productos');
         $result = $this->db->get();
 

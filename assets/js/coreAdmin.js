@@ -9076,7 +9076,7 @@
                      $('#selectIvaCompra_formProducto').val(0).trigger('change');
                      $('#selectControlStock_formProducto').val("select").trigger('change');
                      $('#selectProductoEcommerce_formDatosProducto').val(dato['producto'][0]['ecommerce']).trigger('change');
-                    $("#modal-nuevo-producto").modal("show");
+                     $("#modal-nuevo-producto").modal("show");
                      //--- CARGO DATOS ---//
                      $('#selectProveedor_formProducto').val(dato['producto'][0]['idProveedor']).trigger('change');
                      $('#selectEstado_formProducto').val(dato['producto'][0]['activo']).trigger('change');
@@ -9279,9 +9279,9 @@
                              dato['producto'][0]['descIvaCompras'],
                              ' - ',
                              dato['producto'][0]['nombEmpresa'],
-                             '<a href="#modal-delete" class="tip delete_producto" role="button" data-id="' + dato['producto'][0]['idGenProducto'] + '" data-toggle="modal" data-original-title="Eliminar"><i class="icon-remove4"></i></a>' +
+                             '<a onclick="eliminar_producto(' + "'" + dato['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-remove4"></i></a>' +
                              '&nbsp;&nbsp;&nbsp;' +
-                             '<a href="#" class="tip edit_producto" data-id="' + dato['producto'][0]['idGenProducto'] + '" data-original-title="Editar"><i class="icon-pencil3"></i></a>',
+                             '<a onclick="updateProducto(' + "'" + dato['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>',
                          ]).draw(false);
                          row.nodes().to$().attr('id', dato['producto'][0]['idGenProducto']);
                          table.row(row).column(0).nodes().to$().addClass('text-center');
@@ -15216,11 +15216,11 @@ e-listado-cte-proveedores-informe').val();
                                      $("#listadoProductos").dataTable().fnDeleteRow("#" + dato['producto'][0]['idGenProducto']);
 
                                      if (dato['idUsuario'] != 28 && dato['idUsuario'] != 29) {
-                                         var opciones = '<a href="#modal-delete" class="tip delete_producto" role="button" data-id="' + dato['producto'][0]['idGenProducto'] + '" data-toggle="modal" data-original-title="Eliminar"><i class="icon-remove4"></i></a>' +
+                                         var opciones = '<a onclick="eliminar_producto"(' + dato['producto'][0]['idGenProducto'] + '")" style="color:#339AF0"><i class="icon-remove4"></i></a>' +
                                              '&nbsp;' +
-                                             '<a href="#" class="tip edit_producto" data-id="' + dato['producto'][0]['idGenProducto'] + '" onclick="resetFormProducto()" data-original-title="Editar"><i class="icon-pencil3"></i></a>';
+                                             '<a onclick="updateProducto(' + "'" + dato['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>';
                                      } else {
-                                         var opciones = '<a href="#" class="tip edit_producto" data-id="' + dato['producto'][0]['idGenProducto'] + '" onclick="resetFormProducto()" data-original-title="Editar"><i class="icon-pencil3"></i></a>';
+                                         var opciones = '<a onclick="updateProducto(' + "'" + dato['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>';
                                      }
 
                                      var row = tableListadoProductos.row.add([
@@ -15229,29 +15229,26 @@ e-listado-cte-proveedores-informe').val();
                                          dato['producto'][0]['stock'],
                                          "$" + number_format(dato['producto'][0]['precioCompra'], 2, ",", "."),
                                          "$" + number_format(dato['producto'][0]['precioVenta'], 2, ",", "."),
-                                         dato['producto'][0]['descIvaVentas'],
-                                         dato['producto'][0]['descIvaCompras'],
-                                         '-',
                                          dato['producto'][0]['nombEmpresa'],
                                          opciones
                                      ]).draw(false);
+
                                      row.nodes().to$().attr('id', dato['producto'][0]['idGenProducto']);
                                      tableListadoProductos.row(row).column(0).nodes().to$().addClass('text-center');
                                      tableListadoProductos.row(row).column(1).nodes().to$().addClass('text-center');
                                      tableListadoProductos.row(row).column(2).nodes().to$().addClass('text-center');
-                                     tableListadoProductos.row(row).column(3).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(4).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(7).nodes().to$().addClass('text-center');
-                                     tableListadoProductos.row(row).column(8).nodes().to$().addClass('text-center');
-                                     tableListadoProductos.row(row).column(9).nodes().to$().addClass('text-center');
+                                     tableListadoProductos.row(row).column(3).nodes().to$().addClass('text-center');
+                                     tableListadoProductos.row(row).column(4).nodes().to$().addClass('text-center');
+                                     tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-center');
+                                     tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-center');
 
                                      swal(
                                          'Exito',
                                          'Se registro con exito',
                                          'success'
                                      )
+
+                                     return dato.json()
                                  } else {
                                      swal(
                                          'Error',
@@ -15359,11 +15356,11 @@ e-listado-cte-proveedores-informe').val();
                                      $("#listadoProductos").dataTable().fnDeleteRow("#" + dato['producto'][0]['idGenProducto']);
 
                                      if (dato['idUsuario'] != 28 && dato['idUsuario'] != 29) {
-                                         var opciones = '<a href="#modal-delete" class="tip delete_producto" role="button" data-id="' + dato['producto'][0]['idGenProducto'] + '" data-toggle="modal" data-original-title="Eliminar"><i class="icon-remove4"></i></a>' +
+                                         var opciones = '<a onclick="eliminar_producto(' + "'" + dato['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-remove4"></i></a>' +
                                              '&nbsp;' +
-                                             '<a href="#" class="tip edit_producto" data-id="' + dato['producto'][0]['idGenProducto'] + '" onclick="resetFormProducto()" data-original-title="Editar"><i class="icon-pencil3"></i></a>';
+                                             '<a onclick="updateProducto(' + "'" + dato['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>';
                                      } else {
-                                         var opciones = '<a href="#" class="tip edit_producto" data-id="' + dato['producto'][0]['idGenProducto'] + '" onclick="resetFormProducto()" data-original-title="Editar"><i class="icon-pencil3"></i></a>';
+                                         var opciones = '<a onclick="updateProducto(' + "'" + dato['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>';
                                      }
 
                                      var row = tableListadoProductos.row.add([
@@ -15372,30 +15369,26 @@ e-listado-cte-proveedores-informe').val();
                                          dato['producto'][0]['stock'],
                                          "$" + number_format(dato['producto'][0]['precioCompra'], 2, ",", "."),
                                          "$" + number_format(dato['producto'][0]['precioVenta'], 2, ",", "."),
-                                         dato['producto'][0]['descIvaVentas'],
-                                         dato['producto'][0]['descIvaCompras'],
-                                         '-',
                                          dato['producto'][0]['nombEmpresa'],
                                          opciones
                                      ]).draw(false);
+
                                      row.nodes().to$().attr('id', dato['producto'][0]['idGenProducto']);
                                      tableListadoProductos.row(row).column(0).nodes().to$().addClass('text-center');
                                      tableListadoProductos.row(row).column(1).nodes().to$().addClass('text-center');
                                      tableListadoProductos.row(row).column(2).nodes().to$().addClass('text-center');
-                                     tableListadoProductos.row(row).column(3).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(4).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-right');
-                                     tableListadoProductos.row(row).column(7).nodes().to$().addClass('text-center');
-                                     tableListadoProductos.row(row).column(8).nodes().to$().addClass('text-center');
-                                     tableListadoProductos.row(row).column(9).nodes().to$().addClass('text-center');
-                                     modal - nuevo - producto
+                                     tableListadoProductos.row(row).column(3).nodes().to$().addClass('text-center');
+                                     tableListadoProductos.row(row).column(4).nodes().to$().addClass('text-center');
+                                     tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-center');
+                                     tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-center');
 
                                      swal(
                                          'Exito',
                                          'Se registro con exito',
                                          'success'
                                      )
+
+                                     return dato.json()
                                  } else {
                                      swal(
                                          'Error',
@@ -15480,7 +15473,7 @@ e-listado-cte-proveedores-informe').val();
 
  //--- Abrir el modal para registrar un nuevo producto ---//
  function open_new_product() {
-   //  $("#modal-nuevo-producto").modal("show");
+     //  $("#modal-nuevo-producto").modal("show");
  }
  //--- Fin Abrir el modal para registrar un nuevo producto ---//
 
@@ -19996,4 +19989,660 @@ e-listado-cte-proveedores-informe').val();
 
  function abrirMenuPrincipal() {
      location.href = URL + 'dashboard';
+ }
+
+ //--- Agregar Producto - SWAL ---//
+ function agregarProducto() {
+     $.ajax({
+             url: URL + 'proveedores/get_proveedores/',
+             type: 'POST',
+         })
+         .done(function(data) {
+             var dato = JSON.parse(data);
+             ////console.log(dato);
+             if (dato['valid']) {
+                 var opciones = "";
+                 for (var proveedor in dato['proveedores']) {
+                     opciones += '<option value="' + dato['proveedores'][proveedor]['idProveedor'] + '">' + dato['proveedores'][proveedor]['nombEmpresa'] + '</option>'
+                 }
+                 swal({
+                     title: 'Agregar Producto',
+                     html: '' +
+                         '<div id="paso-1" style="padding-bottom:15px;">' +
+                         '<div class="row">' +
+                         '<div class="col-md-6" style="padding:0px;">' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputNombre">' +
+                         '<span style="color: red;"> * </span>' +
+                         'Nombre' +
+                         '</label>' +
+                         '<input id="inputNombre_formAddProducto" name="inputNombre_formAddProducto" type="text" class="swal2-input" value="">' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputCodigo"><span style="color: red;"> * </span>C&oacute;digo</label>' +
+                         '<input name="inputCodigo_formAddProducto" id="inputCodigo_formAddProducto" data-minlength="2" maxlength="25" type="text" class="swal2-input">' +
+                         '<div id="errorInputCodigo_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="selectProveedor"><span style="color: red;"> * </span>Proveedor</label>' +
+                         '<select name="selectProveedor_formAddProducto" id="selectProveedor_formAddProducto" class="swal2-input search select-full" required>' +
+                         '<option value="0">Seleccione un proveedor</option>' +
+                         opciones +
+                         '</select>' +
+                         '<div id="errorSelectProveedor_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe seleccionar una opci&oacute;n' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-6" style="padding:0px;">' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputStock"><span style="color: red;"> * </span>Stock</label>' +
+                         '<input name="inputStock_formAddProducto" id="inputStock_formAddProducto" type="text" class="swal2-input" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)' +
+                         'event.returnValue = false;">' +
+                         '<div id="errorInputStock_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputDescripcion"><span style="color: red;"> * </span>Descripcion</label>' +
+                         '<textarea class="swal2-input" cols="40" id="inputDescripcion_formAddProducto" name="inputDescripcion_formAddProducto" rows="3"></textarea>' +
+                         '<div id="errorInputDescripcion_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="selectEstado">' +
+                         'Estado' +
+                         '</label>' +
+                         '<select name="selectEstado_formAddProducto" id="selectEstado_formAddProducto" class="swal2-input search select-full" required>' +
+                         '<option selected="selected" value="1">Activo</option>' +
+                         '<option value="0">Inactivo</option>' +
+                         '</select>' +
+                         '<div id="errorSelectEstado_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="selectControlStock">' +
+                         'Control de stock' +
+                         '</label>' +
+                         '<select name="selectControlStock_formAddProducto" id="selectControlStock_formAddProducto" class="swal2-input search select-full" required>' +
+                         '<option selected="selected" value="0">Si</option>' +
+                         '<option value="1">No</option>' +
+                         '</select>' +
+                         '<div id="errorSelectControlStock_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe seleccionar alguna de las opciones correctas.' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div id="paso-2">' +
+                         '<div class="row">' +
+                         '<div class="col-md-6" style="padding:0px;">' +
+                         '<div class="col-md-12">' +
+                         '<h2>' +
+                         '<small>' +
+                         '<i style="color:#333333;padding-right: 2%;" class="fas fa-cart-plus" aria-hidden="true"></i>' +
+                         'COMPRAS.' +
+                         '</small>' +
+                         '</h2>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputPrecioCompra">' +
+                         '<span style="color: red;"> * </span>' +
+                         'Costo' +
+                         '</label>' +
+                         '<div class="input-group">' +
+                         '<input name="inputPrecioCompra_formAddProducto" id="inputPrecioCompra_formAddProducto" type="text" class="swal2-input" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)' +
+                         'event.returnValue = false;">' +
+                         '</div>' +
+                         '<div id="errorInputPrecioCompra_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-6" style="padding:0px;border-left-style: dotted;">' +
+                         '<div class="col-md-12">' +
+                         '<h2>' +
+                         '<small>' +
+                         '<i style="color:#333333;padding-right: 2%;" class="fas fa-shopping-cart" aria-hidden="true"></i>' +
+                         'VENTAS.' +
+                         '</small>' +
+                         '</h2>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputPrecioVenta">' +
+                         '<span style="color: red;"> * </span>' +
+                         'Precio Venta' +
+                         '</label>' +
+                         '<div class="input-group">' +
+                         '<input name="inputPrecioVenta_formAddProducto" id="inputPrecioVenta_formAddProducto" type="text" class="swal2-input" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)' +
+                         'event.returnValue = false;">' +
+                         '</div>' +
+                         '<div id="errorInputPrecioVenta_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>',
+                     text: "Agregar Producto",
+                     width: '900px',
+                     showCancelButton: true,
+                     confirmButtonText: 'Agregar Producto',
+                     showLoaderOnConfirm: true,
+                     preConfirm: (login) => {
+                         var inputNombre_formAddProducto = $('#inputNombre_formAddProducto').val();
+                         var inputStock = $('#inputStock_formAddProducto').val();
+                         var inputCodigo = $('#inputCodigo_formAddProducto').val();
+                         var inputDescripcion = $('#inputDescripcion_formAddProducto').val();
+                         var selectProveedor = $('#selectProveedor_formAddProducto').val();
+                         var selectEstado = $('#selectEstado_formAddProducto').val();
+                         var selectControlStock = $('#selectControlStock_formAddProducto').val();
+                         var inputPrecioCompra = $('#inputPrecioCompra_formAddProducto').val();
+                         var inputPrecioVenta = $('#inputPrecioVenta_formAddProducto').val();
+
+                         $.ajax({
+                                 url: URL + 'productos/set_producto/',
+                                 type: 'POST',
+                                 data: {
+                                     inputNombre: inputNombre_formAddProducto,
+                                     inputStock: inputStock,
+                                     inputCodigo: inputCodigo,
+                                     inputDescripcion: inputDescripcion,
+                                     selectProveedor: selectProveedor,
+                                     selectEstado: selectEstado,
+                                     selectControlStock: selectControlStock,
+                                     inputPrecioCompra: inputPrecioCompra,
+                                     inputPrecioVenta: inputPrecioVenta,
+                                     selectIvaVenta: 0,
+                                     selectIvaCompra: 0,
+                                     selectProductoEcommerce_formDatosProducto: 0,
+                                     inputPorcentajeDescuento_formProducto: 0
+                                 }
+                             })
+                             .then(response => {
+
+
+                                 var response = JSON.parse(response);
+
+                                 //console.log(response);
+
+                                 var tableListadoProductos = $('#listadoProductos').DataTable();
+
+                                 $("#listadoProductos").dataTable().fnDeleteRow("#" + response['producto'][0]['idGenProducto']);
+
+                                 if (response['idUsuario'] != 28 && response['idUsuario'] != 29) {
+                                     var opciones = '<a onclick="eliminar_producto(' + "'" + response['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-remove4"></i></a>' +
+                                         '&nbsp;' +
+                                         '<a onclick="updateProducto(' + "'" + response['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>'
+                                 } else {
+                                     var opciones = '<a onclick="updateProducto(' + "'" + response['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>';
+                                 }
+
+                                 var row = tableListadoProductos.row.add([
+                                     response['producto'][0]['idProducto'],
+                                     response['producto'][0]['nombre'],
+                                     response['producto'][0]['stock'],
+                                     "$" + number_format(response['producto'][0]['precioCompra'], 2, ",", "."),
+                                     "$" + number_format(response['producto'][0]['precioVenta'], 2, ",", "."),
+                                     response['producto'][0]['nombEmpresa'],
+                                     opciones
+                                 ]).draw(false);
+                                 row.nodes().to$().attr('id', response['producto'][0]['idGenProducto']);
+                                 tableListadoProductos.row(row).column(0).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(1).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(2).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(3).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(4).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-center');
+
+                                 $.ajax({
+                                         url: URL + 'productos/get_productos/',
+                                         type: 'POST',
+                                     })
+                                     .then(data => {
+
+                                         var dato = JSON.parse(data);
+
+                                         document.getElementById('stock_listado_producto').innerHTML = dato['totStock'];
+                                         document.getElementById('valor_costo_total_listado_producto').innerHTML = "$" + number_format(dato['costoTotal'], 2, ",", ".");
+                                         document.getElementById('valor_venta_total_listado_producto').innerHTML = "$" + number_format(dato['valorVentaTotal'], 2, ",", ".");
+
+                                         swal(
+                                             'Producto',
+                                             'Se registro un nuevo producto con exito',
+                                             'success'
+                                         )
+                                     })
+                                     .catch(error => {
+                                         console.log(error);
+                                         swal(
+                                             'Producto',
+                                             'Se produjo un error, vuelva a intentarlo',
+                                             'error'
+                                         )
+                                     })
+
+                                 return response.json()
+                             })
+                             .catch(error => {
+                                 console.log(error);
+                                 swal(
+                                     'Producto',
+                                     'Se produjo un error, vuelva a intentarlo',
+                                     'error'
+                                 )
+                             })
+                     },
+                     allowOutsideClick: () => !swal.isLoading()
+                 })
+             } else {
+                 swal(
+                     'Error',
+                     "Se produjo un error al obtener los datos de los productos, vuelva a intentarlo.",
+                     'error'
+                 )
+             }
+         })
+         .fail(function(data) {
+             swal(
+                 'Error',
+                 "Se produjo un error al obtener los datos de los proveedores, vuelva a intentarlo.",
+                 'error'
+             )
+         });
+ }
+
+ //--- Modificar Producto - SWAL ---//
+ function updateProducto(idGenProducto) {
+     $.ajax({
+             url: URL + 'productos/get_info_producto/',
+             type: 'POST',
+             data: {
+                 id: idGenProducto,
+             }
+         })
+         .done(function(data) {
+             var dato = JSON.parse(data);
+             ////console.log(dato);
+             if (dato['valid']) {
+                 var opciones = "";
+                 for (var proveedor in dato['proveedores']) {
+                     if (dato['producto'][0]['idProveedor'] == dato['proveedores'][proveedor]['idProveedor']) {
+                         opciones += '<option selected="selected" value="' + dato['proveedores'][proveedor]['idProveedor'] + '">' + dato['proveedores'][proveedor]['nombEmpresa'] + '</option>'
+                     } else {
+                         opciones += '<option value="' + dato['proveedores'][proveedor]['idProveedor'] + '">' + dato['proveedores'][proveedor]['nombEmpresa'] + '</option>'
+                     }
+                 }
+                 swal({
+                     title: 'Agregar Producto',
+                     html: '' +
+                         '<div id="paso-1" style="padding-bottom:15px;">' +
+                         '<div class="row">' +
+                         '<div class="col-md-6" style="padding:0px;">' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputNombre">' +
+                         '<span style="color: red;"> * </span>' +
+                         'Nombre' +
+                         '</label>' +
+                         '<input id="inputNombre_formAddProducto" name="inputNombre_formAddProducto" type="text" class="swal2-input" value="' + dato['producto'][0]['nombre'] + '">' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputCodigo"><span style="color: red;"> * </span>C&oacute;digo</label>' +
+                         '<input name="inputCodigo_formAddProducto" id="inputCodigo_formAddProducto" data-minlength="2" maxlength="25" type="text" class="swal2-input" value="' + dato['producto'][0]['codigo'] + '">' +
+                         '<div id="errorInputCodigo_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="selectProveedor"><span style="color: red;"> * </span>Proveedor</label>' +
+                         '<select name="selectProveedor_formAddProducto" id="selectProveedor_formAddProducto" class="swal2-input search select-full" required>' +
+                         '<option value="0">Seleccione un proveedor</option>' +
+                         opciones +
+                         '</select>' +
+                         '<div id="errorSelectProveedor_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe seleccionar una opci&oacute;n' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-6" style="padding:0px;">' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputStock"><span style="color: red;"> * </span>Stock</label>' +
+                         '<input name="inputStock_formAddProducto" id="inputStock_formAddProducto" type="text" class="swal2-input" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)' +
+                         'event.returnValue = false;" value="' + dato['producto'][0]['stock'] + '">' +
+                         '<div id="errorInputStock_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputDescripcion"><span style="color: red;"> * </span>Descripcion</label>' +
+                         '<textarea class="swal2-input" cols="40" id="inputDescripcion_formAddProducto" name="inputDescripcion_formAddProducto" rows="3">' + dato['producto'][0]['descripcion'] + '</textarea>' +
+                         '<div id="errorInputDescripcion_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="selectEstado">' +
+                         'Estado' +
+                         '</label>' +
+                         '<select name="selectEstado_formAddProducto" id="selectEstado_formAddProducto" class="swal2-input search select-full" required>' +
+                         ((dato['producto'][0]['activo'] == 1) ? '<option selected="selected" value="1">Activo</option> <option value="0">Inactivo</option>' : '<option value="1">Activo</option> <option selected="selected" value="0">Inactivo</option>') +
+                         '</select>' +
+                         '<div id="errorSelectEstado_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="selectControlStock">' +
+                         'Control de stock' +
+                         '</label>' +
+                         '<select name="selectControlStock_formAddProducto" id="selectControlStock_formAddProducto" class="swal2-input search select-full" required>' +
+                         ((dato['producto'][0]['controlStock'] == 0) ? '<option selected="selected" value="0">Si</option> <option value="1">No</option>' : '<option selected="selected" value="0">Si</option> <option selected="selected" value="1">No</option>') +
+                         '</select>' +
+                         '<div id="errorSelectControlStock_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe seleccionar alguna de las opciones correctas.' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div id="paso-2">' +
+                         '<div class="row">' +
+                         '<div class="col-md-6" style="padding:0px;">' +
+                         '<div class="col-md-12">' +
+                         '<h2>' +
+                         '<small>' +
+                         '<i style="color:#333333;padding-right: 2%;" class="fas fa-cart-plus" aria-hidden="true"></i>' +
+                         'COMPRAS.' +
+                         '</small>' +
+                         '</h2>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputPrecioCompra">' +
+                         '<span style="color: red;"> * </span>' +
+                         'Costo' +
+                         '</label>' +
+                         '<div class="input-group">' +
+                         '<input name="inputPrecioCompra_formAddProducto" id="inputPrecioCompra_formAddProducto" type="text" class="swal2-input" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)' +
+                         'event.returnValue = false;" value="' + dato['producto'][0]['precioCompra'] + '">' +
+                         '</div>' +
+                         '<div id="errorInputPrecioCompra_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '<div class="col-md-6" style="padding:0px;border-left-style: dotted;">' +
+                         '<div class="col-md-12">' +
+                         '<h2>' +
+                         '<small>' +
+                         '<i style="color:#333333;padding-right: 2%;" class="fas fa-shopping-cart" aria-hidden="true"></i>' +
+                         'VENTAS.' +
+                         '</small>' +
+                         '</h2>' +
+                         '</div>' +
+                         '<div class="col-md-12">' +
+                         '<div class="form-group label-floating has-feedback">' +
+                         '<label class="control-label" for="inputPrecioVenta">' +
+                         '<span style="color: red;"> * </span>' +
+                         'Precio Venta' +
+                         '</label>' +
+                         '<div class="input-group">' +
+                         '<input name="inputPrecioVenta_formAddProducto" id="inputPrecioVenta_formAddProducto" type="text" class="swal2-input" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)' +
+                         'event.returnValue = false;"  value="' + dato['producto'][0]['precioVenta'] + '">' +
+                         '</div>' +
+                         '<div id="errorInputPrecioVenta_formProducto" class="btn-danger erroBoxs" style="display: none">' +
+                         '* Debe completar el campo' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>' +
+                         '</div>',
+                     text: "Agregar Producto",
+                     width: '900px',
+                     showCancelButton: true,
+                     confirmButtonText: 'Agregar Producto',
+                     showLoaderOnConfirm: true,
+                     preConfirm: (login) => {
+                         var inputNombre_formAddProducto = $('#inputNombre_formAddProducto').val();
+                         var inputStock = $('#inputStock_formAddProducto').val();
+                         var inputCodigo = $('#inputCodigo_formAddProducto').val();
+                         var inputDescripcion = $('#inputDescripcion_formAddProducto').val();
+                         var selectProveedor = $('#selectProveedor_formAddProducto').val();
+                         var selectEstado = $('#selectEstado_formAddProducto').val();
+                         var selectControlStock = $('#selectControlStock_formAddProducto').val();
+                         var inputPrecioCompra = $('#inputPrecioCompra_formAddProducto').val();
+                         var inputPrecioVenta = $('#inputPrecioVenta_formAddProducto').val();
+
+                         $.ajax({
+                                 url: URL + 'productos/update_producto/',
+                                 type: 'POST',
+                                 data: {
+                                     idGenProducto: idGenProducto,
+                                     inputNombre: inputNombre_formAddProducto,
+                                     inputStock: inputStock,
+                                     inputCodigo: inputCodigo,
+                                     inputDescripcion: inputDescripcion,
+                                     selectProveedor: selectProveedor,
+                                     selectEstado: selectEstado,
+                                     selectControlStock: selectControlStock,
+                                     inputPrecioCompra: inputPrecioCompra,
+                                     inputPrecioVenta: inputPrecioVenta,
+                                     selectIvaVenta: 0,
+                                     selectIvaCompra: 0,
+                                     selectProductoEcommerce_formDatosProducto: 0,
+                                     inputPorcentajeDescuento_formProducto: 0
+                                 }
+                             })
+                             .then(response => {
+
+                                 var response = JSON.parse(response);
+
+                                 var tableListadoProductos = $('#listadoProductos').DataTable();
+
+                                 $("#listadoProductos").dataTable().fnDeleteRow("#" + response['producto'][0]['idGenProducto']);
+
+                                 if (response['idUsuario'] != 28 && response['idUsuario'] != 29) {
+                                     var opciones = '<a onclick="eliminar_producto(' + "'" + response['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-remove4"></i></a>' +
+                                         '&nbsp;' +
+                                         '<a onclick="updateProducto(' + "'" + response['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>';
+                                 } else {
+                                     var opciones = '<a onclick="updateProducto(' + "'" + response['producto'][0]['idGenProducto'] + "'" + ')" style="color:#339AF0"><i class="icon-pencil3"></i></a>';
+                                 }
+
+                                 var row = tableListadoProductos.row.add([
+                                     response['producto'][0]['idProducto'],
+                                     response['producto'][0]['nombre'],
+                                     response['producto'][0]['stock'],
+                                     "$" + number_format(response['producto'][0]['precioCompra'], 2, ",", "."),
+                                     "$" + number_format(response['producto'][0]['precioVenta'], 2, ",", "."),
+                                     response['producto'][0]['nombEmpresa'],
+                                     opciones
+                                 ]).draw(false);
+                                 row.nodes().to$().attr('id', response['producto'][0]['idGenProducto']);
+                                 tableListadoProductos.row(row).column(0).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(1).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(2).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(3).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(4).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-center');
+                                 tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-center');
+
+                                 $.ajax({
+                                         url: URL + 'productos/get_productos/',
+                                         type: 'POST',
+                                     })
+                                     .then(data => {
+
+                                         var dato = JSON.parse(data);
+
+                                         document.getElementById('stock_listado_producto').innerHTML = dato['totStock'];
+                                         document.getElementById('valor_costo_total_listado_producto').innerHTML = "$" + number_format(dato['costoTotal'], 2, ",", ".");
+                                         document.getElementById('valor_venta_total_listado_producto').innerHTML = "$" + number_format(dato['valorVentaTotal'], 2, ",", ".");
+
+                                         swal(
+                                             'Producto',
+                                             'Se actualizo el producto con exito',
+                                             'success'
+                                         )
+                                     })
+                                     .catch(error => {
+                                         console.log(error);
+                                         swal(
+                                             'Producto',
+                                             'Se produjo un error, vuelva a intentarlo',
+                                             'error'
+                                         )
+                                     })
+
+                                 return response.json()
+                             })
+                             .catch(error => {
+                                 console.log(error);
+                             })
+                     },
+                     allowOutsideClick: () => !swal.isLoading()
+                 })
+             } else {
+                 swal(
+                     'Error',
+                     "Se produjo un error al obtener los datos de los productos, vuelva a intentarlo.",
+                     'error'
+                 )
+             }
+         })
+         .fail(function(data) {
+             swal(
+                 'Error',
+                 "Se produjo un error al obtener los datos de los proveedores, vuelva a intentarlo.",
+                 'error'
+             )
+         });
+ }
+
+ //--- Eliminar producto - SWAL ---//
+ function eliminar_producto(idGenProducto) {
+     console.log(idGenProducto);
+     swal({
+         type: 'question',
+         text: '¿ Estás seguro que quieres eliminar el producto ?',
+         showCancelButton: true,
+         confirmButtonText: 'Si',
+         showLoaderOnConfirm: true,
+         preConfirm: (login) => {
+             $.ajax({
+                     url: URL + 'productos/eliminar_producto/',
+                     type: 'POST',
+                     data: {
+                         id: idGenProducto
+                     }
+                 })
+                 .then(response => {
+
+                     var response = JSON.parse(response);
+
+                     var tableListadoProductos = $('#listadoProductos').DataTable();
+
+                     $("#listadoProductos").dataTable().fnDeleteRow("#" + response['idGenProducto']);
+
+                     if (!response['value']) {
+                         swal(
+                             'Producto',
+                             "Se produjo un error al elmiinar el producto, vuelva a intentarlo.",
+                             'error'
+                         )
+                     }
+
+                     $.ajax({
+                             url: URL + 'productos/get_productos/',
+                             type: 'POST',
+                         })
+                         .then(data => {
+
+                             var dato = JSON.parse(data);
+
+                             document.getElementById('stock_listado_producto').innerHTML = dato['totStock'];
+                             document.getElementById('valor_costo_total_listado_producto').innerHTML = "$" + number_format(dato['costoTotal'], 2, ",", ".");
+                             document.getElementById('valor_venta_total_listado_producto').innerHTML = "$" + number_format(dato['valorVentaTotal'], 2, ",", ".");
+
+                             swal(
+                                 'Producto',
+                                 "Se elmiinó el producto exitosamente, vuelva a intentarlo.",
+                                 'success'
+                             )
+                         })
+                         .catch(error => {
+                             console.log(error);
+                             swal(
+                                 'Producto',
+                                 'Se produjo un error, vuelva a intentarlo',
+                                 'error'
+                             )
+                         })
+
+                     return response.json()
+                 })
+                 .catch(error => {
+                     swal.showValidationMessage(
+                         `Request failed: ${error}`
+                     )
+                 })
+         },
+         allowOutsideClick: () => !swal.isLoading()
+     }).then((result) => {
+         if (result.value) {
+             swal(
+                 'Producto',
+                 'El producto fue eliminado con exito',
+                 'success'
+             )
+         }
+     })
  }
