@@ -4,8 +4,7 @@
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
-    <div class="container-fluid">
-
+   
         
         <!--<div class="navbar-wrapper">
             <a class="sidebar-toggle">
@@ -55,7 +54,13 @@
                     <?php endif; ?>                                       
                 </div>
         </li>-->
-        <ul class="navbar-nav ml-auto">                
+        <ul class="navbar-nav ml-auto">        
+           <li>
+           <button type="button" data-widget="pushmenu" class="navbar-toggle offcanvas">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="icon-paragraph-justify2"></i>
+            </button> 
+           </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown">
                     <i class="far fa-bell fa-2x" ></i>
@@ -111,11 +116,7 @@
                 </ul>
             </li>
         </ul>     
-        <ul class="navbar-nav" style="visibility: hidden; float:right;">
-            <li class="nav-item" style="float:right;">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>
-        </ul>                  
+                     
     </div>
 
 </nav>
