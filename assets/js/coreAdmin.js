@@ -7919,60 +7919,60 @@
 
      $("#listadoClientes").on("click", "a.delete_cliente", function(e) {
 
-        swal({
-            title: '¿Estas seguro que deseas eliminar un cliente?',
-            text: "No se podrá revertir",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Aceptar'
-          }).then((result) => {
-           
-            
-                
-                var id = $(this).data('id');
-                var idGen = $(this).data('idgen');
-                $.ajax({
-                    url: URL + 'clientes/eliminar_cliente/',
-                    type: 'POST',
-                    cache: false,
-                    data: {
-                        id: id,
-                        idGen: idGen
-                    }
-                })
-                .done(function(data) {
-                    var dato = JSON.parse(data);
-                    //console.log(dato);
-                    if (dato['valid']) {
-                       
-                        $("#listadoClientes").dataTable().fnDeleteRow("#" + idGen);
-                        swal(
-                            'Cliente',
-                            dato['msg'],
-                            'success'
-                        )
-                    } else {
-                      //exito
-                      console.log("ok")
-                        swal(
-                            'Error',
-                            dato['msg'],
-                            'error'
-                        )
-                    }
-                })
-                .fail(function(data) {
-                    swal(
-                        'Error',
-                        dato['msg'],
-                        'error'
-                    )
-                });
-            
-          })
-    
+         swal({
+             title: '¿Estas seguro que deseas eliminar un cliente?',
+             text: "No se podrá revertir",
+             icon: 'warning',
+             showCancelButton: true,
+             confirmButtonColor: '#3085d6',
+             cancelButtonColor: '#d33',
+             confirmButtonText: 'Aceptar'
+         }).then((result) => {
+
+
+
+             var id = $(this).data('id');
+             var idGen = $(this).data('idgen');
+             $.ajax({
+                     url: URL + 'clientes/eliminar_cliente/',
+                     type: 'POST',
+                     cache: false,
+                     data: {
+                         id: id,
+                         idGen: idGen
+                     }
+                 })
+                 .done(function(data) {
+                     var dato = JSON.parse(data);
+                     //console.log(dato);
+                     if (dato['valid']) {
+
+                         $("#listadoClientes").dataTable().fnDeleteRow("#" + idGen);
+                         swal(
+                             'Cliente',
+                             dato['msg'],
+                             'success'
+                         )
+                     } else {
+                         //exito
+                         console.log("ok")
+                         swal(
+                             'Error',
+                             dato['msg'],
+                             'error'
+                         )
+                     }
+                 })
+                 .fail(function(data) {
+                     swal(
+                         'Error',
+                         dato['msg'],
+                         'error'
+                     )
+                 });
+
+         })
+
 
 
          //
@@ -8993,61 +8993,61 @@
  //--- BORRAR PROVEEDOR ---//
  $(function() {
      $("#listadoProveedores").on("click", "a.delete_proveedor", function(e) {
- 
-        swal({
-            title: '¿Estas seguro que deseas eliminar un proveedor?',
-            text: "La acción es irreversible",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: "Cancelar",
-            confirmButtonText: 'Aceptar'
-          }).then((result) => {
-            
-             
 
-                $.ajax({
-                    url: URL + 'proveedores/eliminar_proveedor/',
-                    type: 'POST',
-                    cache: false,
-                    data: {
-                        id: id
-                    }
-                })
-                .done(function(data) {
-                    var dato = JSON.parse(data);
-                    //console.log(dato);
-                    if (dato['valid']) {
-                      
-                        $("#listadoProveedores").dataTable().fnDeleteRow("#" + id);
-                        swal(
-                            'Proveedor',
-                            dato['msg'],
-                            'success'
-                        )
-                    } else {
-                      
-                        swal(
-                            'Error',
-                            dato['msg'],
-                            'error'
-                        )
-                    }
-                })
-                .fail(function(data) {
-                    swal(
-                        'Error',
-                        dato['msg'],
-                        'error'
-                    )
-                });
+         swal({
+             title: '¿Estas seguro que deseas eliminar un proveedor?',
+             text: "La acción es irreversible",
+             icon: 'warning',
+             showCancelButton: true,
+             confirmButtonColor: '#3085d6',
+             cancelButtonColor: '#d33',
+             cancelButtonText: "Cancelar",
+             confirmButtonText: 'Aceptar'
+         }).then((result) => {
 
 
 
-            
-          })
-       
+             $.ajax({
+                     url: URL + 'proveedores/eliminar_proveedor/',
+                     type: 'POST',
+                     cache: false,
+                     data: {
+                         id: id
+                     }
+                 })
+                 .done(function(data) {
+                     var dato = JSON.parse(data);
+                     //console.log(dato);
+                     if (dato['valid']) {
+
+                         $("#listadoProveedores").dataTable().fnDeleteRow("#" + id);
+                         swal(
+                             'Proveedor',
+                             dato['msg'],
+                             'success'
+                         )
+                     } else {
+
+                         swal(
+                             'Error',
+                             dato['msg'],
+                             'error'
+                         )
+                     }
+                 })
+                 .fail(function(data) {
+                     swal(
+                         'Error',
+                         dato['msg'],
+                         'error'
+                     )
+                 });
+
+
+
+
+         })
+
          e.preventDefault();
          $(".button-delete-si").unbind(); // Borro cache del evento para que no repita la funcio x cant. de clicks
 
@@ -9056,7 +9056,7 @@
              e.preventDefault();
              $("#modal-delete").modal("hide");
              $("#modal-cargando").modal("show");
-             
+
          });
      });
  });
@@ -11715,57 +11715,57 @@
      $("#listadoUsuarios").on("click", "a.deleteUsuario", function(e) {
          e.preventDefault();
 
- 
+
          swal({
-            title: '¿Estas seguro que deseas eliminar un usario?',
-            text: "La acción será irreversible",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Aceptar'
-          }).then((result) => {
-            var id = $(this).data('id');
-            var dataString = 'id=' + id;
-            $.ajax({
-                type: "POST",
-                url: URL + "usuarios/eliminar_usuario",
-                data: dataString,
-                success: function(data) {
-                    data = JSON.parse(data)
+             title: '¿Estas seguro que deseas eliminar un usario?',
+             text: "La acción será irreversible",
+             icon: 'warning',
+             showCancelButton: true,
+             confirmButtonColor: '#3085d6',
+             cancelButtonColor: '#d33',
+             cancelButtonText: 'Cancelar',
+             confirmButtonText: 'Aceptar'
+         }).then((result) => {
+             var id = $(this).data('id');
+             var dataString = 'id=' + id;
+             $.ajax({
+                 type: "POST",
+                 url: URL + "usuarios/eliminar_usuario",
+                 data: dataString,
+                 success: function(data) {
+                     data = JSON.parse(data)
 
-                    if (data) {
-                        $("#modal-cargando").modal("hide");
-                        $("#modal-delete").modal("hide");
-                        swal(
-                            'Usuario',
-                            data['msg'],
-                            'success'
-                        )
+                     if (data) {
+                         $("#modal-cargando").modal("hide");
+                         $("#modal-delete").modal("hide");
+                         swal(
+                             'Usuario',
+                             data['msg'],
+                             'success'
+                         )
 
-                        $("#listadoUsuarios").dataTable().fnDeleteRow("#" + data['id']);
+                         $("#listadoUsuarios").dataTable().fnDeleteRow("#" + data['id']);
 
-                    } else {
-                        swal(
-                            'Usuario',
-                            data['msg'],
-                            'error'
-                        )
-                    }
-                },
-                error: function() {
-                    swal(
-                        'Usuario',
-                        'Error interno',
-                        'error'
-                    )
-                }
-            });
+                     } else {
+                         swal(
+                             'Usuario',
+                             data['msg'],
+                             'error'
+                         )
+                     }
+                 },
+                 error: function() {
+                     swal(
+                         'Usuario',
+                         'Error interno',
+                         'error'
+                     )
+                 }
+             });
 
-          })
+         })
 
-        
+
      });
      //agregar usuario
      $('#agregarUsuario').click(function(e) {
@@ -15292,11 +15292,32 @@ e-listado-cte-proveedores-informe').val();
                                      tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-center');
                                      tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-center');
 
-                                     swal(
-                                         'Exito',
-                                         'Se registro con exito',
-                                         'success'
-                                     )
+                                     $.ajax({
+                                             url: URL + 'productos/get_productos/',
+                                             type: 'POST',
+                                         })
+                                         .then(data => {
+
+                                             var dato = JSON.parse(data);
+
+                                             document.getElementById('stock_listado_producto').innerHTML = dato['totStock'];
+                                             document.getElementById('valor_costo_total_listado_producto').innerHTML = "$" + number_format(dato['costoTotal'], 2, ",", ".");
+                                             document.getElementById('valor_venta_total_listado_producto').innerHTML = "$" + number_format(dato['valorVentaTotal'], 2, ",", ".");
+
+                                             swal(
+                                                 'Producto',
+                                                 'Se incremento el stock del producto exitosamente, vuelva a intentarlo.',
+                                                 'success'
+                                             )
+                                         })
+                                         .catch(error => {
+                                             console.log(error);
+                                             swal(
+                                                 'Producto',
+                                                 'Se produjo un error, vuelva a intentarlo',
+                                                 'error'
+                                             )
+                                         })
 
                                      return dato.json()
                                  } else {
@@ -15432,11 +15453,32 @@ e-listado-cte-proveedores-informe').val();
                                      tableListadoProductos.row(row).column(5).nodes().to$().addClass('text-center');
                                      tableListadoProductos.row(row).column(6).nodes().to$().addClass('text-center');
 
-                                     swal(
-                                         'Exito',
-                                         'Se registro con exito',
-                                         'success'
-                                     )
+                                     $.ajax({
+                                             url: URL + 'productos/get_productos/',
+                                             type: 'POST',
+                                         })
+                                         .then(data => {
+
+                                             var dato = JSON.parse(data);
+
+                                             document.getElementById('stock_listado_producto').innerHTML = dato['totStock'];
+                                             document.getElementById('valor_costo_total_listado_producto').innerHTML = "$" + number_format(dato['costoTotal'], 2, ",", ".");
+                                             document.getElementById('valor_venta_total_listado_producto').innerHTML = "$" + number_format(dato['valorVentaTotal'], 2, ",", ".");
+
+                                             swal(
+                                                 'Producto',
+                                                 "Se disminuyo el stock del producto exitosamente, vuelva a intentarlo.",
+                                                 'success'
+                                             )
+                                         })
+                                         .catch(error => {
+                                             console.log(error);
+                                             swal(
+                                                 'Producto',
+                                                 'Se produjo un error, vuelva a intentarlo',
+                                                 'error'
+                                             )
+                                         })
 
                                      return dato.json()
                                  } else {
@@ -17083,58 +17125,58 @@ e-listado-cte-proveedores-informe').val();
  function deleteNotaDebito(idNotaDebito) {
      //e.preventDefault();
      e.preventDefault();
- 
+
      Swal.fire({
-        title: '¿Estas seguro de eliminar una nota de debito?',
-        text: "La acción sera irreversible",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Aceptar'
-      }).then((result) => {
-        $.ajax({
-            url: URL + 'notas_credito_debito/delete_nota_debito/',
-            type: 'POST',
-            cache: false,
-            data: {
-                idNotaDebito: idNotaDebito
-            }
-        })
-        .done(function(data) {
-            var dato = JSON.parse(data);
-            //console.log(dato);
-            if (dato['valid']) {
-                
-                swal(
-                    'Exito',
-                    dato['msg'],
-                    'success'
-                )
+         title: '¿Estas seguro de eliminar una nota de debito?',
+         text: "La acción sera irreversible",
+         icon: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#3085d6',
+         cancelButtonColor: '#d33',
+         cancelButtonText: 'Cancelar',
+         confirmButtonText: 'Aceptar'
+     }).then((result) => {
+         $.ajax({
+                 url: URL + 'notas_credito_debito/delete_nota_debito/',
+                 type: 'POST',
+                 cache: false,
+                 data: {
+                     idNotaDebito: idNotaDebito
+                 }
+             })
+             .done(function(data) {
+                 var dato = JSON.parse(data);
+                 //console.log(dato);
+                 if (dato['valid']) {
 
-                $('#listadoNotaDebito').dataTable().fnDeleteRow("#" + idNotaDebito);
-            } else {
-                swal(
-                    'Error',
-                    dato['msg'],
-                    'error'
-                )
-            }
-        })
-        .fail(function(data) {
-            'Error',
-                    dato['msg'],
-                    'error'
-        });
-      })
-     
+                     swal(
+                         'Exito',
+                         dato['msg'],
+                         'success'
+                     )
 
-     
-        
-         
-        
-    
+                     $('#listadoNotaDebito').dataTable().fnDeleteRow("#" + idNotaDebito);
+                 } else {
+                     swal(
+                         'Error',
+                         dato['msg'],
+                         'error'
+                     )
+                 }
+             })
+             .fail(function(data) {
+                 'Error',
+                 dato['msg'],
+                 'error'
+             });
+     })
+
+
+
+
+
+
+
  }
  //--- Fin eliminar nota de debito ---//
 
