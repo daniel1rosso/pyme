@@ -6550,6 +6550,14 @@ class App_model extends CI_Model
         return ($result != '') ? $result->result_array() : false;
     }
 
+    public function get_stock_producto_faltante()
+    {
+        $this->db->where('productos.stock <=', 5);
+        $this->db->where('productos.eliminado', 0);
+        $result = $this->db->get('productos');
+        return ($result != '') ? $result->result_array() : false;
+    }
+
     public function get_abono_modalidades()
     {
         $result = $this->db->get('abono_modalidades');

@@ -96,23 +96,31 @@ class MY_Controller extends CI_Controller {
 
 
                 $data['menu'] = $menuOrdenado;
-                $notificacionesEgresos[] = [];
+                $notificacionesStock[] = [];
+                $cantNotificaciones = 0;
+                /* $notificacionesEgresos[] = [];
                 $notificacionesGastos[] = [];
                 $cantNotiEgreso = 0;
-                $cantNotiGasto = 0;
-                $cantNotificaciones = 0;
+                $cantNotiGasto = 0; */
                 //--- Consultas para las notificaciones de deudas que contiene el usuario tanto de compras vencidas como gastos vencidos ---//
-                $notificacionesEgresos = $this->app_model->get_notificaciones_egresos( );
+                /* $notificacionesEgresos = $this->app_model->get_notificaciones_egresos( );
                 $notificacionesGastos = $this->app_model->get_notificaciones_gastos( );
                 if ($notificacionesEgresos != []) {
                     $cantNotiEgreso = count($notificacionesEgresos);
                 }
                 if ($notificacionesGastos != []) {
                     $cantNotiGasto = count($notificacionesGastos);
+                } */
+                
+                $notificacionesStock = $this->app_model->get_stock_producto_faltante( );
+                if ($notificacionesStock != []) {
+                    $cantNotificaciones = count($notificacionesStock);
                 }
-                $cantNotificaciones = $cantNotiEgreso + $cantNotiGasto;
+                
+                /* $cantNotificaciones = $cantNotiEgreso + $cantNotiGasto;
                 $data['notificacionesEgresos'] = $notificacionesEgresos;
-                $data['notificacionesGastos'] = $notificacionesGastos;
+                $data['notificacionesGastos'] = $notificacionesGastos; */
+                $data['notificacionesStock'] = $notificacionesStock;
                 $data['cantNotificaciones'] = $cantNotificaciones;
             }
 

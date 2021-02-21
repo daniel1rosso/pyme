@@ -64,34 +64,51 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown">
                     <i class="far fa-bell fa-2x" ></i>
-                    <span class="badge badge-warning navbar-badge" > <?= $cantNotificaciones ?> </span>
+                    <span class="badge badge-warning navbar-badge" style=" width: 30%; height: 40%; font-size: 85%;" ><?= $cantNotificaciones ?></span>
                 </a>
-                <div class="popup dropdown-menu dropdown-menu-left">
+                <div class="popup dropdown-menu" style="max-width: max-content;">
                     <div class="popup-header">
-                        <span>Notificaciones de deudas</span>
+                        <span style="font-size: initial;">Notificaciones de Stock</span>
+                        <!-- <span>Notificaciones de deudas</span> -->
                     </div>
                     <ul class="activity">
                         <?php if ($cantNotificaciones == 0) : ?>
                             <li>
+                                <i class="fas fa-check-circle fa-lg" style="color: #33BD2A;"></i>
+                                <div>
+                                    <a>No hay faltante de stock</a>
+                                </div>
+                            </li>
+                            <!-- <li>
                                 <i class="fas fa-check-circle fa-lg" style="color: #428bca;"></i>
                                 <div>
                                     <a>No tiene deudas pendientes</a>
                                 </div>
-                            </li>
+                            </li> -->
                         <?php else: ?>
-                            <?php if (!empty($notificacionesEgresos)) : ?>
-                                <?php foreach ($notificacionesEgresos as $key => $value) : ?>
+                            <?php if (!empty($notificacionesStock)) : ?>
+                                <?php foreach ($notificacionesStock as $key => $value) : ?>
                                     <li>
+                                        <i class="fas fa-boxes" style="color: black;"></i>
+                                        <div>
+                                            <a> El producto <span style="text-decoration: underline;color:red;"><?= $value['nombre'] ?></span> quedan: <?= $value['stock'] ?></a>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?> 
+                            <?php endif; ?> 
+                            <?php /* if (!empty($notificacionesEgresos)) : */ ?>
+                                <?php /* foreach ($notificacionesEgresos as $key => $value) : */ ?>
+                                    <!-- <li>
                                         <i class="fas fa-check-circle fa-lg" style="color: #428bca;"></i>
                                         <div>
                                             <a onclick="marcar_leida_notificacion_egreso(<?= "'" . $value['idGenEgreso'] ."'" ?>, <?= "'" . $value['fechaRegistroNotificacion'] . "'" ?>);" >Compra con una deuda de <?= '$' . $value['montoDeuda'] ?> a <?= $value['nombEmpresa'] ?></a>
                                         </div>
                                         <small style="padding-left: 11%;"><?= $value['fechaRegistroNotificacion'] ?></small>
-                                    </li>
-                                <?php endforeach; ?> 
-                            <?php endif; ?> 
-                            <?php if (!empty($notificacionesGastos)) : ?>
-                                <?php foreach ($notificacionesGastos as $key => $value) : ?>
+                                    </li> -->
+                                <?php /* endforeach; */ ?> 
+                            <?php /* endif; */ ?> 
+                            <!-- <?php/*  if (!empty($notificacionesGastos)) :  */?>
+                                <?php /* foreach ($notificacionesGastos as $key => $value) : */ ?>
                                     <li>
                                         <i class="fas fa-check-circle fa-lg" style="color: #428bca;"></i>
                                         <div>
@@ -99,8 +116,8 @@
                                         </div>
                                         <small style="padding-left: 11%;"><?= $value['fechaRegistroNotificacion'] ?></small>
                                     </li>
-                                <?php endforeach; ?> 
-                            <?php endif; ?> 
+                                <?php /* endforeach;  */?> 
+                            <?php /* endif; */ ?>  -->
                         <?php endif; ?> 
                     </ul>
                 </div>
