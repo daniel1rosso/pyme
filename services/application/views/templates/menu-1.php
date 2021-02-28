@@ -4,7 +4,7 @@
     <!-- Sidebar -->
     <div div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
     <div class="sidebar-wrapper">
-            <!-- User dropdown -->
+             User dropdown -->
             <div class="user-menu dropdown"  onclick="abrirMenuPrincipal();">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="<?php echo(empty($usuario['imgPerfil'])) ? $url . 'assets/images/home-3-inner-rev-2-img-3.png' : $url . '/uploads/perfiles/thumbs/' . $usuario['imgPerfil'] ?>">

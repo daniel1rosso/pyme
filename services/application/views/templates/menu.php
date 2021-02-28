@@ -1,17 +1,16 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4" 
-  style="
-  background: #010937;">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #010937;">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
      -->
-   
-  <div class="sidebar" style="background: fixed;">
+  
+  <!--Clase con nombre SIDEBAR, se quito por errores en responsive-->
+  <div class=""  style="background: #010937;">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
-        <div class="image">
+        <div class="image" style="padding-left: 15px;">
           <!--<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
           <img src="<?php echo(empty($userdata['picture'])) ? $url . 'assets/images/main-team-member-img-3-100x100.jpg' : $url . '/uploads/profile/' . $userdata['picture'] ?>" class="img-circle" alt="User Image">
         </div>
@@ -46,7 +45,7 @@
                         href="' . $url . $menu[$key]['link'] . '"> ' .
                         '<i class="' . $menu[$key]['icono'] . ' " style="padding-top:3px; color:#0039FF;"></i>'.
                         '<i class=" fas fa-angle-left right"></i>
-                        <p style="font-size:125%; color:#00CBFF; margin-left: 5%;"> '. $menu[$key]['nombre'] .'</p>                    
+                        <p style="font-size:125%; color:#00CBFF; margin-left: 8%;"> '. $menu[$key]['nombre'] .'</p>                    
                         </a>';
                               
                           for ($j = 0; $j < count($menu); $j++) {
