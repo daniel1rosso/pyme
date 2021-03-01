@@ -1,4 +1,12 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #010937;">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" 
+  style="background-color:black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -6,7 +14,7 @@
      -->
   
   <!--Clase con nombre SIDEBAR, se quito por errores en responsive-->
-  <div class=""  style="background: #010937;">
+  <div class=""  style="">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
