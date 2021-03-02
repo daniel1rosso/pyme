@@ -1,5 +1,5 @@
 <!-- Page content -->
-<div class="page-content">
+<div class="page-wrapper">
 
     <!-- Page header -->
     <div class="page-header">
