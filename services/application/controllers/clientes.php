@@ -47,8 +47,8 @@ class Clientes extends MY_Controller {
                     $value['email'],
                     $value['tel'],
                     $value['cel'],
-                    $value['localidad'],
-                    $value['provincia'],
+                    $value['localidad'][0],
+                    $value['provincia'][0],
                     $opcion,
                     "DT_RowId" => $value['idGenCliente']
                 );
@@ -208,7 +208,7 @@ class Clientes extends MY_Controller {
             $inputDomicilio = $this->input->post('inputDomicilio', true);
             $inputNumDir = $this->input->post('inputNumDir', true);
             $inputPiso = $this->input->post('inputPiso', true);
-            //$inputDpto = $this->input->post('inputDpto', true);
+            $inputDpto = $this->input->post('inputDpto', true);
             //$inputNota = $this->input->post('inputNota', true);
             //$selectCatVentas = $this->input->post('selectCatVentas', true);
             //$inputDtoGeneral = $this->input->post('inputDtoGeneral', true);
@@ -241,12 +241,12 @@ class Clientes extends MY_Controller {
             } else {
                 //--- Actualizo - Cliente ---//
                 $result_update_cliente = $this->app_model->update_cliente(
-                        $idGenCliente, $idUsuario, $inputCliente, $inputNombre, $inputApellido, $inputNumTel, $inputNumCel, $inputCorreo, $inputWeb, $inputDomicilio, $inputApodoML, $selectLocalidad, $selectProvincia, $inputNumDir, $inputPiso, $inputDpto, $inputCodPostal, $inputNota
+                        $idGenCliente, $idUsuario, $inputCliente, $inputNombre, $inputApellido, $inputNumTel, $inputNumCel, $inputCorreo, $inputDomicilio, $selectLocalidad, $selectProvincia, $inputNumDir, $inputPiso, $inputDpto, $inputCodPostal
                 );
 
                 //--- Actualizo - Detalle Venta ---//
                 $result_update_cliente_detalle_venta = $this->app_model->update_cliente_detalle_venta(
-                        $idGenCliente, $idUsuario, $selectCatVentas, $inputDtoGeneral, $inputNotaCliente
+                        $idGenCliente, $idUsuario//, $selectCatVentas, $inputDtoGeneral, $inputNotaCliente
                 );
 
                 //--- Actualizo - Detalle Facturacion ---//

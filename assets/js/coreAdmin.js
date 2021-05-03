@@ -5382,7 +5382,7 @@
          $("#selectPais_formConfiguracionSistema option:selected").each(function() {
              idPais = $('#selectPais_formConfiguracionSistema').val();
              $("#modal-cargando").modal("hide");
-             if (idPais == 13) {
+             if (idPais == 46) {
                  //--- Campos localidad ---//
                  $("#paisArgentina").css("display", "block");
                  $("#paisNoArgentina").css("display", "none");
@@ -5424,7 +5424,7 @@
      $("#selectPais_formConfiguracionSistema option:selected").each(function() {
          idPais = $('#selectPais_formConfiguracionSistema').val();
          $("#modal-cargando").modal("hide");
-         if (idPais == 13) {
+         if (idPais == 46) {
              $("#paisArgentina").css("display", "block");
              $("#paisNoArgentina").css("display", "none");
          } else if (idPais == 0) {
@@ -5440,7 +5440,7 @@
  function mostrarCamposFacturacionSegunFacturacion() {
      idPais = $('#selectPais_formConfiguracionSistema').val();
 
-     if (idPais == 13) {
+     if (idPais == 46) {
          //--- Campos localidad ---//
          $("#paisArgentina").css("display", "block");
          $("#paisNoArgentina").css("display", "none");
