@@ -95,13 +95,14 @@ class Clientes extends MY_Controller {
         //--- Guardo ---//
         if ($_POST) {
             $inputCliente = $this->input->post('inputCliente', true);
-            $inputApodoML = $this->input->post('inputApodoML', true);
+            //$inputApodoML = $this->input->post('inputApodoML', true);
             $inputApellido = $this->input->post('inputApellido', true);
             $inputNombre = $this->input->post('inputNombre', true);
             $inputNumTel = $this->input->post('inputNumTel', true);
             $inputNumCel = $this->input->post('inputNumCel', true);
             $inputCorreo = $this->input->post('inputCorreo', true);
-            $inputWeb = $this->input->post('inputWeb', true);
+            
+            //$inputWeb = $this->input->post('inputWeb', true);
             $selectProvincia = $this->input->post('selectProvincia_formCliente', true);
             $selectLocalidad = $this->input->post('selectLocalidad_formCliente', true);
             $inputCodPostal = $this->input->post('inputCodPostal', true);
@@ -109,21 +110,21 @@ class Clientes extends MY_Controller {
             $inputNumDir = $this->input->post('inputNumDir', true);
             $inputPiso = $this->input->post('inputPiso', true);
             $inputDpto = $this->input->post('inputDpto', true);
-            $inputNota = $this->input->post('inputNota', true);
-            $selectCatVentas = $this->input->post('selectCatVentas', true);
-            $inputDtoGeneral = $this->input->post('inputDtoGeneral', true);
-            $inputNotaCliente = $this->input->post('inputNotaCliente', true);
-            $inputRazonSocial = $this->input->post('inputRazonSocial', true);
-            $inputNumTelFac = $this->input->post('inputNumTelFac', true);
-            $inputNumCelFac = $this->input->post('inputNumCelFac', true);
+            //$inputNota = $this->input->post('inputNota', true);
+            //$selectCatVentas = $this->input->post('selectCatVentas', true);
+            //$inputDtoGeneral = $this->input->post('inputDtoGeneral', true);
+            //$inputNotaCliente = $this->input->post('inputNotaCliente', true);
+            //$inputRazonSocial = $this->input->post('inputRazonSocial', true);
+            //$inputNumTelFac = $this->input->post('inputNumTelFac', true);
+            //$inputNumCelFac = $this->input->post('inputNumCelFac', true);
             $selectTipoDoc = $this->input->post('selectTipoDoc', true);
             $inputNumDoc = $this->input->post('inputNumDoc', true);
-            $inputDomicilioFiscal = $this->input->post('inputDomicilioFiscal', true);
-            $selectCondIva = $this->input->post('selectCondIva', true);
-            $selectCompTipo = $this->input->post('selectCompTipo', true);
-            $selectProvinciaFac = $this->input->post('selectProvinciaFac', true);
-            $selectLocalidadFac = $this->input->post('selectLocalidadFac', true);
-            $inputCodPostalFac = $this->input->post('inputCodPostalFac', true);
+            //$inputDomicilioFiscal = $this->input->post('inputDomicilioFiscal', true);
+            //$selectCondIva = $this->input->post('selectCondIva', true);
+            //$selectCompTipo = $this->input->post('selectCompTipo', true);
+            //$selectProvinciaFac = $this->input->post('selectProvinciaFac', true);
+            //$selectLocalidadFac = $this->input->post('selectLocalidadFac', true);
+            //$inputCodPostalFac = $this->input->post('inputCodPostalFac', true);
 
             $userdata = $this->session->all_userdata();
             $idUsuario = $userdata['idUsuario'];
@@ -152,20 +153,20 @@ class Clientes extends MY_Controller {
                 );
 
                 //--- Guardo - Detalle Facturacion ---//
-                $result_insert_cliente_detalle_facturacion = $this->app_model->insert_cliente_detalle_facturacion(
-                        $idGenCliente, $idUsuario, $inputRazonSocial, $selectTipoDoc, $inputNumDoc, $selectCondIva, $selectCompTipo, $inputNumTelFac, $inputNumCelFac, $inputDomicilioFiscal, $selectLocalidadFac, $selectProvinciaFac, $inputCodPostalFac
-                );
+              //  $result_insert_cliente_detalle_facturacion = $this->app_model->insert_cliente_detalle_facturacion(
+                //        $idGenCliente, $idUsuario, $inputRazonSocial, $selectTipoDoc, $inputNumDoc, $selectCondIva, $selectCompTipo, $inputNumTelFac, $inputNumCelFac, $inputDomicilioFiscal, $selectLocalidadFac, $selectProvinciaFac, $inputCodPostalFac
+                //);
 
                 //--- Guardo - Historico ---//
                 $result_insert_historico = $this->app_model->set_historico(
-                        $idUsuario, $idGenCliente, $tipoAccion = 1, $tipoOperacion = 3, "Se agregó el cliente " . $inputRazonSocial, //detalle
+                        $idUsuario, $idGenCliente, $tipoAccion = 1, $tipoOperacion = 3, "Se agregó el cliente " . $inputNombre, //detalle
                         $total = 0
                 );
 
                 if (
                         $result_insert_cliente &&
                         $result_insert_cliente_detalle_venta &&
-                        $result_insert_cliente_detalle_facturacion &&
+                    //    $result_insert_cliente_detalle_facturacion &&
                         $result_insert_historico
                 ) {
                     $cliente = $this->app_model->get_cliente_byIdGen($idGenCliente);
@@ -194,35 +195,35 @@ class Clientes extends MY_Controller {
         if ($_POST) {
             $idGenCliente = $this->input->post('inputIdGenCliente_formCliente', true);
             $inputCliente = $this->input->post('inputCliente', true);
-            $inputApodoML = $this->input->post('inputApodoML', true);
+            //$inputApodoML = $this->input->post('inputApodoML', true);
             $inputApellido = $this->input->post('inputApellido', true);
             $inputNombre = $this->input->post('inputNombre', true);
             $inputNumTel = $this->input->post('inputNumTel', true);
             $inputNumCel = $this->input->post('inputNumCel', true);
             $inputCorreo = $this->input->post('inputCorreo', true);
-            $inputWeb = $this->input->post('inputWeb', true);
+            //$inputWeb = $this->input->post('inputWeb', true);
             $selectProvincia = $this->input->post('selectProvincia_formCliente', true);
             $selectLocalidad = $this->input->post('selectLocalidad_formCliente', true);
             $inputCodPostal = $this->input->post('inputCodPostal', true);
             $inputDomicilio = $this->input->post('inputDomicilio', true);
             $inputNumDir = $this->input->post('inputNumDir', true);
             $inputPiso = $this->input->post('inputPiso', true);
-            $inputDpto = $this->input->post('inputDpto', true);
-            $inputNota = $this->input->post('inputNota', true);
-            $selectCatVentas = $this->input->post('selectCatVentas', true);
-            $inputDtoGeneral = $this->input->post('inputDtoGeneral', true);
-            $inputNotaCliente = $this->input->post('inputNotaCliente', true);
-            $inputRazonSocial = $this->input->post('inputRazonSocial', true);
-            $inputNumTelFac = $this->input->post('inputNumTelFac', true);
-            $inputNumCelFac = $this->input->post('inputNumCelFac', true);
+            //$inputDpto = $this->input->post('inputDpto', true);
+            //$inputNota = $this->input->post('inputNota', true);
+            //$selectCatVentas = $this->input->post('selectCatVentas', true);
+            //$inputDtoGeneral = $this->input->post('inputDtoGeneral', true);
+            //$inputNotaCliente = $this->input->post('inputNotaCliente', true);
+            //$inputRazonSocial = $this->input->post('inputRazonSocial', true);
+            //$inputNumTelFac = $this->input->post('inputNumTelFac', true);
+            //$inputNumCelFac = $this->input->post('inputNumCelFac', true);
             $selectTipoDoc = $this->input->post('selectTipoDoc', true);
             $inputNumDoc = $this->input->post('inputNumDoc', true);
-            $inputDomicilioFiscal = $this->input->post('inputDomicilioFiscal', true);
-            $selectCondIva = $this->input->post('selectCondIva', true);
-            $selectCompTipo = $this->input->post('selectCompTipo', true);
-            $selectProvinciaFac = $this->input->post('selectProvinciaFac', true);
-            $selectLocalidadFac = $this->input->post('selectLocalidadFac', true);
-            $inputCodPostalFac = $this->input->post('inputCodPostalFac', true);
+            //$inputDomicilioFiscal = $this->input->post('inputDomicilioFiscal', true);
+            //$selectCondIva = $this->input->post('selectCondIva', true);
+            //$selectCompTipo = $this->input->post('selectCompTipo', true);
+            //$selectProvinciaFac = $this->input->post('selectProvinciaFac', true);
+            //$selectLocalidadFac = $this->input->post('selectLocalidadFac', true);
+            //$inputCodPostalFac = $this->input->post('inputCodPostalFac', true);
 
             $userdata = $this->session->all_userdata();
             $idUsuario = $userdata['idUsuario'];
@@ -249,20 +250,20 @@ class Clientes extends MY_Controller {
                 );
 
                 //--- Actualizo - Detalle Facturacion ---//
-                $result_update_cliente_detalle_facturacion = $this->app_model->update_cliente_detalle_facturacion(
-                        $idGenCliente, $idUsuario, $inputRazonSocial, $selectTipoDoc, $inputNumDoc, $selectCondIva, $selectCompTipo, $inputNumTelFac, $inputNumCelFac, $inputDomicilioFiscal, $selectLocalidadFac, $selectProvinciaFac, $inputCodPostalFac
-                );
+                //$result_update_cliente_detalle_facturacion = $this->app_model->update_cliente_detalle_facturacion(
+                 //       $idGenCliente, $idUsuario, $inputRazonSocial, $selectTipoDoc, $inputNumDoc, $selectCondIva, $selectCompTipo, $inputNumTelFac, $inputNumCelFac, $inputDomicilioFiscal, $selectLocalidadFac, $selectProvinciaFac, $inputCodPostalFac
+                //);
 
                 //--- Guardo - Historico ---//
                 $result_insert_historico = $this->app_model->set_historico(
-                        $idUsuario, $idGenCliente, $tipoAccion = 2, $tipoOperacion = 3, "Se agregó el cliente " . $inputRazonSocial, //detalle
+                        $idUsuario, $idGenCliente, $tipoAccion = 2, $tipoOperacion = 3, "Se agregó el cliente " . $inputNombre, //detalle
                         $total = 0
                 );
 
                 if (
                         $result_update_cliente ||
                         $result_update_cliente_detalle_venta ||
-                        $result_update_cliente_detalle_facturacion &&
+                        //$result_update_cliente_detalle_facturacion &&
                         $result_insert_historico
                 ) {
                     
@@ -321,12 +322,12 @@ class Clientes extends MY_Controller {
                     //--- Borro Cliente ---//            
                     $result_eliminar_cliente = $this->app_model->eliminar_cliente($idGenCliente);
                     $result_eliminar_cliente_detalle_venta = $this->app_model->eliminar_cliente_detalle_venta($idGenCliente);
-                    $result_eliminar_cliente_detalle_facturacion = $this->app_model->eliminar_cliente_detalle_facturacion($idGenCliente);
+                    //$result_eliminar_cliente_detalle_facturacion = $this->app_model->eliminar_cliente_detalle_facturacion($idGenCliente);
 
                     if (
                             $result_eliminar_cliente &&
                             $result_eliminar_cliente_detalle_venta &&
-                            $result_eliminar_cliente_detalle_facturacion &&
+                            //$result_eliminar_cliente_detalle_facturacion &&
                             $result_insert_historico
                     ) {
                         $msg = "Cliente eliminado exitosamente";

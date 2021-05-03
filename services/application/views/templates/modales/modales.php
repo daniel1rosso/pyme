@@ -1747,21 +1747,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group label-floating has-feedback">
-                                        <label class="control-label" for="inputApodoML">
-                                            <a href="#" data-placement="top" class="tip" data-original-title="Apodo de Mercado Libre">
-                                                <i class="fas fa-question-circle"></i>
-                                            </a>
-                                            Apodo ML
-                                        </label>
-                                        <input name="inputApodoML" id="inputApodoML_formCliente" data-minlength="2" maxlength="25" type="text" class="form-control">
-
-                                        <div id="errorInputApodoML_formCliente" class="btn-danger erroBoxs" style="display: none">
-                                            * Debe completar el campo
-                                        </div>
-                                    </div>
-                                </div>
+                              
                             </div>
 
                             <div class="col-md-6" style="padding:0px;">
@@ -1827,7 +1813,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+<!--
                                 <div class="col-md-6">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputWeb">P&aacute;gina Web</label>
@@ -1838,6 +1824,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            -->
                             </div>
                         </div>
 
@@ -1937,7 +1924,7 @@
                                 </div>
                             </div>
                         </div>
-
+<!--
                         <div class="row">
                             <div class="col-md-12" style="padding:0px;">
                                 <div class="col-md-12">
@@ -1952,10 +1939,11 @@
                                 </div>
                             </div>
                         </div>
+                    -->
                     </div>
 
                     <div id="paso-2">
-                        <div id="boxCabeceraForm">
+                       <!-- <div id="boxCabeceraForm">
                             <h3>
                                 <small>
                                     <i style="color:#333333;" class="fas fa-shopping-cart" aria-hidden="true"></i>
@@ -1966,7 +1954,8 @@
                                 </small>
                             </h3>
                         </div>
-
+-->
+<!--
                         <div class="row">
                             <div class="col-md-6" style="padding:0px;">
                                 <div class="col-md-12">
@@ -2007,7 +1996,8 @@
                                 </div>
                             </div>
                         </div>
-
+-->
+<!--
                         <div class="row">
                             <div class="col-md-12" style="padding:0px;">
                                 <div class="col-md-12">
@@ -2022,8 +2012,9 @@
                                 </div>
                             </div>
                         </div>
+                    -->
                     </div>
-
+<!--
                     <div id="paso-3">
                         <div id="boxCabeceraForm">
                             <h3>
@@ -2077,7 +2068,7 @@
                                 </div>
                             </div>
                         </div>
-
+-->
                         <div class="row">
                             <div class="col-md-6" style="padding:0px;">
                                 <div class="col-md-6">
@@ -2111,7 +2102,7 @@
                                     </div>
                                 </div>
                             </div>
-
+<!--
                             <div class="col-md-6" style="padding:0px;">
                                 <div class="col-md-12">
                                     <div class="form-group label-floating has-feedback">
@@ -2124,10 +2115,14 @@
                                     </div>
                                 </div>
                             </div>
+
+                        -->
                         </div>
 
                         <div class="row">
                             <div class="col-md-6" style="padding:0px;">
+
+                                <!--
                                 <div class="col-md-6">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="selectCondIva">Conci&oacute;n de IVA</label>
@@ -2147,8 +2142,10 @@
                                         </div>
                                     </div>
                                 </div>
-
+-->
                                 <div class="col-md-6">
+
+                                    <!--
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="selectCompTipo">Comprobante por Defecto</label>
                                         <select name="selectCompTipo" id="selectCompTipo_formCliente" class="select-full" required>
@@ -2166,9 +2163,11 @@
                                             * Debe seleccionar una opci&oacute;n
                                         </div>
                                     </div>
+
+                                -->
                                 </div>
                             </div>
-
+<!--
                             <div class="col-md-6" style="padding:0px;">
                                 <div class="col-md-4">
                                     <div class="form-group label-floating has-feedback">
@@ -2214,6 +2213,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                        -->
                         </div>
                     </div>
 
@@ -2224,7 +2225,7 @@
                 <button id="btnAddCliente" class="btn btn-primary btn-raised">Guardar</button>
                 <button class="btn btn-warning" data-dismiss="modal">Cerrar</button>
             </div>
-        </div>
+        
     </div>
 </div>
 

@@ -15,24 +15,29 @@ class App_model extends CI_Model
 
     public function get_totClientes()
     {
+        $this->db->where('eliminado',0);
         $result = $this->db->get('clientes');
+
         return $result->num_rows;
     }
 
     public function get_totProveedores()
     {
+        $this->db->where('eliminado',0);
         $result = $this->db->get('proveedores');
         return $result->num_rows;
     }
 
     public function get_totProductos()
     {
+        $this->db->where('eliminado',0);
         $result = $this->db->get('productos');
         return $result->num_rows;
     }
 
     public function get_totUsuarios()
     {
+        $this->db->where('eliminado',0);
         $result = $this->db->get('usuarios');
         return $result->num_rows;
     }
