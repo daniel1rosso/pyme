@@ -144,12 +144,12 @@ class Clientes extends MY_Controller {
             } else {
                 //--- Guardo - Cliente ---//
                 $result_insert_cliente = $this->app_model->insert_cliente(
-                        $idGenCliente, $idUsuario, $inputCliente, $inputNombre, $inputApellido, $inputNumTel, $inputNumCel, $inputCorreo, $inputWeb, $inputDomicilio, $inputApodoML, $selectLocalidad, $selectProvincia, $inputNumDir, $inputPiso, $inputDpto, $inputCodPostal, $inputNota
+                        $idGenCliente, $idUsuario, $inputCliente, $inputNombre, $inputApellido, $inputNumTel, $inputNumCel, $inputCorreo, $inputDomicilio,  $selectLocalidad, $selectProvincia, $inputNumDir, $inputPiso, $inputDpto, $inputCodPostal
                 );
 
                 //--- Guardo - Detalle Venta ---//
                 $result_insert_cliente_detalle_venta = $this->app_model->insert_cliente_detalle_venta(
-                        $idGenCliente, $idUsuario, $selectCatVentas, $inputDtoGeneral, $inputNotaCliente
+                        $idGenCliente, $idUsuario
                 );
 
                 //--- Guardo - Detalle Facturacion ---//

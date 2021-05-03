@@ -7461,6 +7461,7 @@
  //--- AGREGAR CLIENTE ---//
  $(document).ready(function() {
      $('#btnAddCliente').on('click', function(event) {
+        console.log("Hola");
          $("#modal-cargando").modal("show");
          event.preventDefault();
          var inputIdGenCliente = $('#inputIdGenCliente_formCliente').val();

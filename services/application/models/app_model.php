@@ -5922,16 +5922,16 @@ class App_model extends CI_Model
         $inputNumTel,
         $inputNumCel,
         $inputCorreo,
-        $inputWeb,
+        //$inputWeb,
         $inputDomicilio,
-        $inputApodoML,
+        //$inputApodoML,
         $selectLocalidad,
         $selectProvincia,
         $inputNumDir,
         $inputPiso,
         $inputDpto,
-        $inputCodPostal,
-        $inputNota
+        $inputCodPostal
+        //$inputNota
     ) {
         $values = array(
             'idGenCliente' => $idGenCliente,
@@ -5942,16 +5942,16 @@ class App_model extends CI_Model
             'tel' => $inputNumTel,
             'cel' => $inputNumCel,
             'email' => $inputCorreo,
-            'pagWeb' => $inputWeb,
+            //'pagWeb' => $inputWeb,
             'domicilio' => $inputDomicilio,
-            'apodoMl' => $inputApodoML,
+            //'apodoMl' => $inputApodoML,
             'idLocalidad' => $selectLocalidad,
             'idProvincia' => $selectProvincia,
             'numero' => $inputNumDir,
             'piso' => $inputPiso,
             'dpto' => $inputDpto,
-            'cp' => $inputCodPostal,
-            'nota' => $inputNota,
+            'cp' => $inputCodPostal//,
+            //'nota' => $inputNota,
         );
         $result = $this->db->insert('clientes', $values);
 
@@ -5967,16 +5967,16 @@ class App_model extends CI_Model
         $inputNumTel,
         $inputNumCel,
         $inputCorreo,
-        $inputWeb,
+        //$inputWeb,
         $inputDomicilio,
-        $inputApodoML,
+        //$inputApodoML,
         $selectLocalidad,
         $selectProvincia,
         $inputNumDir,
         $inputPiso,
         $inputDpto,
-        $inputCodPostal,
-        $inputNota
+        $inputCodPostal
+        //$inputNota
     ) {
         $values = array(
             'idUsuario' => $idUsuario,
@@ -5986,16 +5986,16 @@ class App_model extends CI_Model
             'tel' => $inputNumTel,
             'cel' => $inputNumCel,
             'email' => $inputCorreo,
-            'pagWeb' => $inputWeb,
+            //'pagWeb' => $inputWeb,
             'domicilio' => $inputDomicilio,
-            'apodoMl' => $inputApodoML,
+            //'apodoMl' => $inputApodoML,
             'idLocalidad' => $selectLocalidad,
             'idProvincia' => $selectProvincia,
             'numero' => $inputNumDir,
             'piso' => $inputPiso,
             'dpto' => $inputDpto,
             'cp' => $inputCodPostal,
-            'nota' => $inputNota,
+            //'nota' => $inputNota,
         );
 
         $this->db->where('idGenCliente', $idGenCliente);
@@ -6006,17 +6006,17 @@ class App_model extends CI_Model
 
     public function insert_cliente_detalle_venta(
         $idGenCliente,
-        $idUsuario,
-        $selectCatVentas,
-        $inputDtoGeneral,
-        $inputNotaCliente
+        $idUsuario//,
+        //$selectCatVentas,
+        //$inputDtoGeneral,
+        //$inputNotaCliente
     ) {
         $values = array(
             'idGenCliente' => $idGenCliente,
-            'idUsuario' => $idUsuario,
-            'idCategoriaVentas' => $selectCatVentas,
-            'dtoGeneral' => $inputDtoGeneral,
-            'notaCliente' => $inputNotaCliente
+            'idUsuario' => $idUsuario//,
+           // 'idCategoriaVentas' => $selectCatVentas,
+          //  'dtoGeneral' => $inputDtoGeneral,
+           // 'notaCliente' => $inputNotaCliente
         );
         $result = $this->db->insert('clientes_detalle_ventas', $values);
 
@@ -6025,16 +6025,16 @@ class App_model extends CI_Model
 
     public function update_cliente_detalle_venta(
         $idGenCliente,
-        $idUsuario,
-        $selectCatVentas,
-        $inputDtoGeneral,
-        $inputNotaCliente
+        $idUsuario//,
+        //$selectCatVentas,
+        //$inputDtoGeneral,
+        //$inputNotaCliente
     ) {
         $values = array(
-            'idUsuario' => $idUsuario,
-            'idCategoriaVentas' => $selectCatVentas,
-            'dtoGeneral' => $inputDtoGeneral,
-            'notaCliente' => $inputNotaCliente
+            'idUsuario' => $idUsuario//,
+            //'idCategoriaVentas' => $selectCatVentas,
+           //'dtoGeneral' => $inputDtoGeneral,
+           // 'notaCliente' => $inputNotaCliente
         );
 
         $this->db->where('idGenCliente', $idGenCliente);
@@ -6045,10 +6045,10 @@ class App_model extends CI_Model
 
     public function insert_cliente_detalle_facturacion(
         $idGenCliente,
-        $idUsuario,
-        $inputRazonSocial,
+        $idUsuario,/*
+        $inputRazonSocial,*/
         $selectTipoDoc,
-        $inputNumDoc,
+        $inputNumDoc/*,
         $selectCondIva,
         $selectCompTipo,
         $inputNumTelFac,
@@ -6056,22 +6056,22 @@ class App_model extends CI_Model
         $inputDomicilioFiscal,
         $selectLocalidadFac,
         $selectProvinciaFac,
-        $inputCodPostalFac
+        $inputCodPostalFac*/
     ) {
         $values = array(
             'idGenCliente' => $idGenCliente,
             'idUsuario' => $idUsuario,
-            'razonSocial' => $inputRazonSocial,
-            'idTipoDoc' => $selectTipoDoc,
-            'cuit' => $inputNumDoc,
-            'idCondIva' => $selectCondIva,
-            'idComprobante' => $selectCompTipo,
-            'tel' => $inputNumTelFac,
-            'cel' => $inputNumCelFac,
-            'domicilio' => $inputDomicilioFiscal,
-            'idLocalidad' => $selectLocalidadFac,
-            'idProvincia' => $selectProvinciaFac,
-            'cp' => $inputCodPostalFac
+            //'razonSocial' => $inputRazonSocial,
+            'idTipoDoc' => $selectTipoDoc //,
+            //'cuit' => $inputNumDoc,
+            //'idCondIva' => $selectCondIva,
+            //'idComprobante' => $selectCompTipo,
+            //'tel' => $inputNumTelFac,
+            //'cel' => $inputNumCelFac,
+            //'domicilio' => $inputDomicilioFiscal,
+            //'idLocalidad' => $selectLocalidadFac,
+            //'idProvincia' => $selectProvinciaFac,
+            //'cp' => $inputCodPostalFac
         );
         $result = $this->db->insert('clientes_detalle_facturacion', $values);
 
@@ -6081,9 +6081,9 @@ class App_model extends CI_Model
     public function update_cliente_detalle_facturacion(
         $idGenCliente,
         $idUsuario,
-        $inputRazonSocial,
+       // $inputRazonSocial,
         $selectTipoDoc,
-        $inputNumDoc,
+        $inputNumDoc/*,
         $selectCondIva,
         $selectCompTipo,
         $inputNumTelFac,
@@ -6092,20 +6092,21 @@ class App_model extends CI_Model
         $selectLocalidadFac,
         $selectProvinciaFac,
         $inputCodPostalFac
+        */
     ) {
         $values = array(
             'idUsuario' => $idUsuario,
-            'razonSocial' => $inputRazonSocial,
-            'idTipoDoc' => $selectTipoDoc,
-            'cuit' => $inputNumDoc,
-            'idCondIva' => $selectCondIva,
-            'idComprobante' => $selectCompTipo,
-            'tel' => $inputNumTelFac,
-            'cel' => $inputNumCelFac,
-            'domicilio' => $inputDomicilioFiscal,
-            'idLocalidad' => $selectLocalidadFac,
-            'idProvincia' => $selectProvinciaFac,
-            'cp' => $inputCodPostalFac
+            //'razonSocial' => $inputRazonSocial,
+            'idTipoDoc' => $selectTipoDoc
+            //'cuit' => $inputNumDoc,
+            //'idCondIva' => $selectCondIva,
+            //'idComprobante' => $selectCompTipo,
+            //'tel' => $inputNumTelFac,
+            //'cel' => $inputNumCelFac,
+            //'domicilio' => $inputDomicilioFiscal,
+            //'idLocalidad' => $selectLocalidadFac,
+            //'idProvincia' => $selectProvinciaFac,
+            //'cp' => $inputCodPostalFac
         );
 
         $this->db->where('idGenCliente', $idGenCliente);

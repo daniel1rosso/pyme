@@ -2214,8 +2214,9 @@
                                 </div>
                             </div>
 
-                        -->
+                       
                         </div>
+                         -->
                     </div>
 
                 </form>
@@ -2228,6 +2229,8 @@
         
     </div>
 </div>
+
+
 
 <!-- Modal Proveedor -->
 <div id="modal-nuevo-proveedor" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
