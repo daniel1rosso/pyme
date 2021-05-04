@@ -1712,46 +1712,41 @@
 </div>
 
 <!-- Modal Cliente -->
-<div id="modal-nuevo-cliente" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
+<div id="modal-nuevo-cliente" class="modal" tabindex="-1" role="dialog" aria-hidden="false" style="z-index: 1010;background: rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" style="min-width:70%;">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"><i class="icon-pencil3"></i>Cliente</h4>
+                <h4 class="modal-title"><i class="icon-pencil3"></i>Agregar/Modificar Cliente</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+               
             </div>
 
             <div class="panel-body">
                 <form id="formDatosCliente" role="form">
                     <input name="inputIdGenCliente_formCliente" id="inputIdGenCliente_formCliente" type="hidden">
-
                     <div id="paso-1" style="padding-bottom:15px;">
-                        <div id="boxCabeceraForm">
+                        <!--<div id="boxCabeceraForm">
                             <h3>
                                 <small>
                                     <i style="color:#333333;" class="fas fa-id-card" aria-hidden="true"></i>
-                                    DATOS CLIENTE.
+                                    DATOS CLIENTE
                                 </small>
                             </h3>
-                        </div>
+                        </div>-->
 
                         <div class="row">
-                            <div class="col-md-6" style="padding:0px;">
-                                <div class="col-md-6">
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-4">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputCliente"><span style="color: red;"> * </span>Cliente</label>
                                         <input name="inputCliente" id="inputCliente_formCliente" data-minlength="2" maxlength="25" type="text" class="form-control">
-
                                         <div id="errorInputCliente_formCliente" class="btn-danger erroBoxs" style="display: none">
                                             * Debe completar el campo
                                         </div>
                                     </div>
                                 </div>
 
-                              
-                            </div>
-
-                            <div class="col-md-6" style="padding:0px;">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputApellido"><span style="color: red;"> * </span>Apellido</label>
                                         <input name="inputApellido" id="inputApellido_formCliente" data-minlength="2" maxlength="25" type="text" class="form-control">
@@ -1762,7 +1757,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputNombre"><span style="color: red;"> * </span>Nombre</label>
                                         <input name="inputNombre" id="inputNombre_formCliente" data-minlength="2" maxlength="25" type="text" class="form-control">
@@ -1776,8 +1771,8 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6" style="padding:0px;">
-                                <div class="col-md-6">
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-3">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputNumTel">N&uacute;mero de Tel&eacute;fono</label>
                                         <input name="inputNumTel" id="inputNumTel_formCliente" data-minlength="10" maxlength="15" type="text" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)
@@ -1789,7 +1784,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputNumCel">N&uacute;mero de Celular</label>
                                         <input name="inputNumCel" id="inputNumCel_formCliente" data-minlength="10" maxlength="15" type="text" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)
@@ -1800,9 +1795,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-md-6" style="padding:0px;">
+                            
                                 <div class="col-md-6">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputCorreo">Correo Electr&oacute;nico</label>
@@ -1876,7 +1869,7 @@
                             </div>
 
                             <div class="col-md-6" style="padding:0px;">
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputDomicilio">Domicilio</label>
                                         <input name="inputDomicilio" id="inputDomicilio_formCliente" data-minlength="3" maxlength="50" type="text" class="form-control" required>
@@ -1887,7 +1880,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <div class="form-group label-floating has-feedback">
                                         <label class="control-label" for="inputNumDir">N&uacute;mero</label>
                                         <input name="inputNumDir" id="inputNumDir_formCliente" data-minlength="1" maxlength="10" type="text" onKeypress="if (event.keyCode < 45 || event.keyCode > 57)
@@ -2073,7 +2066,7 @@
                             <div class="col-md-6" style="padding:0px;">
                                 <div class="col-md-6">
                                     <div class="form-group label-floating has-feedback">
-                                        <label class="control-label" for="selectTipoDoc">Tipo Documento</label>
+                                        <label class="control-label" for="selectTipoDoc">Tipo DNI</label>
                                         <select name="selectTipoDoc" id="selectTipoDoc_formCliente" class="select-full" required>
                                             <option value="0">Seleccione</option>
                                             <?php
@@ -2093,7 +2086,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group label-floating has-feedback">
-                                        <label class="control-label" for="inputNumDoc">Documento</label>
+                                        <label class="control-label" for="inputNumDoc">N&uacute;mero DNI</label>
                                         <input name="inputNumDoc" id="inputNumDoc_formCliente" data-minlength="10" maxlength="15" type="number" class="form-control" onkeyup="validar_cuit_dni_cliente()" required>
 
                                         <div id="errorInputNumDoc_formCliente" class="btn-danger erroBoxs" style="display: none">
@@ -3750,6 +3743,26 @@
                     </thead>
                     <tbody id="tbody"></tbody>
                 </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Productos -->
+<div id="modal-productos" class="modal  " tabindex="-1" role="dialog" aria-hidden="false" style="background: rgba(0, 0, 0, 0.6);">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="width: 700px;margin: 0px auto;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"> Agregar/Modificar Productos</h4>
+            </div>
+
+            <div class="modal-body" style="padding: 10px; max-height: 500px; min-height: auto; overflow: auto;">
+                
             </div>
 
             <div class="modal-footer">
