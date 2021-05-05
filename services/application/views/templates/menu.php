@@ -14,30 +14,25 @@
      -->
   
   <!--Clase con nombre SIDEBAR, se quito por errores en responsive-->
-  <div class=""  style="">
+  <div class="sidebar-menu"  style="">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-
         <div class="image" style="padding-left: 15px;">
           <!--<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
           <img src="<?php echo(empty($userdata['picture'])) ? $url . 'assets/images/main-team-member-img-3-100x100.jpg' : $url . '/uploads/profile/' . $userdata['picture'] ?>" class="img-circle" alt="User Image">
         </div>
         
         <div class="info">
-         <h4> <strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong>
-         </h4>
+         <h4><strong style="font-family: 'Exo 2', sans-serif; color: white;" href="#" class="d-block"> <?= $userdata['nombreCompleto'] ?> ( <?= $nivelUsuario ?> )</strong></h4>
         </div>
        </div>
       
-       <nav class="mt-2">
-
+       <nav class="mt-2 sidebar-menu">
           <ul  class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-
-            <li class="nav-item" style="margin-top: 1%;">
+            <li class="" style="margin-top: 1%;">
               <a class="nav-link" onclick="abrirMenuPrincipal();">
                 <i class="nav-icon fas fa-bars" style="padding-top:3px; color:#0039FF;"></i>
-                <p  style="font-size:125%; color:#00CBFF; margin-left: 5%;">Menu Principal</p>
+                <p  style="font-size:125%; color:#00CBFF; margin-left: 8%;">Menu Principal</p>
               </a>
             </li>
 
@@ -49,8 +44,7 @@
                     foreach ($menu as $key => $value) {
                       if ($menu[$key]['idTipoInterna'] == 1) {
                         echo '<li class="nav-item" style="margin-top: 1%;" >' .
-                        ' <a class="nav-link"
-                        href="' . $url . $menu[$key]['link'] . '"> ' .
+                        ' <a class="nav-link" href="' . $url . $menu[$key]['link'] . '"> ' .
                         '<i class="' . $menu[$key]['icono'] . ' " style="padding-top:3px; color:#0039FF;"></i>'.
                         '<i class=" fas fa-angle-left right"></i>
                         <p style="font-size:125%; color:#00CBFF; margin-left: 8%;"> '. $menu[$key]['nombre'] .'</p>                    
@@ -62,7 +56,7 @@
                                 echo '<ul class="nav nav-treeview"><li class="nav-item" >' .
                                 '<a class="nav-link" href="' . $url . $menu[$j]['link'] . '">' .
                                 '<i class="far fa-circle nav-icon" style="padding-top:3px;"></i>'.
-                                '<span style="font-size:125%; color:white;">' . $menu[$j]['nombre'] . '</span>' .                     
+                                '<span class="flecha" style="font-size:125%; color:white;">' . $menu[$j]['nombre'] . '</span>' .                     
                                 '</a>';
 
                                   for ($k = 0; $k < count($menu); $k++) {

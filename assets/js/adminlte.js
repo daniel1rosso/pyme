@@ -50,6 +50,8 @@
     }
   };
 
+  
+
   var CardRefresh = /*#__PURE__*/function () {
     function CardRefresh(element, settings) {
       this._element = element;
